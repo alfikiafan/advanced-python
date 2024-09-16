@@ -10,21 +10,21 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Contoh Kode Python Dasar</title>
-    <meta name="title" content="Contoh Kode Python Dasar">
+    <title>Contoh Kode Encapsulation</title>
+    <meta name="title" content="Contoh Kode Encapsulation">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/introduction/code/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/inheritance/code2/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/introduction/code/">
-    <meta property="og:title" content="Contoh Kode Python Dasar">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/inheritance/code2/">
+    <meta property="og:title" content="Contoh Kode Encapsulation">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/introduction/code/">
-    <meta property="twitter:title" content="Contoh Kode Python Dasar">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/inheritance/code2/">
+    <meta property="twitter:title" content="Contoh Kode Encapsulation">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -148,86 +148,68 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="contoh-kode-python-dasar" class="break-words">
+<doc-anchor-target id="contoh-kode-encapsulation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode-python-dasar">#</doc-anchor-trigger>
-        <span>Contoh Kode Python Dasar</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode-encapsulation">#</doc-anchor-trigger>
+        <span>Contoh Kode Encapsulation</span>
     </h1>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Mendeklarasikan variabel dengan tipe data yang berbeda
-x = 10           # Kotak x berisi angka bulat (integer) 10
-y = 3.14         # Kotak y berisi angka desimal (float) 3.14
-name = &quot;Fiki&quot;    # Kotak name berisi teks (string) &quot;Fiki&quot;
-is_active = True # Kotak is_active berisi nilai boolean True
+<pre class="language-python"><code v-pre class="language-python">class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner            # Public member
+        self._balance = balance        # Protected member
+        self.__account_number = &quot;987654321&quot;  # Private member
 
-# Operator Aritmatika
-a = 5
-b = 2
-print(a + b)  # Menjumlahkan 5 dan 2, hasilnya 7
-print(a - b)  # Mengurangi 5 dengan 2, hasilnya 3
-print(a * b)  # Mengalikan 5 dengan 2, hasilnya 10
-print(a / b)  # Membagi 5 dengan 2, hasilnya 2.5
-print(a // b) # Pembagian bulat 5 dibagi 2, hasilnya 2
-print(a % b)  # Sisa pembagian 5 dengan 2, hasilnya 1
-print(a ** b) # 5 dipangkatkan 2, hasilnya 25
+    def deposit(self, amount):
+        if amount &gt; 0:
+            self._balance += amount
+            print(f&quot;Anda telah menyetor Rp{amount}. Saldo saat ini: Rp{self._balance}.&quot;)
+        else:
+            print(&quot;Jumlah setoran harus lebih dari nol.&quot;)
 
-# Operator Pembanding
-print(a == b) # Apakah 5 sama dengan 2? Hasilnya False
-print(a != b) # Apakah 5 tidak sama dengan 2? Hasilnya True
-print(a &gt; b)  # Apakah 5 lebih besar dari 2? Hasilnya True
-print(a &lt; b)  # Apakah 5 lebih kecil dari 2? Hasilnya False
+    def withdraw(self, amount):
+        if 0 &lt; amount &lt;= self._balance:
+            self._balance -= amount
+            print(f&quot;Anda telah menarik Rp{amount}. Saldo saat ini: Rp{self._balance}.&quot;)
+        else:
+            print(&quot;Jumlah penarikan tidak valid.&quot;)
 
-# Operator Logika
-x = True
-y = False
-print(x and y) # Apakah x dan y keduanya True? Hasilnya False
-print(x or y)  # Apakah x atau y salah satunya True? Hasilnya True
-print(not x)   # Negasi dari x, hasilnya False
+    def get_account_number(self):
+        return self.__account_number  # Getter untuk atribut private
 
-# Program menentukan jenis segitiga
-a = 3
-b = 4
-c = 5
+    def get_balance(self):
+        return self._balance  # Getter untuk atribut protected
 
-if a == b == c:
-    print(&quot;Segitiga sama sisi&quot;)
-elif a == b or b == c or a == c:
-    print(&quot;Segitiga sama kaki&quot;)
-else:
-    print(&quot;Segitiga sembarang&quot;)
+    def set_balance(self, balance):
+        if balance &gt;= 0:
+            self._balance = balance  # Setter untuk atribut protected
+        else:
+            print(&quot;Saldo tidak dapat bernilai negatif.&quot;)
 
-# Menghitung jumlah bilangan dari 1 hingga 5
-total = 0
-for i in range(1, 6):
-    print(i)
-    total += i
-print(&quot;Jumlah bilangan dari 1 hingga 5 adalah:&quot;, total)
+# Membuat objek BankAccount
+akun1 = BankAccount(&quot;Budi&quot;, 1500000)
 
-# Menghitung faktorial dari sebuah angka menggunakan while loop
-n = 5
-faktorial = 1
-while n &gt; 0:
-    faktorial *= n
-    n -= 1
-print(&quot;Faktorial dari 5 adalah:&quot;, faktorial)
+# Mengakses public member
+print(f&quot;Pemilik akun: {akun1.owner}&quot;)  # Output: Pemilik akun: Budi
 
-# Mendefinisikan fungsi untuk menghitung kuadrat dari sebuah angka
-def kuadrat(x):
-    return x * x
+# Menggunakan metode deposit dan withdraw
+akun1.deposit(500000)   # Output: Anda telah menyetor Rp500000. Saldo saat ini: Rp2000000.
+akun1.withdraw(300000)  # Output: Anda telah menarik Rp300000. Saldo saat ini: Rp1700000.
 
-# Memanggil fungsi
-angka = 4
-print(&quot;Kuadrat dari&quot;, angka, &quot;adalah&quot;, kuadrat(angka))
+# Mengakses protected member melalui getter
+print(f&quot;Saldo saat ini: Rp{akun1.get_balance()}&quot;)  # Output: Saldo saat ini: Rp1700000
 
-# Fungsi untuk menghitung luas segitiga
-def luas_segitiga(alas, tinggi):
-    return int(0.5 * alas * tinggi)
+# Mengakses private member melalui getter
+print(f&quot;Nomor Akun: {akun1.get_account_number()}&quot;)  # Output: Nomor Akun: 987654321
 
-# Memanggil fungsi dengan parameter
-alas = 5
-tinggi = 10
-print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tinggi, &quot;adalah&quot;, luas_segitiga(alas, tinggi))</code></pre>
+# Mengubah saldo menggunakan setter
+akun1.set_balance(2500000)
+print(f&quot;Saldo setelah diubah: Rp{akun1.get_balance()}&quot;)  # Output: Saldo setelah diubah: Rp2500000
+
+# Mencoba mengakses protected dan private member langsung (tidak disarankan)
+print(f&quot;Saldo langsung (tidak disarankan): Rp{akun1._balance}&quot;)  # Output: Saldo langsung (tidak disarankan): Rp2500000
+# print(akun1.__account_number)  # Akan menghasilkan AttributeError jika diaktifkan</code></pre>
 </doc-codeblock></div>
 
                                 
@@ -238,20 +220,20 @@ print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tingg
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../introduction/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../inheritance/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Pengantar Python</span>
+                                                <span class="block mt-1">Inheritance & Encapsulation</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../class/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../inheritance/code1/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Class & Object</span>
+                                                <span class="block mt-1">Contoh Kode Inheritance</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -295,6 +277,6 @@ print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tingg
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Contoh Kode Python Dasar", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Contoh Kode Encapsulation", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
