@@ -4,36 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/advanced-python">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779792705511">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779801132320">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Contoh Kode Python Dasar</title>
-    <meta name="title" content="Contoh Kode Python Dasar">
+    <title>Encapsulation</title>
+    <meta name="title" content="Encapsulation">
+    <meta name="description" content="Bayangkan kamu bekerja di sebuah perusahaan besar dengan berbagai divisi seperti akuntansi, keuangan, dan penjualan.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/introduction/code/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/3--oop-bagian-2/encapsulation/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/introduction/code/">
-    <meta property="og:title" content="Contoh Kode Python Dasar">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/encapsulation/">
+    <meta property="og:title" content="Encapsulation">
+    <meta property="og:description" content="Bayangkan kamu bekerja di sebuah perusahaan besar dengan berbagai divisi seperti akuntansi, keuangan, dan penjualan.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/introduction/code/">
-    <meta property="twitter:title" content="Contoh Kode Python Dasar">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/encapsulation/">
+    <meta property="twitter:title" content="Encapsulation">
+    <meta property="twitter:description" content="Bayangkan kamu bekerja di sebuah perusahaan besar dengan berbagai divisi seperti akuntansi, keuangan, dan penjualan.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.779792705511" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.779801132320" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.779792705511" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.779801132320" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.779792705511" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.779792705511" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.779801132320" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.779801132320" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -49,7 +52,7 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Python Lanjut</span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
                         </a>
                     </div>
         
@@ -148,87 +151,252 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="contoh-kode-python-dasar" class="break-words">
+<doc-anchor-target id="encapsulation" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode-python-dasar">#</doc-anchor-trigger>
-        <span>Contoh Kode Python Dasar</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#encapsulation">#</doc-anchor-trigger>
+        <span>Encapsulation</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="apa-itu-encapsulation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-encapsulation">#</doc-anchor-trigger>
+        <span>Apa Itu Encapsulation?</span>
+    </h3>
+</doc-anchor-target>
+<p>Bayangkan kamu bekerja di sebuah perusahaan besar dengan berbagai divisi seperti akuntansi, keuangan, dan penjualan. Setiap divisi memiliki data dan tugasnya sendiri yang perlu dijaga kerahasiaannya. <strong>Encapsulation</strong> atau <strong>enkapsulasi</strong> dalam pemrograman berorientasi objek (OOP) adalah konsep yang mirip dengan situasi ini. Enkapsulasi melibatkan pembungkusan data (atribut) dan metode (fungsi) yang bekerja pada data tersebut dalam satu unit, yaitu kelas. Ini membantu melindungi data dari akses langsung dan modifikasi yang tidak disengaja.</p>
+<doc-anchor-target id="manfaat-encapsulation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#manfaat-encapsulation">#</doc-anchor-trigger>
+        <span>Manfaat Encapsulation:</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Pengamanan Data:</strong> Melindungi data dari perubahan yang tidak diinginkan dari luar kelas.</li>
+<li><strong>Informasi Tersembunyi:</strong> Menyembunyikan detail implementasi internal dan hanya menampilkan antarmuka yang diperlukan.</li>
+<li><strong>Kontrol Akses:</strong> Mengatur siapa yang bisa mengakses atau memodifikasi data tertentu.</li>
+<li><strong>Pemeliharaan Mudah:</strong> Memudahkan perubahan implementasi internal tanpa mempengaruhi kode yang menggunakan kelas tersebut.</li>
+</ol>
+<doc-anchor-target id="jenis-jenis-anggota-kelas-dalam-enkapsulasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#jenis-jenis-anggota-kelas-dalam-enkapsulasi">#</doc-anchor-trigger>
+        <span>Jenis-Jenis Anggota Kelas dalam Enkapsulasi:</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Public Members:</strong> Anggota yang dapat diakses dari mana saja.</li>
+<li><strong>Protected Members:</strong> Anggota yang seharusnya hanya diakses dalam kelas itu sendiri dan kelas turunannya.</li>
+<li><strong>Private Members:</strong> Anggota yang hanya dapat diakses dalam kelas itu sendiri.</li>
+</ol>
+<doc-anchor-target id="public-members">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#public-members">#</doc-anchor-trigger>
+        <span>Public Members</span>
+    </h3>
+</doc-anchor-target>
+<p>Public members adalah anggota kelas yang dapat diakses dari mana saja, baik di dalam maupun di luar kelas.</p>
+<doc-anchor-target id="contoh-public-members">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-public-members">#</doc-anchor-trigger>
+        <span>Contoh Public Members:</span>
+    </h4>
+</doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Mendeklarasikan variabel dengan tipe data yang berbeda
-x = 10           # Kotak x berisi angka bulat (integer) 10
-y = 3.14         # Kotak y berisi angka desimal (float) 3.14
-name = &quot;Fiki&quot;    # Kotak name berisi teks (string) &quot;Fiki&quot;
-is_active = True # Kotak is_active berisi nilai boolean True
+<pre class="language-python"><code v-pre class="language-python">class Car:
+    def __init__(self, brand, model):
+        self.brand = brand    # Public member
+        self.model = model    # Public member
 
-# Operator Aritmatika
-a = 5
-b = 2
-print(a + b)  # Menjumlahkan 5 dan 2, hasilnya 7
-print(a - b)  # Mengurangi 5 dengan 2, hasilnya 3
-print(a * b)  # Mengalikan 5 dengan 2, hasilnya 10
-print(a / b)  # Membagi 5 dengan 2, hasilnya 2.5
-print(a // b) # Pembagian bulat 5 dibagi 2, hasilnya 2
-print(a % b)  # Sisa pembagian 5 dengan 2, hasilnya 1
-print(a ** b) # 5 dipangkatkan 2, hasilnya 25
+    def display_info(self):
+        print(f&quot;Mobil ini adalah {self.brand} model {self.model}.&quot;)
 
-# Operator Pembanding
-print(a == b) # Apakah 5 sama dengan 2? Hasilnya False
-print(a != b) # Apakah 5 tidak sama dengan 2? Hasilnya True
-print(a &gt; b)  # Apakah 5 lebih besar dari 2? Hasilnya True
-print(a &lt; b)  # Apakah 5 lebih kecil dari 2? Hasilnya False
-
-# Operator Logika
-x = True
-y = False
-print(x and y) # Apakah x dan y keduanya True? Hasilnya False
-print(x or y)  # Apakah x atau y salah satunya True? Hasilnya True
-print(not x)   # Negasi dari x, hasilnya False
-
-# Program menentukan jenis segitiga
-a = 3
-b = 4
-c = 5
-
-if a == b == c:
-    print(&quot;Segitiga sama sisi&quot;)
-elif a == b or b == c or a == c:
-    print(&quot;Segitiga sama kaki&quot;)
-else:
-    print(&quot;Segitiga sembarang&quot;)
-
-# Menghitung jumlah bilangan dari 1 hingga 5
-total = 0
-for i in range(1, 6):
-    print(i)
-    total += i
-print(&quot;Jumlah bilangan dari 1 hingga 5 adalah:&quot;, total)
-
-# Menghitung faktorial dari sebuah angka menggunakan while loop
-n = 5
-faktorial = 1
-while n &gt; 0:
-    faktorial *= n
-    n -= 1
-print(&quot;Faktorial dari 5 adalah:&quot;, faktorial)
-
-# Mendefinisikan fungsi untuk menghitung kuadrat dari sebuah angka
-def kuadrat(x):
-    return x * x
-
-# Memanggil fungsi
-angka = 4
-print(&quot;Kuadrat dari&quot;, angka, &quot;adalah&quot;, kuadrat(angka))
-
-# Fungsi untuk menghitung luas segitiga
-def luas_segitiga(alas, tinggi):
-    return int(0.5 * alas * tinggi)
-
-# Memanggil fungsi dengan parameter
-alas = 5
-tinggi = 10
-print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tinggi, &quot;adalah&quot;, luas_segitiga(alas, tinggi))</code></pre>
+# Membuat objek dari kelas Car
+mobil = Car(&quot;Toyota&quot;, &quot;Camry&quot;)
+mobil.display_info()  # Output: Mobil ini adalah Toyota model Camry.</code></pre>
 </doc-codeblock></div>
+<p><strong>Penjelasan Kode:</strong></p>
+<ul>
+<li><code v-pre>self.brand</code> dan <code v-pre>self.model</code> adalah public members yang dapat diakses dari luar kelas.</li>
+<li>Metode <code v-pre>display_info()</code> menampilkan informasi tentang mobil.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Mobil ini adalah Toyota model Camry.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="protected-members">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#protected-members">#</doc-anchor-trigger>
+        <span>Protected Members</span>
+    </h3>
+</doc-anchor-target>
+<p>Protected members adalah anggota kelas yang seharusnya hanya diakses di dalam kelas itu sendiri dan kelas turunannya. Di Python, kita menggunakan satu garis bawah (<code v-pre>_</code>) sebagai konvensi untuk menandakan bahwa anggota tersebut adalah protected.</p>
+<doc-anchor-target id="contoh-protected-members">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-protected-members">#</doc-anchor-trigger>
+        <span>Contoh Protected Members:</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Python program untuk mendemonstrasikan protected members
+
+class Base:
+    def __init__(self):
+        self._a = 2  # Anggota protected
+
+class Derived(Base):
+    def __init__(self):
+        super().__init__()  # Memanggil constructor kelas Base
+        print(&quot;Memanggil anggota protected dari kelas Base:&quot;, self._a)
+        
+        # Memodifikasi anggota protected
+        self._a = 3
+        print(&quot;Memanggil anggota protected yang telah dimodifikasi:&quot;, self._a)
+
+# Membuat objek dari kelas Derived
+object1 = Derived()
+
+# Membuat objek dari kelas Base
+object2 = Base()
+
+# Mengakses anggota protected
+print(&quot;Mengakses anggota protected dari object1:&quot;, object1._a)
+print(&quot;Mengakses anggota protected dari object2:&quot;, object2._a)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan Kode:</strong></p>
+<ul>
+<li><code v-pre>self._a</code>: Menandakan bahwa atribut <code v-pre>_a</code> adalah anggota protected.</li>
+<li><code v-pre>Derived</code> mewarisi dari <code v-pre>Base</code> dan dapat mengakses serta memodifikasi atribut <code v-pre>_a</code>.</li>
+<li>Meskipun anggota protected dapat diakses dari luar kelas, disarankan untuk tidak melakukannya.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Memanggil anggota protected dari kelas Base: 2
+Memanggil anggota protected yang telah dimodifikasi: 3
+Mengakses anggota protected dari object1: 3
+Mengakses anggota protected dari object2: 2</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="private-members">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#private-members">#</doc-anchor-trigger>
+        <span>Private Members</span>
+    </h3>
+</doc-anchor-target>
+<p>Private members adalah anggota kelas yang tidak dapat diakses dari luar kelas maupun dari kelas turunannya. Di Python, kita menggunakan dua garis bawah (<code v-pre>__</code>) sebagai konvensi untuk menandakan bahwa anggota tersebut adalah private. Python menggunakan <em>name mangling</em> untuk menyembunyikan atribut ini.</p>
+<doc-anchor-target id="contoh-private-members">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-private-members">#</doc-anchor-trigger>
+        <span>Contoh Private Members:</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Program untuk mendemonstrasikan private members
+
+class Base:
+    def __init__(self):
+        self.a = &quot;MobilSport&quot;       # Anggota public
+        self.__c = &quot;Data Rahasia&quot;  # Anggota private
+
+    def display_private(self):
+        print(&quot;Private member dalam kelas Base:&quot;, self.__c)
+
+class Derived(Base):
+    def __init__(self):
+        super().__init__()  # Memanggil constructor kelas Base
+        print(&quot;Mencoba mengakses anggota private dari kelas Base:&quot;)
+        # print(self.__c)  # Akan menghasilkan AttributeError jika diaktifkan
+
+# Membuat objek dari kelas Base
+object1 = Base()
+print(object1.a)  # Output: MobilSport
+object1.display_private()  # Output: Private member dalam kelas Base: Data Rahasia
+
+# Mencoba mengakses anggota private dari luar kelas
+# print(object1.__c)  # Akan menghasilkan AttributeError jika diaktifkan
+
+# Membuat objek dari kelas Derived
+object2 = Derived()</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan Kode:</strong></p>
+<ul>
+<li><code v-pre>self.__c</code>: Menandakan bahwa atribut <code v-pre>__c</code> adalah anggota private.</li>
+<li>Metode <code v-pre>display_private()</code> di kelas <code v-pre>Base</code> dapat mengakses <code v-pre>__c</code>.</li>
+<li>Kelas <code v-pre>Derived</code> mencoba mengakses atribut <code v-pre>__c</code>, tetapi akan menghasilkan error karena <code v-pre>__c</code> adalah private.</li>
+<li>Mengakses <code v-pre>__c</code> dari objek <code v-pre>Base</code> juga akan menghasilkan error.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">MobilSport
+Private member dalam kelas Base: Data Rahasia
+Error: 'Base' object has no attribute '__c'
+Mencoba mengakses anggota private dari kelas Base:
+Error: 'Derived' object has no attribute '_Derived__c'</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="contoh-penggunaan-encapsulation">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-penggunaan-encapsulation">#</doc-anchor-trigger>
+        <span>Contoh Penggunaan Encapsulation</span>
+    </h3>
+</doc-anchor-target>
+<p>Mari kita lihat contoh yang lebih lengkap di mana kita menggunakan enkapsulasi untuk mengatur akses ke atribut dan metode dalam kelas.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">class Person:
+    def __init__(self, name, age):
+        self.name = name       # Public member
+        self._age = age        # Protected member
+        self.__dob = &quot;01-01-2000&quot;  # Private member
+
+    def display_info(self):
+        print(f&quot;Nama: {self.name}, Umur: {self._age} tahun.&quot;)
+
+    def __private_method(self):
+        print(&quot;Ini adalah metode private dalam kelas Person.&quot;)
+
+    def get_dob(self):
+        return self.__dob  # Getter untuk atribut private
+
+    def set_dob(self, dob):
+        self.__dob = dob    # Setter untuk atribut private
+
+class Student(Person):
+    def __init__(self, name, age, grade):
+        super().__init__(name, age)
+        self.grade = grade    # Public member
+
+    def display_student_info(self):
+        print(f&quot;Nama: {self.name}, Umur: {self._age} tahun, Kelas: {self.grade}, Tanggal Lahir: {self.get_dob()}.&quot;)
+
+# Membuat objek Person
+person = Person(&quot;Andi&quot;, 30)
+person.display_info()  # Output: Nama: Andi, Umur: 30 tahun.
+print(f&quot;Tanggal Lahir: {person.get_dob()}&quot;)  # Output: Tanggal Lahir: 01-01-2000
+
+# Mengubah tanggal lahir menggunakan setter
+person.set_dob(&quot;15-08-1990&quot;)
+print(f&quot;Tanggal Lahir setelah diubah: {person.get_dob()}&quot;)  # Output: Tanggal Lahir setelah diubah: 15-08-1990
+
+# Membuat objek Student
+murid = Student(&quot;Budi&quot;, 20, &quot;A&quot;)
+murid.display_student_info()  # Output: Nama: Budi, Umur: 20 tahun, Kelas: A, Tanggal Lahir: 01-01-2000.
+
+# Mencoba mengakses anggota private langsung akan menghasilkan error
+# print(person.__dob)  # Akan menghasilkan AttributeError</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan Kode:</strong></p>
+<ul>
+<li><code v-pre>self.name</code>: Public member yang dapat diakses dari mana saja.</li>
+<li><code v-pre>self._age</code>: Protected member yang dapat diakses di dalam kelas dan kelas turunannya.</li>
+<li><code v-pre>self.__dob</code>: Private member yang hanya dapat diakses di dalam kelas <code v-pre>Person</code>.</li>
+<li>Metode <code v-pre>get_dob()</code> dan <code v-pre>set_dob()</code> digunakan untuk mengakses dan mengubah atribut private <code v-pre>__dob</code>.</li>
+<li>Kelas <code v-pre>Student</code> mewarisi dari <code v-pre>Person</code> dan dapat mengakses protected member <code v-pre>_age</code>.</li>
+<li>Mengakses private member <code v-pre>__dob</code> langsung dari luar kelas akan menghasilkan error.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Nama: Andi, Umur: 30 tahun.
+Tanggal Lahir: 01-01-2000
+Tanggal Lahir setelah diubah: 15-08-1990
+Nama: Budi, Umur: 20 tahun, Kelas: A, Tanggal Lahir: 01-01-2000.</code></pre>
+</doc-codeblock></div>
+<p>Dengan menggunakan metode <em>getter</em> dan <em>setter</em>, kita dapat mengontrol bagaimana atribut private diakses dan dimodifikasi, menjaga integritas data dan mencegah perubahan yang tidak diinginkan dari luar kelas.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -238,20 +406,20 @@ print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tingg
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../introduction/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/inheritance/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Pengantar Python</span>
+                                                <span class="block mt-1">Inheritance</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../class/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/polymorphism/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Class & Object</span>
+                                                <span class="block mt-1">Polymorphism</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -295,6 +463,6 @@ print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tingg
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Contoh Kode Python Dasar", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Encapsulation", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/advanced-python">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779792705511">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.5.0.779801132320">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tugas: Sistem Pengelolaan Data Mahasiswa</title>
-    <meta name="title" content="Tugas: Sistem Pengelolaan Data Mahasiswa">
-    <meta name="description" content="Kalian diminta untuk membuat sebuah program Python yang dapat digunakan untuk mengelola data mahasiswa">
+    <title>Polymorphism</title>
+    <meta name="title" content="Polymorphism">
+    <meta name="description" content="Bayangkan kamu punya sebuah remote TV universal. Remote ini bisa digunakan untuk mengontrol berbagai perangkat—TV, DVD player, atau speaker.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/class/assignment/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/3--oop-bagian-2/polymorphism/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/class/assignment/">
-    <meta property="og:title" content="Tugas: Sistem Pengelolaan Data Mahasiswa">
-    <meta property="og:description" content="Kalian diminta untuk membuat sebuah program Python yang dapat digunakan untuk mengelola data mahasiswa">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/polymorphism/">
+    <meta property="og:title" content="Polymorphism">
+    <meta property="og:description" content="Bayangkan kamu punya sebuah remote TV universal. Remote ini bisa digunakan untuk mengontrol berbagai perangkat—TV, DVD player, atau speaker.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/class/assignment/">
-    <meta property="twitter:title" content="Tugas: Sistem Pengelolaan Data Mahasiswa">
-    <meta property="twitter:description" content="Kalian diminta untuk membuat sebuah program Python yang dapat digunakan untuk mengelola data mahasiswa">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/polymorphism/">
+    <meta property="twitter:title" content="Polymorphism">
+    <meta property="twitter:description" content="Bayangkan kamu punya sebuah remote TV universal. Remote ini bisa digunakan untuk mengontrol berbagai perangkat—TV, DVD player, atau speaker.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.5.0.779792705511" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.5.0.779801132320" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.779792705511" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.5.0.779801132320" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.5.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.779792705511" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.779792705511" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.5.0.779801132320" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.5.0.779801132320" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -52,7 +52,7 @@
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
                         <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
-                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Python Lanjut</span>
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
                         </a>
                     </div>
         
@@ -151,229 +151,192 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tugas-sistem-pengelolaan-data-mahasiswa" class="break-words">
+<doc-anchor-target id="polymorphism" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tugas-sistem-pengelolaan-data-mahasiswa">#</doc-anchor-trigger>
-        <span>Tugas: Sistem Pengelolaan Data Mahasiswa</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism">#</doc-anchor-trigger>
+        <span>Polymorphism</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="deskripsi-tugas">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deskripsi-tugas">#</doc-anchor-trigger>
-        <span>Deskripsi Tugas</span>
-    </h2>
+<doc-anchor-target id="apa-itu-polymorphism">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-polymorphism">#</doc-anchor-trigger>
+        <span>Apa Itu Polymorphism?</span>
+    </h3>
 </doc-anchor-target>
-<p>Kalian diminta untuk membuat sebuah <strong>program Python</strong> yang dapat digunakan untuk <strong>mengelola data mahasiswa</strong> dalam sebuah kelas. Program ini akan memungkinkan pengguna untuk:</p>
-<ol>
-<li>Menambahkan data mahasiswa.</li>
-<li>Menampilkan data mahasiswa.</li>
-<li>Menghitung rata-rata nilai dari semua mahasiswa.</li>
-<li>Mencari mahasiswa dengan nilai tertinggi dan terendah.</li>
-<li>Menampilkan mahasiswa yang lulus atau tidak lulus (nilai &gt;= 60 lulus).</li>
-</ol>
-<doc-anchor-target id="kriteria-program">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kriteria-program">#</doc-anchor-trigger>
-        <span>Kriteria Program</span>
-    </h2>
+<p>Bayangkan kamu punya sebuah remote TV universal. Remote ini bisa digunakan untuk mengontrol berbagai perangkat—TV, DVD player, atau speaker. Meskipun kamu hanya menggunakan satu remote, tombol-tombol di remote itu bisa memiliki fungsi yang berbeda tergantung perangkat mana yang sedang kamu kontrol. Misalnya, tombol volume akan menambah volume pada TV, tapi pada speaker, tombol yang sama akan mengubah sumber input.</p>
+<p>Di dunia pemrograman, <strong>Polymorphism</strong> bekerja dengan cara yang sama. Polimorfisme memungkinkan kita menggunakan metode atau fungsi dengan nama yang sama, tapi fungsinya bisa berbeda tergantung pada tipe data atau objek yang sedang kita tangani. Jadi, seperti halnya remote TV universal, metode yang sama bisa &quot;berfungsi&quot; berbeda pada konteks yang berbeda.</p>
+<doc-anchor-target id="polymorphism-dengan-fungsi-bawaan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism-dengan-fungsi-bawaan">#</doc-anchor-trigger>
+        <span>Polymorphism dengan Fungsi Bawaan</span>
+    </h3>
 </doc-anchor-target>
-<doc-anchor-target id="1-buat-class-mahasiswa-yang-memiliki-atribut">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-buat-class-mahasiswa-yang-memiliki-atribut">#</doc-anchor-trigger>
-        <span>1. Buat class <code v-pre>Mahasiswa</code> yang memiliki atribut:</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li><code v-pre>nama</code>: Nama mahasiswa.</li>
-<li><code v-pre>nim</code>: Nomor Induk Mahasiswa.</li>
-<li><code v-pre>nilai</code>: Nilai akhir mahasiswa (integer).</li>
-</ul>
-<doc-anchor-target id="2-class-mahasiswa-harus-memiliki-metode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-class-mahasiswa-harus-memiliki-metode">#</doc-anchor-trigger>
-        <span>2. Class <code v-pre>Mahasiswa</code> harus memiliki metode:</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li><code v-pre>deskripsi()</code>: Menampilkan data mahasiswa (nama, NIM, nilai).</li>
-<li><code v-pre>status_kelulusan()</code>: Menampilkan status kelulusan (Lulus jika nilai &gt;= 60, Tidak Lulus jika nilai &lt; 60).</li>
-</ul>
-<doc-anchor-target id="3-buat-class-kelas-yang-memiliki-atribut">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-buat-class-kelas-yang-memiliki-atribut">#</doc-anchor-trigger>
-        <span>3. Buat class <code v-pre>Kelas</code> yang memiliki atribut:</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li><code v-pre>daftar_mahasiswa</code>: List untuk menyimpan object <code v-pre>Mahasiswa</code> yang sudah dibuat.<br />
-<strong>Clue:</strong> sintaks untuk membuat list dalam class &quot;Kelas&quot; adalah: <code v-pre>self.daftar_mahasiswa = []</code>.</li>
-</ul>
-<doc-anchor-target id="4-class-kelas-harus-memiliki-metode">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-class-kelas-harus-memiliki-metode">#</doc-anchor-trigger>
-        <span>4. Class <code v-pre>Kelas</code> harus memiliki metode:</span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li><code v-pre>tambah_mahasiswa(mahasiswa)</code>: Menambahkan object <code v-pre>Mahasiswa</code> ke dalam list <code v-pre>daftar_mahasiswa</code>.<br />
-<strong>Clue:</strong> sintaks untuk menambahkan object ke dalam list adalah: <code v-pre>self.daftar_mahasiswa.append(mahasiswa)</code>.</li>
-<li><code v-pre>tampilkan_semua_mahasiswa()</code>: Menampilkan semua data mahasiswa dalam kelas.
-<strong>Clue:</strong> gunakan perulangan <code v-pre>for</code> untuk menampilkan data mahasiswa. Misalnya, <code v-pre>for mahasiswa in self.daftar_mahasiswa: print(mahasiswa.deskripsi())</code>.</li>
-<li><code v-pre>hitung_rata_rata_nilai()</code>: Menghitung dan menampilkan rata-rata nilai mahasiswa dalam kelas.
-<strong>Clue:</strong> gunakan fungsi <code v-pre>sum()</code> untuk menjumlahkan nilai-nilai mahasiswa dan <code v-pre>len()</code> untuk menghitung jumlah mahasiswa.</li>
-<li><code v-pre>cari_nilai_tertinggi()</code>: Menampilkan mahasiswa dengan nilai tertinggi.<br />
-<strong>Clue:</strong> gunakan fungsi <code v-pre>max()</code> untuk mencari nilai tertinggi.</li>
-<li><code v-pre>cari_nilai_terendah()</code>: Menampilkan mahasiswa dengan nilai terendah.<br />
-<strong>Clue:</strong> gunakan fungsi <code v-pre>min()</code> untuk mencari nilai terendah.</li>
-</ul>
-<doc-anchor-target id="persyaratan-tambahan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persyaratan-tambahan">#</doc-anchor-trigger>
-        <span>Persyaratan Tambahan</span>
-    </h2>
-</doc-anchor-target>
-<ul>
-<li>Gunakan <strong>looping</strong> (perulangan) dan <strong>if-else</strong> untuk mengecek status kelulusan mahasiswa dan menampilkan hasilnya.</li>
-<li>Pastikan tipe data yang digunakan untuk atribut sudah sesuai (contoh: <code v-pre>nilai</code> harus berupa integer).
-<strong>Clue:</strong> gunakan fungsi <code v-pre>int()</code> untuk mengubah input menjadi integer.</li>
-<li>Buatlah validasi sederhana agar nilai yang dimasukkan harus berada dalam rentang 0-100.
-<strong>Clue:</strong> gunakan pernyataan <code v-pre>if</code> untuk mengecek nilai yang dimasukkan. Misalnya, jika nilai &lt; 0, maka nilai = 0. Jika nilai &gt; 100, maka nilai = 100.</li>
-</ul>
-<doc-anchor-target id="panduan-penyelesaian">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#panduan-penyelesaian">#</doc-anchor-trigger>
-        <span>Panduan Penyelesaian</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="1-class-mahasiswa">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-class-mahasiswa">#</doc-anchor-trigger>
-        <span>1. <strong>Class Mahasiswa</strong></span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Buat class <code v-pre>Mahasiswa</code> yang memiliki atribut nama, NIM, dan nilai.</li>
-<li>Buat metode <code v-pre>deskripsi()</code> untuk menampilkan detail mahasiswa dan metode <code v-pre>status_kelulusan()</code> untuk mengecek apakah mahasiswa lulus atau tidak. Anda bisa memanggil <code v-pre>self.status_kelulusan()</code> di dalam metode <code v-pre>deskripsi()</code>.</li>
-</ul>
-<doc-anchor-target id="2-class-kelas">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-class-kelas">#</doc-anchor-trigger>
-        <span>2. <strong>Class Kelas</strong></span>
-    </h4>
-</doc-anchor-target>
-<ul>
-<li>Buat class <code v-pre>Kelas</code> yang menyimpan daftar mahasiswa dalam list.</li>
-<li>Implementasikan metode untuk menambah mahasiswa, menampilkan semua data mahasiswa, menghitung rata-rata nilai, dan mencari nilai tertinggi serta terendah.</li>
-</ul>
-<doc-anchor-target id="contoh-hasil-eksekusi">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-hasil-eksekusi">#</doc-anchor-trigger>
-        <span>Contoh Hasil Eksekusi</span>
-    </h2>
-</doc-anchor-target>
+<p>Python punya banyak fungsi bawaan yang sudah mendukung polimorfisme. Salah satu contohnya adalah fungsi <code v-pre>len()</code>. Fungsi ini bisa menghitung panjang berbagai tipe data, seperti string dan list.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 1
-Masukkan nama mahasiswa: Andi
-Masukkan NIM mahasiswa: 123456
-Masukkan nilai mahasiswa (0-100): 85
-Mahasiswa Andi berhasil ditambahkan.
+<pre class="language-python"><code v-pre class="language-python"># Menggunakan len() untuk string
+print(len(&quot;hello&quot;))  # Output: 5
 
-===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 1
-Masukkan nama mahasiswa: Budi
-Masukkan NIM mahasiswa: 789012
-Masukkan nilai mahasiswa (0-100): 92
-Mahasiswa Budi berhasil ditambahkan.
-
-===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 2
-
-Daftar Mahasiswa:
-1. Andi - NIM: 123456 - Nilai: 85 (Lulus)
-2. Budi - NIM: 789012 - Nilai: 92 (Lulus)
-
-===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 3
-Rata-rata nilai kelas adalah: 88.50
-
-===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 4
-Mahasiswa dengan nilai tertinggi:
-Budi - NIM: 789012 - Nilai: 92
-
-===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 5
-Mahasiswa dengan nilai terendah:
-Andi - NIM: 123456 - Nilai: 85
-
-===== Sistem Pengelolaan Data Mahasiswa =====
-1. Tambah Mahasiswa
-2. Tampilkan Semua Mahasiswa
-3. Hitung Rata-rata Nilai
-4. Cari Nilai Tertinggi
-5. Cari Nilai Terendah
-6. Keluar
-Pilih opsi (1-6): 6
-Program selesai.</code></pre>
+# Menggunakan len() untuk list
+print(len([1, 2, 3, 4]))  # Output: 4</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="ketentuan-pengumpulan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ketentuan-pengumpulan">#</doc-anchor-trigger>
-        <span>Ketentuan Pengumpulan</span>
-    </h2>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>len(&quot;hello&quot;)</code> mengembalikan panjang string, yaitu 5 karena ada 5 huruf.</li>
+<li><code v-pre>len([1, 2, 3, 4])</code> menghitung jumlah elemen dalam list, yaitu 4.</li>
+</ul>
+<p>Polimorfisme di sini terjadi karena meskipun <code v-pre>len()</code> digunakan untuk string dan list, hasilnya tetap sesuai dengan tipe datanya. Keren, kan?</p>
+<doc-anchor-target id="polymorphism-dengan-fungsi-buatan-sendiri">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism-dengan-fungsi-buatan-sendiri">#</doc-anchor-trigger>
+        <span>Polymorphism dengan Fungsi Buatan Sendiri</span>
+    </h3>
 </doc-anchor-target>
-<doc-anchor-target id="deadline">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deadline">#</doc-anchor-trigger>
-        <span>Deadline</span>
-    </h4>
+<p>Kita juga bisa membuat fungsi polimorfik kita sendiri, yang bisa bekerja dengan jumlah argumen berbeda. Contohnya, kita bisa membuat fungsi <code v-pre>tambah</code> yang bisa menjumlahkan dua atau tiga angka.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Fungsi untuk menjumlahkan angka dengan jumlah argumen yang bervariasi
+def add(x, y, z=0):
+    return x + y + z
+
+# Kode Penggerak
+print(add(2, 3))       # Output: 5
+print(add(2, 3, 4))    # Output: 9</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Ketika kita memanggil <code v-pre>add(3, 4)</code>, fungsi hanya menggunakan dua angka karena argumen ketiga punya nilai default <code v-pre>0</code>.</li>
+<li>Ketika kita memanggil <code v-pre>add(3, 4, 5)</code>, fungsi menjumlahkan ketiga angkanya.</li>
+</ul>
+<p>Nah, kamu bisa lihat bahwa fungsi ini bisa beradaptasi dengan jumlah argumen yang diberikan. Ini adalah contoh praktis bagaimana polimorfisme bekerja di fungsi buatan sendiri.</p>
+<doc-anchor-target id="polymorphism-dengan-kelas-dan-metode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism-dengan-kelas-dan-metode">#</doc-anchor-trigger>
+        <span>Polymorphism dengan Kelas dan Metode</span>
+    </h3>
 </doc-anchor-target>
-<p>Kumpulkan tugas kalian dalam bentuk <strong>file Python (.py)</strong> ke dalam Google Classroom <strong>paling lambat Senin, 16 September 2024 pukul 23.59 WIB</strong>.</p>
-<p>Selamat mengerjakan, dan jangan ragu untuk bertanya jika ada yang kurang jelas. Tetap semangat!</p>
-<doc-anchor-target id="nama-file">
-    <h4>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nama-file">#</doc-anchor-trigger>
-        <span>Nama File:</span>
-    </h4>
+<p>Di dunia nyata, kita sering bekerja dengan objek dari berbagai kelas. Di sinilah polimorfisme bisa sangat membantu. Kamu bisa menggunakan metode yang sama dari berbagai objek tanpa khawatir tipe kelas apa yang kamu gunakan.</p>
+<p>Mari kita lihat contoh sederhana di mana kita punya dua kelas berbeda, yaitu <strong>Burung</strong> dan <strong>Ikan</strong>. Keduanya memiliki metode <code v-pre>move</code>, tetapi dengan implementasi yang berbeda.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">class Burung:
+    def move(self):
+        print(&quot;Burung terbang di langit.&quot;)
+
+class Ikan:
+    def move(self):
+        print(&quot;Ikan berenang di air.&quot;)
+
+# Membuat objek dari masing-masing kelas
+burung = Burung()
+ikan = Ikan()
+
+# Mengiterasi objek dan memanggil metode yang sama
+for hewan in (burung, ikan):
+    hewan.move()</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Kelas <code v-pre>Burung</code> dan <code v-pre>Ikan</code> punya metode yang sama yaitu <code v-pre>move()</code>, tetapi dengan implementasi yang berbeda.</li>
+<li>Kita membuat objek <code v-pre>burung</code> dan <code v-pre>ikan</code>, lalu memanggil metode <code v-pre>move()</code> untuk keduanya dalam satu loop tanpa khawatir dengan kelasnya.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Burung terbang di langit.
+Ikan berenang di air.</code></pre>
+</doc-codeblock></div>
+<p>Hebatnya polimorfisme di sini adalah kita bisa memperlakukan objek dari berbagai kelas dengan cara yang sama, meskipun mereka berperilaku berbeda.</p>
+<doc-anchor-target id="polymorphism-dengan-inheritance-pewarisan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism-dengan-inheritance-pewarisan">#</doc-anchor-trigger>
+        <span>Polymorphism dengan Inheritance (Pewarisan)</span>
+    </h3>
 </doc-anchor-target>
-<p>Tugas1_NIM_Nama.py</p>
+<p>Polimorfisme juga sering muncul bersama pewarisan. Kamu bisa membuat kelas anak yang mewarisi metode dari kelas induk, tapi kamu juga bisa mengubah (override) metode tersebut agar sesuai dengan kebutuhan kelas anak.</p>
+<p>Mari kita ambil contoh tentang <strong>Hewan</strong>, di mana ada kelas <strong>Anjing</strong> dan <strong>Kucing</strong> yang mewarisi metode dari kelas induk.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">class Hewan:
+    def suara(self):
+        print(&quot;Hewan ini mengeluarkan suara.&quot;)
+
+class Anjing(Hewan):
+    def suara(self):
+        print(&quot;Anjing menggonggong: Guk! Guk!&quot;)
+
+class Kucing(Hewan):
+    def suara(self):
+        print(&quot;Kucing mengeong: Meong!&quot;)
+
+# Membuat objek dari masing-masing kelas
+hewan1 = Hewan()
+hewan2 = Anjing()
+hewan3 = Kucing()
+
+# Memanggil metode suara untuk setiap objek
+hewan1.suara()  # Output: Hewan ini mengeluarkan suara.
+hewan2.suara()  # Output: Anjing menggonggong: Guk! Guk!
+hewan3.suara()  # Output: Kucing mengeong: Meong!</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Kelas <code v-pre>Hewan</code> adalah kelas induk yang punya metode <code v-pre>suara()</code>.</li>
+<li>Kelas <code v-pre>Anjing</code> dan <code v-pre>Kucing</code> mewarisi dari kelas <code v-pre>Hewan</code>, tetapi mereka mengubah (override) metode <code v-pre>suara()</code> untuk memberikan implementasi yang spesifik.</li>
+<li>Ketika kita memanggil <code v-pre>suara()</code> dari objek <code v-pre>hewan2</code> dan <code v-pre>hewan3</code>, mereka memberikan suara yang sesuai dengan masing-masing kelas.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Hewan ini mengeluarkan suara.
+Anjing menggonggong: Guk! Guk!
+Kucing mengeong: Meong!</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="polymorphism-dengan-fungsi-dan-objek">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism-dengan-fungsi-dan-objek">#</doc-anchor-trigger>
+        <span>Polymorphism dengan Fungsi dan Objek</span>
+    </h3>
+</doc-anchor-target>
+<p>Kita juga bisa membuat fungsi yang menerima objek apa saja dan menggunakan polimorfisme di dalamnya. Fungsi ini tidak peduli dari kelas mana objek berasal, yang penting objek tersebut memiliki metode yang dibutuhkan.</p>
+<p>Contoh di bawah ini menggunakan fungsi <code v-pre>beraksi()</code> yang bisa bekerja dengan objek dari berbagai kelas.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">class Burung:
+    def aksi(self):
+        print(&quot;Burung sedang terbang.&quot;)
+
+class Ikan:
+    def aksi(self):
+        print(&quot;Ikan sedang berenang.&quot;)
+
+def beraksi(hewan):
+    hewan.aksi()
+
+# Membuat objek dari Burung dan Ikan
+burung = Burung()
+ikan = Ikan()
+
+# Memanggil fungsi beraksi() untuk setiap objek
+beraksi(burung)  # Output: Burung sedang terbang.
+beraksi(ikan)    # Output: Ikan sedang berenang.</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Fungsi <code v-pre>beraksi()</code> menerima objek apa saja, asalkan objek tersebut memiliki metode <code v-pre>aksi()</code>.</li>
+<li>Ini adalah contoh polimorfisme dengan fungsi, di mana kita bisa menggunakan objek dari berbagai kelas selama mereka punya metode yang diperlukan.</li>
+</ul>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Burung sedang terbang.
+Ikan sedang berenang.</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="kesimpulan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kesimpulan">#</doc-anchor-trigger>
+        <span>Kesimpulan</span>
+    </h3>
+</doc-anchor-target>
+<p>Dengan <strong>Polymorphism</strong>, kita bisa membuat kode yang lebih fleksibel dan mudah digunakan. Kamu tidak perlu khawatir tentang tipe objek yang sedang kamu tangani, karena dengan polimorfisme, kamu bisa memanggil metode yang sama untuk objek yang berbeda, dan mereka akan berperilaku sesuai dengan definisi kelas masing-masing.</p>
+<p><strong>Manfaat Polymorphism:</strong></p>
+<ul>
+<li><strong>Fleksibilitas:</strong> Fungsi atau metode yang sama dapat bekerja dengan berbagai objek.</li>
+<li><strong>Kemudahan Pemeliharaan:</strong> Kode jadi lebih mudah diperbarui karena kita tidak perlu menulis ulang logika untuk setiap tipe data atau kelas.</li>
+<li><strong>Reusability:</strong> Menghindari duplikasi kode karena metode yang sama bisa diterapkan pada objek yang berbeda.</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -383,20 +346,20 @@ Program selesai.</code></pre>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../class/code/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/encapsulation/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Contoh Kode Class & Object</span>
+                                                <span class="block mt-1">Encapsulation</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../inheritance/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/abstraction/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Inheritance & Encapsulation</span>
+                                                <span class="block mt-1">Abstraction</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -440,6 +403,6 @@ Program selesai.</code></pre>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tugas", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Polymorphism", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
