@@ -10,24 +10,21 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tugas: Sistem Pengelolaan Akun Pengguna</title>
-    <meta name="title" content="Tugas: Sistem Pengelolaan Akun Pengguna">
-    <meta name="description" content="Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep inheritance, encapsulation, polymorphism">
+    <title>Contoh Kode</title>
+    <meta name="title" content="Contoh Kode">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/3--oop-bagian-2/assignment/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/3--oop-bagian-2/code/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/assignment/">
-    <meta property="og:title" content="Tugas: Sistem Pengelolaan Akun Pengguna">
-    <meta property="og:description" content="Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep inheritance, encapsulation, polymorphism">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/code/">
+    <meta property="og:title" content="Contoh Kode">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/assignment/">
-    <meta property="twitter:title" content="Tugas: Sistem Pengelolaan Akun Pengguna">
-    <meta property="twitter:description" content="Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep inheritance, encapsulation, polymorphism">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/code/">
+    <meta property="twitter:title" content="Contoh Kode">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -151,164 +148,212 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tugas-sistem-pengelolaan-akun-pengguna" class="break-words">
+<doc-anchor-target id="contoh-kode" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tugas-sistem-pengelolaan-akun-pengguna">#</doc-anchor-trigger>
-        <span>Tugas: Sistem Pengelolaan Akun Pengguna</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode">#</doc-anchor-trigger>
+        <span>Contoh Kode</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="tujuan-tugas">
+<doc-anchor-target id="inheritance">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tujuan-tugas">#</doc-anchor-trigger>
-        <span>Tujuan Tugas:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#inheritance">#</doc-anchor-trigger>
+        <span>Inheritance</span>
     </h2>
-</doc-anchor-target>
-<p>Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep <strong>inheritance</strong>, <strong>encapsulation</strong>, <strong>polymorphism</strong>, dan <strong>abstraction</strong> dalam pemrograman Python melalui implementasi sederhana sistem pengelolaan akun pengguna.</p>
-<doc-anchor-target id="studi-kasus-pengelolaan-akun-pengguna">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#studi-kasus-pengelolaan-akun-pengguna">#</doc-anchor-trigger>
-        <span>Studi Kasus: Pengelolaan Akun Pengguna</span>
-    </h2>
-</doc-anchor-target>
-<p>Bayangkan kamu bekerja sebagai pengembang perangkat lunak yang bertugas untuk membuat sistem sederhana untuk mengelola akun pengguna. Sistem ini harus bisa menangani dua jenis akun pengguna, yaitu <strong>Akun Standar</strong> dan <strong>Akun Premium</strong>. Setiap jenis akun memiliki hak akses dan fitur yang berbeda.</p>
-<p>Setiap pengguna akan memiliki informasi seperti <strong>nama</strong>, <strong>email</strong>, dan <strong>status keanggotaan</strong> (standar atau premium). Pengguna juga memiliki metode untuk <strong>login</strong>, <strong>logout</strong>, dan <strong>melihat informasi</strong> mereka.</p>
-<doc-anchor-target id="fitur-yang-harus-dimiliki-sistem">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fitur-yang-harus-dimiliki-sistem">#</doc-anchor-trigger>
-        <span>Fitur yang Harus Dimiliki Sistem:</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="1-inheritance-pewarisan">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-inheritance-pewarisan">#</doc-anchor-trigger>
-        <span>1. Inheritance (Pewarisan):</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Buat kelas induk <strong>UserAccount</strong> yang memiliki atribut umum seperti <code v-pre>name</code>, <code v-pre>email</code>, dan metode seperti <code v-pre>login()</code>, <code v-pre>logout()</code>, dan <code v-pre>view_account()</code>.</li>
-<li>Buat subkelas <strong>StandardAccount</strong> dan <strong>PremiumAccount</strong> yang mewarisi dari kelas <strong>UserAccount</strong>. Berikan perilaku yang unik, seperti akses fitur tambahan untuk akun premium.</li>
-</ul>
-<doc-anchor-target id="2-encapsulation-enkapsulasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-encapsulation-enkapsulasi">#</doc-anchor-trigger>
-        <span>2. Encapsulation (Enkapsulasi):</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Atribut seperti <strong>email</strong> dan <strong>status keanggotaan</strong> harus dienkapsulasi (privat). Gunakan <strong>getter</strong> dan <strong>setter</strong> untuk mengakses dan memodifikasi data ini.</li>
-<li>Validasi pada setter harus memastikan bahwa hanya status keanggotaan yang valid (standar/premium) yang dapat diterima.</li>
-</ul>
-<doc-anchor-target id="3-polymorphism-polimorfisme">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-polymorphism-polimorfisme">#</doc-anchor-trigger>
-        <span>3. Polymorphism (Polimorfisme):</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Implementasikan polimorfisme pada metode <code v-pre>view_account()</code> agar akun standar dan premium dapat menampilkan informasi dengan cara yang berbeda.</li>
-<li>Misalnya, <strong>StandardAccount</strong> hanya dapat melihat informasi dasar, sementara <strong>PremiumAccount</strong> dapat melihat informasi tambahan seperti tanggal berakhirnya keanggotaan.</li>
-</ul>
-<doc-anchor-target id="4-abstraction-abstraksi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-abstraction-abstraksi">#</doc-anchor-trigger>
-        <span>4. Abstraction (Abstraksi):</span>
-    </h3>
-</doc-anchor-target>
-<p>Definisikan metode abstrak <code v-pre>access_features()</code> di kelas induk <strong>UserAccount</strong>. Setiap subkelas harus mengimplementasikan metode ini dengan fitur yang sesuai, seperti fitur dasar untuk akun standar dan fitur premium untuk akun premium.</p>
-<doc-anchor-target id="langkah-langkah-yang-dapat-dilakukan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-yang-dapat-dilakukan">#</doc-anchor-trigger>
-        <span>Langkah-Langkah yang Dapat Dilakukan:</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="1-membuat-kelas-induk-useraccount">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-membuat-kelas-induk-useraccount">#</doc-anchor-trigger>
-        <span>1. Membuat Kelas Induk <code v-pre>UserAccount</code></span>
-    </h3>
-</doc-anchor-target>
-<p>Buat kelas abstrak bernama <code v-pre>UserAccount</code> yang memiliki atribut umum seperti <code v-pre>name</code> dan <code v-pre>email</code>, serta metode seperti <code v-pre>login()</code>, <code v-pre>logout()</code>, dan <code v-pre>view_account()</code>.</p>
-<doc-anchor-target id="2-mengembangkan-subkelas-standardaccount-dan-premiumaccount">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-mengembangkan-subkelas-standardaccount-dan-premiumaccount">#</doc-anchor-trigger>
-        <span>2. Mengembangkan Subkelas <code v-pre>StandardAccount</code> dan <code v-pre>PremiumAccount</code></span>
-    </h3>
-</doc-anchor-target>
-<p>Mewarisi kelas induk dan implementasikan metode khusus untuk setiap akun pengguna. Gunakan polimorfisme pada metode seperti <code v-pre>view_account()</code>.</p>
-<doc-anchor-target id="3-menerapkan-enkapsulasi-dengan-getter-dan-setter">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-menerapkan-enkapsulasi-dengan-getter-dan-setter">#</doc-anchor-trigger>
-        <span>3. Menerapkan Enkapsulasi dengan Getter dan Setter</span>
-    </h3>
-</doc-anchor-target>
-<p>Buat getter dan setter untuk atribut privat <strong>email</strong> dan <strong>status keanggotaan</strong>. Tambahkan validasi input dalam setter.</p>
-<doc-anchor-target id="4-membuat-simulasi-penggunaan-akun">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-membuat-simulasi-penggunaan-akun">#</doc-anchor-trigger>
-        <span>4. Membuat Simulasi Penggunaan Akun</span>
-    </h3>
-</doc-anchor-target>
-<p>Simulasikan pengoperasian sistem akun dengan menggunakan getter dan setter untuk menampilkan serta mengubah informasi pengguna.</p>
-<doc-anchor-target id="catatan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#catatan">#</doc-anchor-trigger>
-        <span>Catatan</span>
-    </h2>
-</doc-anchor-target>
-<p>Kalian tidak perlu menggunakan input dari pengguna. Cukup buat objek akun pengguna secara manual dan panggil metode yang sesuai untuk menampilkan informasi.</p>
-<doc-anchor-target id="contoh-output-tidak-harus-sama">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-output-tidak-harus-sama">#</doc-anchor-trigger>
-        <span>Contoh Output (Tidak Harus Sama):</span>
-    </h3>
 </doc-anchor-target>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">Nama: Budi
-Email: budi@example.com
-Status: Standard
-Budi berhasil login.
-Akses fitur dasar.
-Budi berhasil logout.
+<pre class="language-python"><code v-pre class="language-python">class Hewan:
+    def __init__(self, nama, umur):
+        self.nama = nama    # Public member
+        self.umur = umur    # Public member
 
----
+    def suara(self):
+        print(&quot;Hewan ini mengeluarkan suara.&quot;)
 
-Nama: Siti
-Email: siti.premium@example.com
-Status: Premium
-Keanggotaan berakhir pada: 31 Desember 2024
-Siti berhasil login.
-Mengakses fitur premium.
-Siti berhasil logout.</code></pre>
+class Anjing(Hewan):
+    def __init__(self, nama, umur, breed):
+        super().__init__(nama, umur)  # Memanggil konstruktor kelas induk
+        self.breed = breed            # Atribut tambahan spesifik untuk Anjing
+
+    def suara(self):
+        print(f&quot;{self.nama} menggonggong: Woof Woof!&quot;)
+
+class Kucing(Hewan):
+    def __init__(self, nama, umur, warna):
+        super().__init__(nama, umur)  # Memanggil konstruktor kelas induk
+        self.warna = warna            # Atribut tambahan spesifik untuk Kucing
+
+    def suara(self):
+        print(f&quot;{self.nama} mengeong: Meow Meow!&quot;)
+
+# Membuat objek Anjing
+anjing1 = Anjing(&quot;Buddy&quot;, 5, &quot;Golden Retriever&quot;)
+anjing1.suara()  # Output: Buddy menggonggong: Woof Woof!
+print(f&quot;Nama Hewan: {anjing1.nama}, Umur: {anjing1.umur} tahun, Breed: {anjing1.breed}.&quot;)
+# Output: Nama Hewan: Buddy, Umur: 5 tahun, Breed: Golden Retriever.
+
+# Membuat objek Kucing
+kucing1 = Kucing(&quot;Whiskers&quot;, 3, &quot;Hitam&quot;)
+kucing1.suara()  # Output: Whiskers mengeong: Meow Meow!
+print(f&quot;Nama Hewan: {kucing1.nama}, Umur: {kucing1.umur} tahun, Warna: {kucing1.warna}.&quot;)
+# Output: Nama Hewan: Whiskers, Umur: 3 tahun, Warna: Hitam.
+
+# Menggunakan isinstance
+print(isinstance(anjing1, Anjing))    # Output: True
+print(isinstance(anjing1, Hewan))     # Output: True
+print(isinstance(kucing1, Kucing))    # Output: True
+print(isinstance(kucing1, Hewan))     # Output: True
+
+# Menggunakan issubclass
+print(issubclass(Anjing, Hewan))      # Output: True
+print(issubclass(Kucing, Hewan))      # Output: True
+print(issubclass(Hewan, Anjing))      # Output: False</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="laporan">
+<doc-anchor-target id="encapsulation">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#laporan">#</doc-anchor-trigger>
-        <span>Laporan</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#encapsulation">#</doc-anchor-trigger>
+        <span>Encapsulation</span>
     </h2>
 </doc-anchor-target>
-<p>Buat laporan singkat yang menjelaskan bagaimana kalian menerapkan setiap konsep OOP (inheritance, encapsulation, polymorphism, dan abstraction). Laporan maksimal 2 halaman dalam format PDF.</p>
-<doc-anchor-target id="pengumpulan">
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner            # Public member
+        self._balance = balance        # Protected member
+        self.__account_number = &quot;987654321&quot;  # Private member
+
+    def deposit(self, amount):
+        if amount &gt; 0:
+            self._balance += amount
+            print(f&quot;Anda telah menyetor Rp{amount}. Saldo saat ini: Rp{self._balance}.&quot;)
+        else:
+            print(&quot;Jumlah setoran harus lebih dari nol.&quot;)
+
+    def withdraw(self, amount):
+        if 0 &lt; amount &lt;= self._balance:
+            self._balance -= amount
+            print(f&quot;Anda telah menarik Rp{amount}. Saldo saat ini: Rp{self._balance}.&quot;)
+        else:
+            print(&quot;Jumlah penarikan tidak valid.&quot;)
+
+    def get_account_number(self):
+        return self.__account_number  # Getter untuk atribut private
+
+    def get_balance(self):
+        return self._balance  # Getter untuk atribut protected
+
+    def set_balance(self, balance):
+        if balance &gt;= 0:
+            self._balance = balance  # Setter untuk atribut protected
+        else:
+            print(&quot;Saldo tidak dapat bernilai negatif.&quot;)
+
+# Membuat objek BankAccount
+akun1 = BankAccount(&quot;Budi&quot;, 1500000)
+
+# Mengakses public member
+print(f&quot;Pemilik akun: {akun1.owner}&quot;)  # Output: Pemilik akun: Budi
+
+# Menggunakan metode deposit dan withdraw
+akun1.deposit(500000)   # Output: Anda telah menyetor Rp500000. Saldo saat ini: Rp2000000.
+akun1.withdraw(300000)  # Output: Anda telah menarik Rp300000. Saldo saat ini: Rp1700000.
+
+# Mengakses protected member melalui getter
+print(f&quot;Saldo saat ini: Rp{akun1.get_balance()}&quot;)  # Output: Saldo saat ini: Rp1700000
+
+# Mengakses private member melalui getter
+print(f&quot;Nomor Akun: {akun1.get_account_number()}&quot;)  # Output: Nomor Akun: 987654321
+
+# Mengubah saldo menggunakan setter
+akun1.set_balance(2500000)
+print(f&quot;Saldo setelah diubah: Rp{akun1.get_balance()}&quot;)  # Output: Saldo setelah diubah: Rp2500000
+
+# Mencoba mengakses protected dan private member langsung (tidak disarankan)
+print(f&quot;Saldo langsung (tidak disarankan): Rp{akun1._balance}&quot;)  # Output: Saldo langsung (tidak disarankan): Rp2500000
+# print(akun1.__account_number)  # Akan menghasilkan AttributeError jika diaktifkan</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="polymorphism">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pengumpulan">#</doc-anchor-trigger>
-        <span>Pengumpulan</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#polymorphism">#</doc-anchor-trigger>
+        <span>Polymorphism</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="deadline">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deadline">#</doc-anchor-trigger>
-        <span>Deadline</span>
-    </h3>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Langkah 1: Mendefinisikan kelas Kucing dan Anjing
+class Kucing:
+    def suara(self):
+        print(&quot;Kucing mengeong: Meow!&quot;)
+
+class Anjing:
+    def suara(self):
+        print(&quot;Anjing menggonggong: Guk!&quot;)
+
+# Langkah 2: Membuat objek dari kelas Kucing dan Anjing
+kucing = Kucing()
+anjing = Anjing()
+
+# Langkah 3: Memasukkan objek ke dalam daftar dan menggunakan loop
+hewan = [kucing, anjing]
+
+for h in hewan:
+    h.suara()
+
+# Langkah 4: Menambahkan kelas Burung
+class Burung:
+    def suara(self):
+        print(&quot;Burung berkicau: Cuit cuit!&quot;)
+
+# Memasukkan Burung ke dalam daftar hewan dan memanggil metode suara()
+burung = Burung()
+hewan.append(burung)
+
+for h in hewan:
+    h.suara()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="abstraction">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#abstraction">#</doc-anchor-trigger>
+        <span>Abstraction</span>
+    </h2>
 </doc-anchor-target>
-<p>Kumpulkan tugas kalian ke dalam Google Classroom <strong>paling lambat Senin, 30 September 2024 pukul 21.00 WIB</strong>.</p>
-<doc-anchor-target id="nama-file">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nama-file">#</doc-anchor-trigger>
-        <span>Nama File:</span>
-    </h3>
-</doc-anchor-target>
-<p>TugasAkun_NIM_Nama.py<br />
-TugasAkun_NIM_Nama.pdf</p>
-<p>Selamat mengerjakan, dan jangan ragu untuk bertanya jika ada yang kurang jelas. Tetap semangat! <span class="docs-emoji">&#x1F680;</span></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">from abc import ABC, abstractmethod
+
+# Langkah 1: Membuat kelas abstrak Kendaraan
+class Kendaraan(ABC):
+    @abstractmethod
+    def bergerak(self):
+        pass
+    
+    @abstractmethod
+    def bahan_bakar(self):
+        pass
+
+# Langkah 2: Membuat kelas Mobil yang mewarisi Kendaraan
+class Mobil(Kendaraan):
+    def bergerak(self):
+        print(&quot;Mobil bergerak di jalan.&quot;)
+    
+    def bahan_bakar(self):
+        print(&quot;Mobil menggunakan bensin.&quot;)
+
+# Langkah 3: Membuat kelas Sepeda yang mewarisi Kendaraan
+class Sepeda(Kendaraan):
+    def bergerak(self):
+        print(&quot;Sepeda bergerak dengan pedal.&quot;)
+    
+    def bahan_bakar(self):
+        print(&quot;Sepeda tidak menggunakan bahan bakar.&quot;)
+
+# Langkah 4: Membuat objek dari subkelas dan memanggil metode
+mobil = Mobil()
+sepeda = Sepeda()
+
+mobil.bergerak()        # Output: Mobil bergerak di jalan.
+mobil.bahan_bakar()     # Output: Mobil menggunakan bensin.
+
+sepeda.bergerak()       # Output: Sepeda bergerak dengan pedal.
+sepeda.bahan_bakar()    # Output: Sepeda tidak menggunakan bahan bakar.</code></pre>
+</doc-codeblock></div>
 
                                 
                                 <!-- Required only on API pages -->
@@ -318,20 +363,20 @@ TugasAkun_NIM_Nama.pdf</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/code/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/abstraction/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Contoh Kode</span>
+                                                <span class="block mt-1">Abstraction</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../4--struktur-data/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/assignment/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">4 - Struktur Data</span>
+                                                <span class="block mt-1">Tugas</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -375,6 +420,6 @@ TugasAkun_NIM_Nama.pdf</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tugas", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Contoh Kode", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

@@ -10,24 +10,24 @@
     <meta name="generator" content="Retype 3.5.0">
 
     <!-- Primary Meta Tags -->
-    <title>Tugas: Sistem Pengelolaan Akun Pengguna</title>
-    <meta name="title" content="Tugas: Sistem Pengelolaan Akun Pengguna">
-    <meta name="description" content="Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep inheritance, encapsulation, polymorphism">
+    <title>List</title>
+    <meta name="title" content="List">
+    <meta name="description" content="Hai! Mau tau tentang salah satu tipe data paling sering dipakai di Python? Yap, kita akan bahas tentang ">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/3--oop-bagian-2/assignment/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/4--struktur-data/list/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/assignment/">
-    <meta property="og:title" content="Tugas: Sistem Pengelolaan Akun Pengguna">
-    <meta property="og:description" content="Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep inheritance, encapsulation, polymorphism">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/4--struktur-data/list/">
+    <meta property="og:title" content="List">
+    <meta property="og:description" content="Hai! Mau tau tentang salah satu tipe data paling sering dipakai di Python? Yap, kita akan bahas tentang ">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/3--oop-bagian-2/assignment/">
-    <meta property="twitter:title" content="Tugas: Sistem Pengelolaan Akun Pengguna">
-    <meta property="twitter:description" content="Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep inheritance, encapsulation, polymorphism">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/4--struktur-data/list/">
+    <meta property="twitter:title" content="List">
+    <meta property="twitter:description" content="Hai! Mau tau tentang salah satu tipe data paling sering dipakai di Python? Yap, kita akan bahas tentang ">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -151,164 +151,252 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="tugas-sistem-pengelolaan-akun-pengguna" class="break-words">
+<doc-anchor-target id="list" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tugas-sistem-pengelolaan-akun-pengguna">#</doc-anchor-trigger>
-        <span>Tugas: Sistem Pengelolaan Akun Pengguna</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#list">#</doc-anchor-trigger>
+        <span>List</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="tujuan-tugas">
+<p>Hai! Mau tau tentang salah satu tipe data paling sering dipakai di Python? Yap, kita akan bahas tentang <strong>List</strong>! List ini semacam &quot;wadah&quot; yang bisa kamu gunakan untuk menyimpan berbagai macam data. Mulai dari angka, string, hingga kombinasi dari berbagai tipe data sekaligus. Yuk, kita mulai!</p>
+<doc-anchor-target id="apa-itu-list">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tujuan-tugas">#</doc-anchor-trigger>
-        <span>Tujuan Tugas:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-list">#</doc-anchor-trigger>
+        <span>Apa Itu List?</span>
     </h2>
 </doc-anchor-target>
-<p>Mahasiswa diharapkan dapat memahami dan mempraktikkan konsep <strong>inheritance</strong>, <strong>encapsulation</strong>, <strong>polymorphism</strong>, dan <strong>abstraction</strong> dalam pemrograman Python melalui implementasi sederhana sistem pengelolaan akun pengguna.</p>
-<doc-anchor-target id="studi-kasus-pengelolaan-akun-pengguna">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#studi-kasus-pengelolaan-akun-pengguna">#</doc-anchor-trigger>
-        <span>Studi Kasus: Pengelolaan Akun Pengguna</span>
-    </h2>
-</doc-anchor-target>
-<p>Bayangkan kamu bekerja sebagai pengembang perangkat lunak yang bertugas untuk membuat sistem sederhana untuk mengelola akun pengguna. Sistem ini harus bisa menangani dua jenis akun pengguna, yaitu <strong>Akun Standar</strong> dan <strong>Akun Premium</strong>. Setiap jenis akun memiliki hak akses dan fitur yang berbeda.</p>
-<p>Setiap pengguna akan memiliki informasi seperti <strong>nama</strong>, <strong>email</strong>, dan <strong>status keanggotaan</strong> (standar atau premium). Pengguna juga memiliki metode untuk <strong>login</strong>, <strong>logout</strong>, dan <strong>melihat informasi</strong> mereka.</p>
-<doc-anchor-target id="fitur-yang-harus-dimiliki-sistem">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fitur-yang-harus-dimiliki-sistem">#</doc-anchor-trigger>
-        <span>Fitur yang Harus Dimiliki Sistem:</span>
-    </h3>
-</doc-anchor-target>
-<doc-anchor-target id="1-inheritance-pewarisan">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-inheritance-pewarisan">#</doc-anchor-trigger>
-        <span>1. Inheritance (Pewarisan):</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Buat kelas induk <strong>UserAccount</strong> yang memiliki atribut umum seperti <code v-pre>name</code>, <code v-pre>email</code>, dan metode seperti <code v-pre>login()</code>, <code v-pre>logout()</code>, dan <code v-pre>view_account()</code>.</li>
-<li>Buat subkelas <strong>StandardAccount</strong> dan <strong>PremiumAccount</strong> yang mewarisi dari kelas <strong>UserAccount</strong>. Berikan perilaku yang unik, seperti akses fitur tambahan untuk akun premium.</li>
-</ul>
-<doc-anchor-target id="2-encapsulation-enkapsulasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-encapsulation-enkapsulasi">#</doc-anchor-trigger>
-        <span>2. Encapsulation (Enkapsulasi):</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Atribut seperti <strong>email</strong> dan <strong>status keanggotaan</strong> harus dienkapsulasi (privat). Gunakan <strong>getter</strong> dan <strong>setter</strong> untuk mengakses dan memodifikasi data ini.</li>
-<li>Validasi pada setter harus memastikan bahwa hanya status keanggotaan yang valid (standar/premium) yang dapat diterima.</li>
-</ul>
-<doc-anchor-target id="3-polymorphism-polimorfisme">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-polymorphism-polimorfisme">#</doc-anchor-trigger>
-        <span>3. Polymorphism (Polimorfisme):</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li>Implementasikan polimorfisme pada metode <code v-pre>view_account()</code> agar akun standar dan premium dapat menampilkan informasi dengan cara yang berbeda.</li>
-<li>Misalnya, <strong>StandardAccount</strong> hanya dapat melihat informasi dasar, sementara <strong>PremiumAccount</strong> dapat melihat informasi tambahan seperti tanggal berakhirnya keanggotaan.</li>
-</ul>
-<doc-anchor-target id="4-abstraction-abstraksi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-abstraction-abstraksi">#</doc-anchor-trigger>
-        <span>4. Abstraction (Abstraksi):</span>
-    </h3>
-</doc-anchor-target>
-<p>Definisikan metode abstrak <code v-pre>access_features()</code> di kelas induk <strong>UserAccount</strong>. Setiap subkelas harus mengimplementasikan metode ini dengan fitur yang sesuai, seperti fitur dasar untuk akun standar dan fitur premium untuk akun premium.</p>
-<doc-anchor-target id="langkah-langkah-yang-dapat-dilakukan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-yang-dapat-dilakukan">#</doc-anchor-trigger>
-        <span>Langkah-Langkah yang Dapat Dilakukan:</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="1-membuat-kelas-induk-useraccount">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-membuat-kelas-induk-useraccount">#</doc-anchor-trigger>
-        <span>1. Membuat Kelas Induk <code v-pre>UserAccount</code></span>
-    </h3>
-</doc-anchor-target>
-<p>Buat kelas abstrak bernama <code v-pre>UserAccount</code> yang memiliki atribut umum seperti <code v-pre>name</code> dan <code v-pre>email</code>, serta metode seperti <code v-pre>login()</code>, <code v-pre>logout()</code>, dan <code v-pre>view_account()</code>.</p>
-<doc-anchor-target id="2-mengembangkan-subkelas-standardaccount-dan-premiumaccount">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-mengembangkan-subkelas-standardaccount-dan-premiumaccount">#</doc-anchor-trigger>
-        <span>2. Mengembangkan Subkelas <code v-pre>StandardAccount</code> dan <code v-pre>PremiumAccount</code></span>
-    </h3>
-</doc-anchor-target>
-<p>Mewarisi kelas induk dan implementasikan metode khusus untuk setiap akun pengguna. Gunakan polimorfisme pada metode seperti <code v-pre>view_account()</code>.</p>
-<doc-anchor-target id="3-menerapkan-enkapsulasi-dengan-getter-dan-setter">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-menerapkan-enkapsulasi-dengan-getter-dan-setter">#</doc-anchor-trigger>
-        <span>3. Menerapkan Enkapsulasi dengan Getter dan Setter</span>
-    </h3>
-</doc-anchor-target>
-<p>Buat getter dan setter untuk atribut privat <strong>email</strong> dan <strong>status keanggotaan</strong>. Tambahkan validasi input dalam setter.</p>
-<doc-anchor-target id="4-membuat-simulasi-penggunaan-akun">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-membuat-simulasi-penggunaan-akun">#</doc-anchor-trigger>
-        <span>4. Membuat Simulasi Penggunaan Akun</span>
-    </h3>
-</doc-anchor-target>
-<p>Simulasikan pengoperasian sistem akun dengan menggunakan getter dan setter untuk menampilkan serta mengubah informasi pengguna.</p>
-<doc-anchor-target id="catatan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#catatan">#</doc-anchor-trigger>
-        <span>Catatan</span>
-    </h2>
-</doc-anchor-target>
-<p>Kalian tidak perlu menggunakan input dari pengguna. Cukup buat objek akun pengguna secara manual dan panggil metode yang sesuai untuk menampilkan informasi.</p>
-<doc-anchor-target id="contoh-output-tidak-harus-sama">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-output-tidak-harus-sama">#</doc-anchor-trigger>
-        <span>Contoh Output (Tidak Harus Sama):</span>
-    </h3>
-</doc-anchor-target>
+<p>Secara sederhana, <strong>List</strong> adalah kumpulan item yang bisa terdiri dari angka, teks, atau bahkan list lain. Elemen-elemen di dalam list disimpan dalam urutan tertentu dan bisa diakses melalui <strong>index</strong>. List di Python ditulis menggunakan kurung siku <code v-pre>[]</code> dan dipisahkan oleh koma <code v-pre>,</code>.</p>
+<p><strong>Contoh:</strong></p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">Nama: Budi
-Email: budi@example.com
-Status: Standard
-Budi berhasil login.
-Akses fitur dasar.
-Budi berhasil logout.
-
----
-
-Nama: Siti
-Email: siti.premium@example.com
-Status: Premium
-Keanggotaan berakhir pada: 31 Desember 2024
-Siti berhasil login.
-Mengakses fitur premium.
-Siti berhasil logout.</code></pre>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;]
+angka = [1, 2, 3, 4, 5]
+campuran = [&quot;halo&quot;, 10, True]</code></pre>
 </doc-codeblock></div>
-<doc-anchor-target id="laporan">
+<p><strong>Penjelasan</strong>:</p>
+<ul>
+<li><code v-pre>buah_buahan</code>: Sebuah list yang berisi string dengan nama buah.</li>
+<li><code v-pre>angka</code>: List yang berisi angka dari 1 hingga 5.</li>
+<li><code v-pre>campuran</code>: List yang berisi data campuran seperti string, angka, dan boolean.</li>
+<li>Di sini, kita lihat bahwa list bisa berisi berbagai tipe data sekaligus.</li>
+</ul>
+<doc-anchor-target id="ciri-ciri-list-di-python">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#laporan">#</doc-anchor-trigger>
-        <span>Laporan</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ciri-ciri-list-di-python">#</doc-anchor-trigger>
+        <span>Ciri-ciri List di Python:</span>
     </h2>
 </doc-anchor-target>
-<p>Buat laporan singkat yang menjelaskan bagaimana kalian menerapkan setiap konsep OOP (inheritance, encapsulation, polymorphism, dan abstraction). Laporan maksimal 2 halaman dalam format PDF.</p>
-<doc-anchor-target id="pengumpulan">
+<ul>
+<li><strong>Mutable</strong>: Artinya list bisa diubah setelah dibuat. Kamu bisa menambah, menghapus, atau mengubah elemen-elemen di dalamnya.</li>
+<li><strong>Dapat menyimpan berbagai tipe data</strong>: Dalam satu list, kamu bisa gabungin angka, string, boolean, dan lain-lain.</li>
+<li><strong>Diakses dengan index</strong>: Setiap elemen dalam list memiliki nomor urutannya, dimulai dari <strong>0</strong>.</li>
+</ul>
+<doc-anchor-target id="cara-mengakses-elemen-di-list">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pengumpulan">#</doc-anchor-trigger>
-        <span>Pengumpulan</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cara-mengakses-elemen-di-list">#</doc-anchor-trigger>
+        <span>Cara Mengakses Elemen di List</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="deadline">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#deadline">#</doc-anchor-trigger>
-        <span>Deadline</span>
-    </h3>
+<p>Untuk mengakses elemen di list, kamu bisa menggunakan <strong>index</strong>. Ingat, indeks pertama di Python adalah <strong>0</strong> ya, bukan 1!</p>
+<p><strong>Contoh:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;]
+print(buah_buahan[0])  # Output: apel
+print(buah_buahan[1])  # Output: pisang</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:</p>
+<ul>
+<li><code v-pre>buah_buahan[0]</code> mengakses elemen pertama dari list, yaitu <code v-pre>&quot;apel&quot;</code>.</li>
+<li><code v-pre>buah_buahan[1]</code> mengakses elemen kedua dari list, yaitu <code v-pre>&quot;pisang&quot;</code>.</li>
+<li>Python menggunakan indeks 0 untuk elemen pertama, 1 untuk elemen kedua, dan seterusnya.</li>
+</ul>
+<p>Kalau mau akses dari belakang? Gampang, gunakan <strong>index negatif</strong>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">print(buah_buahan[-1])  # Output: jeruk</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:</p>
+<ul>
+<li><code v-pre>buah_buahan[-1]</code> mengakses elemen terakhir dalam list, yaitu <code v-pre>&quot;jeruk&quot;</code>.</li>
+<li>Indeks negatif dimulai dari <code v-pre>-1</code> untuk elemen terakhir, <code v-pre>-2</code> untuk elemen kedua terakhir, dan seterusnya.</li>
+</ul>
+<doc-anchor-target id="mengubah-elemen-di-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mengubah-elemen-di-list">#</doc-anchor-trigger>
+        <span>Mengubah Elemen di List</span>
+    </h2>
 </doc-anchor-target>
-<p>Kumpulkan tugas kalian ke dalam Google Classroom <strong>paling lambat Senin, 30 September 2024 pukul 21.00 WIB</strong>.</p>
-<doc-anchor-target id="nama-file">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#nama-file">#</doc-anchor-trigger>
-        <span>Nama File:</span>
-    </h3>
+<p>List itu <strong>mutable</strong>, artinya kamu bisa mengubah nilai elemen-elemen di dalamnya.</p>
+<p><strong>Contoh:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;]
+buah_buahan[1] = &quot;mangga&quot;
+print(buah_buahan)  # Output: ['apel', 'mangga', 'jeruk']</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:</p>
+<ul>
+<li>Di sini, elemen kedua dari <code v-pre>buah_buahan</code>, yaitu <code v-pre>&quot;pisang&quot;</code>, diubah menjadi <code v-pre>&quot;mangga&quot;</code>.</li>
+</ul>
+<doc-anchor-target id="menambah-elemen-ke-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menambah-elemen-ke-list">#</doc-anchor-trigger>
+        <span>Menambah Elemen ke List</span>
+    </h2>
 </doc-anchor-target>
-<p>TugasAkun_NIM_Nama.py<br />
-TugasAkun_NIM_Nama.pdf</p>
-<p>Selamat mengerjakan, dan jangan ragu untuk bertanya jika ada yang kurang jelas. Tetap semangat! <span class="docs-emoji">&#x1F680;</span></p>
+<p>Ada beberapa cara untuk menambah elemen ke dalam list:</p>
+<ol>
+<li><p><strong>Menggunakan <code v-pre>append()</code></strong>: Menambahkan elemen di akhir list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan.append(&quot;anggur&quot;)
+print(buah_buahan)  # Output: ['apel', 'pisang', 'jeruk', 'anggur']</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>append()</code> menambahkan elemen <code v-pre>&quot;anggur&quot;</code> di <strong>akhir</strong> list.</p>
+</li>
+<li><p><strong>Menggunakan <code v-pre>insert()</code></strong>: Menyisipkan elemen di posisi tertentu.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan.insert(1, &quot;mangga&quot;)
+print(buah_buahan)  # Output: ['apel', 'mangga', 'pisang', 'jeruk']</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>insert(1, &quot;mangga&quot;)</code> menambahkan <code v-pre>&quot;mangga&quot;</code> di <strong>posisi kedua</strong> (indeks 1) pada list.
+Metode ini memungkinkan kita menyisipkan elemen di tempat yang kita inginkan.</p>
+</li>
+<li><p><strong>Menggabungkan dua list dengan <code v-pre>extend()</code></strong>: Menambah elemen-elemen dari list lain.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">sayuran = [&quot;wortel&quot;, &quot;bayam&quot;]
+buah_buahan.extend(sayuran)
+print(buah_buahan)  # Output: ['apel', 'pisang', 'jeruk', 'wortel', 'bayam']</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>extend()</code> menambahkan semua elemen dari list <code v-pre>sayuran</code> ke dalam <code v-pre>buah_buahan</code>.
+Ini berbeda dari <code v-pre>append()</code>, yang hanya menambahkan satu elemen, sedangkan <code v-pre>extend()</code> menambahkan seluruh isi list lain.</p>
+</li>
+</ol>
+<doc-anchor-target id="menghapus-elemen-dari-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menghapus-elemen-dari-list">#</doc-anchor-trigger>
+        <span>Menghapus Elemen dari List</span>
+    </h2>
+</doc-anchor-target>
+<p>Kamu juga bisa menghapus elemen dari list menggunakan beberapa cara:</p>
+<ol>
+<li><p><strong>Menggunakan <code v-pre>remove()</code></strong>: Menghapus elemen berdasarkan nilainya.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan.remove(&quot;jeruk&quot;)
+print(buah_buahan)  # Output: ['apel', 'pisang']</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>remove(&quot;jeruk&quot;)</code> menghapus elemen <code v-pre>&quot;jeruk&quot;</code> dari list.
+Metode ini menghapus elemen <strong>berdasarkan nilai</strong>.</p>
+</li>
+<li><p><strong>Menggunakan <code v-pre>pop()</code></strong>: Menghapus elemen berdasarkan index, atau elemen terakhir jika tanpa index.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan.pop(1)
+print(buah_buahan)  # Output: ['apel']</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>pop(1)</code> menghapus elemen di <strong>indeks 1</strong>, yaitu <code v-pre>&quot;pisang&quot;</code>.
+Jika tidak memberikan parameter, <code v-pre>pop()</code> akan menghapus elemen terakhir.</p>
+</li>
+<li><p><strong>Menggunakan <code v-pre>clear()</code></strong>: Menghapus semua elemen di list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan.clear()
+print(buah_buahan)  # Output: []</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>clear()</code> menghapus <strong>semua elemen</strong> dari list, membuatnya menjadi list kosong.</p>
+</li>
+</ol>
+<doc-anchor-target id="menggunakan-loop-pada-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menggunakan-loop-pada-list">#</doc-anchor-trigger>
+        <span>Menggunakan Loop pada List</span>
+    </h2>
+</doc-anchor-target>
+<p>Kalau kamu mau melakukan sesuatu pada setiap elemen dalam list, kamu bisa menggunakan <strong>loop</strong>. Misalnya, untuk mencetak semua elemen di dalam list:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">buah_buahan = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;]
+for buah in buah_buahan:
+    print(buah)</code></pre>
+</doc-codeblock></div>
+<p>Output:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">apel
+pisang
+jeruk</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="fungsi-fungsi-berguna-untuk-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fungsi-fungsi-berguna-untuk-list">#</doc-anchor-trigger>
+        <span>Fungsi-fungsi Berguna untuk List</span>
+    </h2>
+</doc-anchor-target>
+<p>Berikut beberapa fungsi lain yang sering dipakai saat bekerja dengan list:</p>
+<ul>
+<li><p><strong><code v-pre>len()</code></strong>: Menghitung jumlah elemen di list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">print(len(buah_buahan))  # Output: 3</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>len()</code> mengembalikan jumlah elemen dalam list. Di sini, list <code v-pre>buah_buahan</code> memiliki 3 elemen.</p>
+</li>
+<li><p><strong><code v-pre>sort()</code></strong>: Mengurutkan elemen dalam list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">angka = [3, 1, 4, 2]
+angka.sort()
+print(angka)  # Output: [1, 2, 3, 4]</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>sort()</code> mengurutkan elemen-elemen dalam list secara <strong>ascending</strong> (dari kecil ke besar).</p>
+</li>
+<li><p><strong><code v-pre>reverse()</code></strong>: Membalik urutan elemen dalam list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">angka.reverse()
+print(angka)  # Output: [4, 3, 2, 1]</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:<br />
+<code v-pre>reverse()</code> membalikkan urutan elemen dalam list. Bukan mengurutkan, tetapi membalik urutan yang ada.</p>
+</li>
+<li><p><strong><code v-pre>in</code></strong>: Mengecek apakah sebuah elemen ada di dalam list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">print(&quot;apel&quot; in buah_buahan)  # Output: True</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:</p>
+<ul>
+<li><code v-pre>in</code> digunakan untuk mengecek apakah suatu elemen (<code v-pre>&quot;apel&quot;</code>) ada di dalam list <code v-pre>buah_buahan</code>.</li>
+<li>Jika elemen ditemukan, hasilnya <strong>True</strong>, jika tidak, hasilnya <strong>False</strong>.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="list-dalam-list-nested-list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#list-dalam-list-nested-list">#</doc-anchor-trigger>
+        <span>List dalam List (Nested List)</span>
+    </h2>
+</doc-anchor-target>
+<p>List juga bisa menyimpan list lain di dalamnya. Ini disebut <strong>nested list</strong>.</p>
+<p>Contoh:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">nested_list = [[1, 2, 3], [&quot;apel&quot;, &quot;jeruk&quot;]]
+print(nested_list[0])     # Output: [1, 2, 3]
+print(nested_list[1][1])  # Output: jeruk</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan</strong>:</p>
+<ul>
+<li><code v-pre>nested_list[0]</code> mengakses elemen pertama dari list dalam list, yaitu <code v-pre>[1, 2, 3]</code>.</li>
+<li><code v-pre>nested_list[1][1]</code> mengakses elemen kedua dari list kedua, yaitu <code v-pre>&quot;jeruk&quot;</code>.</li>
+<li>List bisa berisi list lain, dan kamu bisa mengakses elemen-elemen di dalamnya dengan indeks bersarang.</li>
+</ul>
+<doc-anchor-target id="kesimpulan">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kesimpulan">#</doc-anchor-trigger>
+        <span>Kesimpulan</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><strong>List</strong> adalah tipe data yang sangat fleksibel di Python, bisa menyimpan berbagai macam data, dan mudah untuk dimodifikasi.</li>
+<li>Kamu bisa menambah, menghapus, mengubah, dan mengakses elemen dalam list dengan mudah.</li>
+<li>Python juga menyediakan banyak fungsi bawaan yang bisa memudahkan kamu dalam bekerja dengan list, seperti <code v-pre>append()</code>, <code v-pre>remove()</code>, <code v-pre>sort()</code>, dan lain-lain.</li>
+</ul>
+<p>Selamat mencoba!</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -318,20 +406,20 @@ TugasAkun_NIM_Nama.pdf</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../3--oop-bagian-2/code/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../4--struktur-data/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Contoh Kode</span>
+                                                <span class="block mt-1">4 - Struktur Data</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../4--struktur-data/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../4--struktur-data/tuple/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">4 - Struktur Data</span>
+                                                <span class="block mt-1">Tuple</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -375,6 +463,6 @@ TugasAkun_NIM_Nama.pdf</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Tugas", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "List", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
