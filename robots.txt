@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alfiki.my.id/advanced-python/sitemap.xml.gz
+Sitemap: https://alfiki.my.id/advanced-python/sitemap.xml
