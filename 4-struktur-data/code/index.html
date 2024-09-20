@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-root" content="/advanced-python">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780139011443">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Contoh Kode</title>
+    <meta name="title" content="Contoh Kode">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/4-struktur-data/code/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/4-struktur-data/code/">
+    <meta property="og:title" content="Contoh Kode">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/4-struktur-data/code/">
+    <meta property="twitter:title" content="Contoh Kode">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.780139011443" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780139011443" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780139011443" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780139011443" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="contoh-kode" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode">#</doc-anchor-trigger>
+        <span>Contoh Kode</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="list">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#list">#</doc-anchor-trigger>
+        <span>List</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Operasi pada List di Python
+
+# 1. Membuat List
+# Membuat berbagai jenis list: list string, list angka, dan list campuran.
+buah_buahan = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;]
+angka = [1, 2, 3, 4, 5]
+campuran = [&quot;halo&quot;, 10, True]
+
+print(&quot;List Buah:&quot;, buah_buahan)       # Output: List Buah: ['apel', 'pisang', 'jeruk']
+print(&quot;List Angka:&quot;, angka)            # Output: List Angka: [1, 2, 3, 4, 5]
+print(&quot;List Campuran:&quot;, campuran)      # Output: List Campuran: ['halo', 10, True]
+print()
+
+# 2. Mengakses Elemen di List
+# Mengakses elemen menggunakan indeks positif dan negatif.
+print(&quot;Elemen pertama buah_buahan:&quot;, buah_buahan[0])    # Output: apel
+print(&quot;Elemen kedua buah_buahan:&quot;, buah_buahan[1])      # Output: pisang
+print(&quot;Elemen terakhir buah_buahan:&quot;, buah_buahan[-1])  # Output: jeruk
+print()
+
+# 3. Mengubah Elemen di List
+# Mengubah nilai elemen tertentu dalam list.
+print(&quot;List buah sebelum diubah:&quot;, buah_buahan)          # Output: ['apel', 'pisang', 'jeruk']
+buah_buahan[1] = &quot;mangga&quot;
+print(&quot;List buah setelah diubah:&quot;, buah_buahan)          # Output: ['apel', 'mangga', 'jeruk']
+print()
+
+# 4. Menambah Elemen ke List
+# a. Menggunakan append() untuk menambah elemen di akhir list.
+print(&quot;List buah sebelum append:&quot;, buah_buahan)          # Output: ['apel', 'mangga', 'jeruk']
+buah_buahan.append(&quot;anggur&quot;)
+print(&quot;List buah setelah append:&quot;, buah_buahan)          # Output: ['apel', 'mangga', 'jeruk', 'anggur']
+print()
+
+# b. Menggunakan insert() untuk menyisipkan elemen di posisi tertentu.
+print(&quot;List buah sebelum insert:&quot;, buah_buahan)          # Output: ['apel', 'mangga', 'jeruk', 'anggur']
+buah_buahan.insert(1, &quot;durian&quot;)
+print(&quot;List buah setelah insert:&quot;, buah_buahan)          # Output: ['apel', 'durian', 'mangga', 'jeruk', 'anggur']
+print()
+
+# c. Menggunakan extend() untuk menggabungkan dua list.
+sayuran = [&quot;wortel&quot;, &quot;bayam&quot;]
+print(&quot;List buah sebelum extend:&quot;, buah_buahan)           # Output: ['apel', 'durian', 'mangga', 'jeruk', 'anggur']
+buah_buahan.extend(sayuran)
+print(&quot;List buah setelah extend:&quot;, buah_buahan)           # Output: ['apel', 'durian', 'mangga', 'jeruk', 'anggur', 'wortel', 'bayam']
+print()
+
+# 5. Menghapus Elemen dari List
+# a. Menggunakan remove() untuk menghapus elemen berdasarkan nilai.
+print(&quot;List buah sebelum remove:&quot;, buah_buahan)           # Output: ['apel', 'durian', 'mangga', 'jeruk', 'anggur', 'wortel', 'bayam']
+buah_buahan.remove(&quot;jeruk&quot;)
+print(&quot;List buah setelah remove:&quot;, buah_buahan)           # Output: ['apel', 'durian', 'mangga', 'anggur', 'wortel', 'bayam']
+print()
+
+# b. Menggunakan pop() untuk menghapus elemen berdasarkan indeks.
+print(&quot;List buah sebelum pop:&quot;, buah_buahan)              # Output: ['apel', 'durian', 'mangga', 'anggur', 'wortel', 'bayam']
+dihapus = buah_buahan.pop(2)                              # Menghapus elemen di indeks 2 (&quot;mangga&quot;)
+print(f&quot;Elemen yang dihapus: {dihapus}&quot;)                  # Output: mangga
+print(&quot;List buah setelah pop:&quot;, buah_buahan)              # Output: ['apel', 'durian', 'anggur', 'wortel', 'bayam']
+print()
+
+# c. Menggunakan clear() untuk menghapus semua elemen dalam list.
+print(&quot;List buah sebelum clear:&quot;, buah_buahan)            # Output: ['apel', 'durian', 'anggur', 'wortel', 'bayam']
+buah_buahan.clear()
+print(&quot;List buah setelah clear:&quot;, buah_buahan)            # Output: []
+print()
+
+# 6. Menggunakan Loop pada List
+# Menggunakan for loop untuk mencetak setiap elemen dalam list.
+print(&quot;Menggunakan loop untuk mencetak elemen list buah_buahan:&quot;)
+buah_buahan = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;]
+for buah in buah_buahan:
+    print(f&quot;Buah: {buah}&quot;)
+# Output:
+# Buah: apel
+# Buah: pisang
+# Buah: jeruk
+print()
+
+# 7. Fungsi-fungsi Berguna untuk List
+# a. Menggunakan len() untuk menghitung jumlah elemen dalam list.
+print(&quot;Jumlah elemen dalam list buah_buahan:&quot;, len(buah_buahan))  # Output: 3
+
+# b. Menggunakan sort() untuk mengurutkan elemen dalam list.
+angka = [3, 1, 4, 2]
+print(&quot;List angka sebelum sort:&quot;, angka)          # Output: [3, 1, 4, 2]
+angka.sort()
+print(&quot;List angka setelah sort:&quot;, angka)          # Output: [1, 2, 3, 4]
+
+# c. Menggunakan reverse() untuk membalik urutan elemen dalam list.
+print(&quot;List angka sebelum reverse:&quot;, angka)       # Output: [1, 2, 3, 4]
+angka.reverse()
+print(&quot;List angka setelah reverse:&quot;, angka)       # Output: [4, 3, 2, 1]
+
+# d. Menggunakan 'in' untuk mengecek keberadaan elemen dalam list.
+print(&quot;Apakah 'apel' ada dalam list buah_buahan?&quot;, &quot;apel&quot; in buah_buahan)  # Output: True
+print(&quot;Apakah 'mangga' ada dalam list buah_buahan?&quot;, &quot;mangga&quot; in buah_buahan)  # Output: False
+print()
+
+# 8. List dalam List (Nested List)
+# Membuat dan mengakses elemen dalam nested list.
+nested_list = [[1, 2, 3], [&quot;apel&quot;, &quot;jeruk&quot;]]
+print(&quot;Elemen pertama dari nested_list:&quot;, nested_list[0])          # Output: [1, 2, 3]
+print(&quot;Elemen kedua dari list kedua dalam nested_list:&quot;, nested_list[1][1])  # Output: jeruk
+print()
+
+# 9. Contoh Praktis: Mengelola Data Mahasiswa
+# Menggunakan list untuk menyimpan data mahasiswa dan melakukan berbagai operasi.
+mahasiswa = [
+    {&quot;nama&quot;: &quot;Budi&quot;, &quot;umur&quot;: 21, &quot;jurusan&quot;: &quot;Teknik Informatika&quot;},
+    {&quot;nama&quot;: &quot;Siti&quot;, &quot;umur&quot;: 22, &quot;jurusan&quot;: &quot;Sistem Informasi&quot;},
+    {&quot;nama&quot;: &quot;Ani&quot;, &quot;umur&quot;: 20, &quot;jurusan&quot;: &quot;Matematika&quot;}
+]
+
+# Menambahkan mahasiswa baru
+mahasiswa.append({&quot;nama&quot;: &quot;Dewi&quot;, &quot;umur&quot;: 23, &quot;jurusan&quot;: &quot;Fisika&quot;})
+print(&quot;Data mahasiswa setelah penambahan:&quot;)
+for m in mahasiswa:
+    print(m)
+print()
+
+# Mengubah jurusan mahasiswa
+mahasiswa[0][&quot;jurusan&quot;] = &quot;Teknik Komputer&quot;
+print(&quot;Data mahasiswa setelah mengubah jurusan Budi:&quot;)
+for m in mahasiswa:
+    print(m)
+print()
+
+# Menghapus mahasiswa berdasarkan nama
+for m in mahasiswa:
+    if m[&quot;nama&quot;] == &quot;Siti&quot;:
+        mahasiswa.remove(m)
+        break
+print(&quot;Data mahasiswa setelah menghapus Siti:&quot;)
+for m in mahasiswa:
+    print(m)
+print()
+
+# Menghitung jumlah mahasiswa
+print(&quot;Jumlah mahasiswa:&quot;, len(mahasiswa))  # Output: 3
+print()
+
+# Mengurutkan mahasiswa berdasarkan umur
+mahasiswa.sort(key=lambda x: x[&quot;umur&quot;])
+print(&quot;Data mahasiswa setelah diurutkan berdasarkan umur:&quot;)
+for m in mahasiswa:
+    print(m)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="tuple">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tuple">#</doc-anchor-trigger>
+        <span>Tuple</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Operasi pada Tuple di Python
+
+# 1. Membuat Tuple
+# Membuat berbagai jenis tuple: tuple string, tuple angka, dan tuple campuran.
+hewan = (&quot;kucing&quot;, &quot;anjing&quot;, &quot;kelinci&quot;)
+angka = (1, 2, 3, 4, 5)
+campuran = (&quot;halo&quot;, 10, True)
+
+print(&quot;Tuple Hewan:&quot;, hewan)         # Output: Tuple Hewan: ('kucing', 'anjing', 'kelinci')
+print(&quot;Tuple Angka:&quot;, angka)         # Output: Tuple Angka: (1, 2, 3, 4, 5)
+print(&quot;Tuple Campuran:&quot;, campuran)   # Output: Tuple Campuran: ('halo', 10, True)
+print()
+
+# 2. Mengakses Elemen di Tuple
+# Mengakses elemen menggunakan indeks positif dan negatif.
+print(&quot;Elemen pertama hewan:&quot;, hewan[0])    # Output: kucing
+print(&quot;Elemen kedua hewan:&quot;, hewan[1])      # Output: anjing
+print(&quot;Elemen terakhir hewan:&quot;, hewan[-1])  # Output: kelinci
+print()
+
+# 3. Mengubah Elemen di Tuple (Immutable)
+# Mencoba mengubah elemen akan menghasilkan error.
+print(&quot;Tuple sebelum mencoba diubah:&quot;, hewan)  # Output: ('kucing', 'anjing', 'kelinci')
+try:
+    hewan[1] = &quot;burung&quot;  # Ini akan menimbulkan error
+except TypeError as e:
+    print(&quot;Error saat mengubah tuple:&quot;, e)       # Output: Error saat mengubah tuple: 'tuple' object does not support item assignment
+print()
+
+# 4. Mengubah Tuple dengan Mengonversinya ke List
+# Mengonversi tuple ke list, mengubah elemen, lalu kembali ke tuple.
+print(&quot;Tuple sebelum diubah:&quot;, hewan)          # Output: ('kucing', 'anjing', 'kelinci')
+hewan_list = list(hewan)                       # Mengonversi ke list
+hewan_list[1] = &quot;burung&quot;                       # Mengubah elemen di list
+hewan_baru = tuple(hewan_list)                 # Mengonversi kembali ke tuple
+print(&quot;Tuple setelah diubah:&quot;, hewan_baru)     # Output: ('kucing', 'burung', 'kelinci')
+print()
+
+# 5. Menambah Elemen ke Tuple (Immutable)
+# Menggabungkan tuple yang ada dengan tuple baru untuk menambah elemen.
+buah_buahan = (&quot;apel&quot;, &quot;mangga&quot;, &quot;jeruk&quot;)
+print(&quot;Tuple buah sebelum penambahan:&quot;, buah_buahan)  # Output: ('apel', 'mangga', 'jeruk')
+buah_baru = (&quot;pisang&quot;,)
+buah_buahan = buah_buahan + buah_baru
+print(&quot;Tuple buah setelah penambahan:&quot;, buah_buahan)   # Output: ('apel', 'mangga', 'jeruk', 'pisang')
+print()
+
+# 6. Unpacking Tuple
+# Memisahkan elemen-elemen dalam tuple ke dalam variabel yang berbeda.
+print(&quot;Unpacking tuple buah_buahan:&quot;)
+buah1, buah2, buah3, buah4 = buah_buahan
+print(&quot;Buah 1:&quot;, buah1)  # Output: apel
+print(&quot;Buah 2:&quot;, buah2)  # Output: mangga
+print(&quot;Buah 3:&quot;, buah3)  # Output: jeruk
+print(&quot;Buah 4:&quot;, buah4)  # Output: pisang
+print()
+
+# 7. Fungsi-fungsi Tuple
+# a. Menggunakan len() untuk menghitung jumlah elemen dalam tuple.
+print(&quot;Jumlah elemen dalam tuple buah_buahan:&quot;, len(buah_buahan))  # Output: 4
+
+# b. Menggunakan count() untuk menghitung berapa kali elemen tertentu muncul dalam tuple.
+angka_duplikat = (1, 2, 2, 3, 4)
+print(&quot;Jumlah kemunculan angka 2 dalam angka_duplikat:&quot;, angka_duplikat.count(2))  # Output: 2
+
+# c. Menggunakan index() untuk menemukan indeks dari elemen tertentu.
+print(&quot;Indeks angka 3 dalam angka:&quot;, angka.index(3))  # Output: 2
+print()
+
+# 8. Tuple dalam Tuple (Nested Tuple)
+# Membuat dan mengakses elemen dalam nested tuple.
+nested_tuple = ((1, 2, 3), (&quot;apel&quot;, &quot;mangga&quot;))
+print(&quot;Nested Tuple:&quot;, nested_tuple)                       # Output: ((1, 2, 3), ('apel', 'mangga'))
+print(&quot;Elemen pertama dari nested_tuple:&quot;, nested_tuple[0])       # Output: (1, 2, 3)
+print(&quot;Elemen kedua dari nested_tuple:&quot;, nested_tuple[1][1])     # Output: mangga
+print()
+
+# 9. Contoh Praktis: Mengelola Data Siswa
+# Menggunakan tuple untuk menyimpan data siswa yang tidak ingin diubah.
+siswa = (
+    (&quot;Budi&quot;, 21, &quot;Teknik Informatika&quot;),
+    (&quot;Siti&quot;, 22, &quot;Sistem Informasi&quot;),
+    (&quot;Ani&quot;, 20, &quot;Matematika&quot;)
+)
+
+# Menampilkan data semua siswa
+print(&quot;Data Siswa:&quot;)
+for nama, umur, jurusan in siswa:
+    print(f&quot;Nama: {nama}, Umur: {umur}, Jurusan: {jurusan}&quot;)
+print()
+
+# Mencoba mengubah data siswa (akan menimbulkan error)
+try:
+    siswa[1] = (&quot;Siti&quot;, 23, &quot;Fisika&quot;)  # Ini akan menimbulkan error
+except TypeError as e:
+    print(&quot;Error saat mengubah tuple siswa:&quot;, e)  # Output: 'tuple' object does not support item assignment
+print()
+
+# Menambahkan siswa baru dengan menggabungkan tuple
+siswa_baru = (&quot;Dewi&quot;, 23, &quot;Fisika&quot;)
+siswa = siswa + (siswa_baru,)
+print(&quot;Data Siswa setelah penambahan:&quot;)
+for nama, umur, jurusan in siswa:
+    print(f&quot;Nama: {nama}, Umur: {umur}, Jurusan: {jurusan}&quot;)
+print()
+
+# Menghitung jumlah siswa
+print(&quot;Jumlah siswa:&quot;, len(siswa))  # Output: 4
+print()
+
+# Menggunakan tuple sebagai key di dictionary
+# Tuple dapat digunakan sebagai key karena immutable
+nilai_mahasiswa = {
+    (&quot;Budi&quot;, 21): {&quot;Matematika&quot;: 85, &quot;Fisika&quot;: 90},
+    (&quot;Siti&quot;, 22): {&quot;Matematika&quot;: 88, &quot;Fisika&quot;: 92},
+    (&quot;Ani&quot;, 20): {&quot;Matematika&quot;: 95, &quot;Fisika&quot;: 89}
+}
+
+# Mengakses nilai mahasiswa
+print(&quot;Nilai Budi:&quot;, nilai_mahasiswa[(&quot;Budi&quot;, 21)])  # Output: {'Matematika': 85, 'Fisika': 90}
+print(&quot;Nilai Ani:&quot;, nilai_mahasiswa[(&quot;Ani&quot;, 20)])    # Output: {'Matematika': 95, 'Fisika': 89}
+print()
+
+# Menggunakan nested tuples sebagai key
+nested_key = ((&quot;A&quot;, &quot;B&quot;), (&quot;C&quot;, &quot;D&quot;))
+nilai_mahasiswa[nested_key] = {&quot;Matematika&quot;: 75, &quot;Fisika&quot;: 80}
+print(&quot;Nilai dengan nested tuple sebagai key:&quot;, nilai_mahasiswa[nested_key])  # Output: {'Matematika': 75, 'Fisika': 80}
+print()
+
+# Mengiterasi dictionary dengan tuple sebagai key
+print(&quot;Semua data nilai mahasiswa:&quot;)
+for key, nilai in nilai_mahasiswa.items():
+    print(f&quot;Key: {key}, Nilai: {nilai}&quot;)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="dictionary">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dictionary">#</doc-anchor-trigger>
+        <span>Dictionary</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Operasi pada Dictionary di Python
+
+# 1. Membuat Dictionary
+# Membuat berbagai jenis dictionary: dictionary string, dictionary angka, dan dictionary campuran.
+mahasiswa = {
+    &quot;nama&quot;: &quot;Budi&quot;,
+    &quot;umur&quot;: 21,
+    &quot;jurusan&quot;: &quot;Teknik Informatika&quot;
+}
+print(&quot;Dictionary Mahasiswa:&quot;, mahasiswa)
+# Output: Dictionary Mahasiswa: {'nama': 'Budi', 'umur': 21, 'jurusan': 'Teknik Informatika'}
+
+angka = {
+    1: &quot;satu&quot;,
+    2: &quot;dua&quot;,
+    3: &quot;tiga&quot;
+}
+print(&quot;Dictionary Angka:&quot;, angka)
+# Output: Dictionary Angka: {1: 'satu', 2: 'dua', 3: 'tiga'}
+
+campuran = {
+    &quot;angka&quot;: 10,
+    &quot;kata&quot;: &quot;halo&quot;,
+    True: &quot;benar&quot;
+}
+print(&quot;Dictionary Campuran:&quot;, campuran)
+# Output: Dictionary Campuran: {'angka': 10, 'kata': 'halo', True: 'benar'}
+print()
+
+# 2. Mengakses Elemen di Dictionary
+# Mengakses elemen menggunakan key.
+print(&quot;Nama Mahasiswa:&quot;, mahasiswa[&quot;nama&quot;])    # Output: Budi
+print(&quot;Umur Mahasiswa:&quot;, mahasiswa[&quot;umur&quot;])    # Output: 21
+print(&quot;Jurusan Mahasiswa:&quot;, mahasiswa[&quot;jurusan&quot;])  # Output: Teknik Informatika
+print()
+
+# Mengakses Key yang Tidak Ada (akan menyebabkan KeyError)
+# print(mahasiswa[&quot;alamat&quot;])  # KeyError: 'alamat'
+
+# Menggunakan Metode get() untuk mengakses elemen yang mungkin tidak ada
+print(&quot;Alamat Mahasiswa (menggunakan get):&quot;, mahasiswa.get(&quot;alamat&quot;))  # Output: None
+print(&quot;Alamat Mahasiswa (dengan default):&quot;, mahasiswa.get(&quot;alamat&quot;, &quot;Tidak diketahui&quot;))  # Output: Tidak diketahui
+print()
+
+# 3. Menambah atau Mengubah Elemen di Dictionary
+# Menambah elemen baru
+print(&quot;Dictionary Mahasiswa sebelum penambahan:&quot;, mahasiswa)
+mahasiswa[&quot;alamat&quot;] = &quot;Jl. Mawar No. 10&quot;
+print(&quot;Dictionary Mahasiswa setelah penambahan:&quot;, mahasiswa)
+# Output:
+# Dictionary Mahasiswa sebelum penambahan: {'nama': 'Budi', 'umur': 21, 'jurusan': 'Teknik Informatika'}
+# Dictionary Mahasiswa setelah penambahan: {'nama': 'Budi', 'umur': 21, 'jurusan': 'Teknik Informatika', 'alamat': 'Jl. Mawar No. 10'}
+
+# Mengubah elemen yang sudah ada
+print(&quot;Dictionary Angka sebelum perubahan:&quot;, angka)
+angka[2] = &quot;dua besar&quot;
+print(&quot;Dictionary Angka setelah perubahan:&quot;, angka)
+# Output:
+# Dictionary Angka sebelum perubahan: {1: 'satu', 2: 'dua', 3: 'tiga'}
+# Dictionary Angka setelah perubahan: {1: 'satu', 2: 'dua besar', 3: 'tiga'}
+print()
+
+# 4. Menghapus Elemen dari Dictionary
+# a. Menggunakan pop() untuk menghapus elemen berdasarkan key dan mengembalikan value-nya
+print(&quot;Dictionary Mahasiswa sebelum pop:&quot;, mahasiswa)
+umur = mahasiswa.pop(&quot;umur&quot;)
+print(f&quot;Elemen yang dihapus (umur): {umur}&quot;)
+print(&quot;Dictionary Mahasiswa setelah pop:&quot;, mahasiswa)
+# Output:
+# Dictionary Mahasiswa sebelum pop: {'nama': 'Budi', 'umur': 21, 'jurusan': 'Teknik Informatika', 'alamat': 'Jl. Mawar No. 10'}
+# Elemen yang dihapus (umur): 21
+# Dictionary Mahasiswa setelah pop: {'nama': 'Budi', 'jurusan': 'Teknik Informatika', 'alamat': 'Jl. Mawar No. 10'}
+
+# b. Menggunakan del untuk menghapus elemen berdasarkan key
+print(&quot;Dictionary Angka sebelum del:&quot;, angka)
+del angka[3]
+print(&quot;Dictionary Angka setelah del:&quot;, angka)
+# Output:
+# Dictionary Angka sebelum del: {1: 'satu', 2: 'dua besar', 3: 'tiga'}
+# Dictionary Angka setelah del: {1: 'satu', 2: 'dua besar'}
+print()
+
+# c. Menggunakan clear() untuk menghapus semua elemen dalam dictionary
+print(&quot;Dictionary Campuran sebelum clear:&quot;, campuran)
+campuran.clear()
+print(&quot;Dictionary Campuran setelah clear:&quot;, campuran)
+# Output:
+# Dictionary Campuran sebelum clear: {'angka': 10, 'kata': 'halo', True: 'benar'}
+# Dictionary Campuran setelah clear: {}
+print()
+
+# 5. Looping di Dictionary
+# a. Loop berdasarkan key
+print(&quot;Looping berdasarkan key:&quot;)
+for key in mahasiswa:
+    print(f&quot;Key: {key}&quot;)
+# Output:
+# Key: nama
+# Key: jurusan
+# Key: alamat
+print()
+
+# b. Loop berdasarkan value
+print(&quot;Looping berdasarkan value:&quot;)
+for value in mahasiswa.values():
+    print(f&quot;Value: {value}&quot;)
+# Output:
+# Value: Budi
+# Value: Teknik Informatika
+# Value: Jl. Mawar No. 10
+print()
+
+# c. Loop berdasarkan key dan value
+print(&quot;Looping berdasarkan key dan value:&quot;)
+for key, value in mahasiswa.items():
+    print(f&quot;{key}: {value}&quot;)
+# Output:
+# nama: Budi
+# jurusan: Teknik Informatika
+# alamat: Jl. Mawar No. 10
+print()
+
+# 6. Fungsi-fungsi Berguna untuk Dictionary
+# a. Menggunakan len() untuk menghitung jumlah elemen dalam dictionary
+print(&quot;Jumlah elemen dalam dictionary mahasiswa:&quot;, len(mahasiswa))  # Output: 3
+print()
+
+# b. Menggunakan keys() untuk mendapatkan semua key dalam dictionary
+print(&quot;Semua key dalam dictionary mahasiswa:&quot;, mahasiswa.keys())
+# Output: dict_keys(['nama', 'jurusan', 'alamat'])
+
+# c. Menggunakan values() untuk mendapatkan semua value dalam dictionary
+print(&quot;Semua value dalam dictionary mahasiswa:&quot;, mahasiswa.values())
+# Output: dict_values(['Budi', 'Teknik Informatika', 'Jl. Mawar No. 10'])
+
+# d. Menggunakan items() untuk mendapatkan semua pasangan key-value dalam dictionary
+print(&quot;Semua pasangan key-value dalam dictionary mahasiswa:&quot;, mahasiswa.items())
+# Output: dict_items([('nama', 'Budi'), ('jurusan', 'Teknik Informatika'), ('alamat', 'Jl. Mawar No. 10')])
+print()
+
+# e. Menggunakan update() untuk menambahkan atau mengubah elemen dari dictionary lain
+data_baru = {&quot;umur&quot;: 22, &quot;hobi&quot;: &quot;Membaca&quot;}
+print(&quot;Dictionary mahasiswa sebelum update:&quot;, mahasiswa)
+mahasiswa.update(data_baru)
+print(&quot;Dictionary mahasiswa setelah update:&quot;, mahasiswa)
+# Output:
+# Dictionary mahasiswa sebelum update: {'nama': 'Budi', 'jurusan': 'Teknik Informatika', 'alamat': 'Jl. Mawar No. 10'}
+# Dictionary mahasiswa setelah update: {'nama': 'Budi', 'jurusan': 'Teknik Informatika', 'alamat': 'Jl. Mawar No. 10', 'umur': 22, 'hobi': 'Membaca'}
+print()
+
+# 7. Nested Dictionary (Dictionary dalam Dictionary)
+# Membuat dan mengakses elemen dalam nested dictionary.
+mahasiswa_detail = {
+    &quot;Budi&quot;: {
+        &quot;umur&quot;: 21,
+        &quot;jurusan&quot;: &quot;Teknik Informatika&quot;,
+        &quot;nilai&quot;: {&quot;Matematika&quot;: 85, &quot;Fisika&quot;: 90}
+    },
+    &quot;Siti&quot;: {
+        &quot;umur&quot;: 22,
+        &quot;jurusan&quot;: &quot;Sistem Informasi&quot;,
+        &quot;nilai&quot;: {&quot;Matematika&quot;: 88, &quot;Fisika&quot;: 92}
+    }
+}
+print(&quot;Nilai Budi:&quot;, mahasiswa_detail[&quot;Budi&quot;][&quot;nilai&quot;])
+# Output: Nilai Budi: {'Matematika': 85, 'Fisika': 90}
+print(&quot;Nilai Siti:&quot;, mahasiswa_detail[&quot;Siti&quot;][&quot;nilai&quot;])
+# Output: Nilai Siti: {'Matematika': 88, 'Fisika': 92}
+print()
+
+# 8. Contoh Praktis: Mengelola Data Karyawan
+# Menggunakan dictionary untuk menyimpan dan mengelola data karyawan.
+karyawan = {
+    &quot;001&quot;: {&quot;nama&quot;: &quot;Andi&quot;, &quot;umur&quot;: 30, &quot;jabatan&quot;: &quot;Manager&quot;},
+    &quot;002&quot;: {&quot;nama&quot;: &quot;Budi&quot;, &quot;umur&quot;: 25, &quot;jabatan&quot;: &quot;Staff&quot;},
+    &quot;003&quot;: {&quot;nama&quot;: &quot;Citra&quot;, &quot;umur&quot;: 28, &quot;jabatan&quot;: &quot;Supervisor&quot;}
+}
+
+# Menampilkan semua data karyawan
+print(&quot;Data Karyawan:&quot;)
+for id_karyawan, info in karyawan.items():
+    print(f&quot;ID: {id_karyawan}, Nama: {info['nama']}, Umur: {info['umur']}, Jabatan: {info['jabatan']}&quot;)
+print()
+
+# Menambah karyawan baru
+karyawan[&quot;004&quot;] = {&quot;nama&quot;: &quot;Dewi&quot;, &quot;umur&quot;: 27, &quot;jabatan&quot;: &quot;Staff&quot;}
+print(&quot;Data Karyawan setelah penambahan:&quot;)
+for id_karyawan, info in karyawan.items():
+    print(f&quot;ID: {id_karyawan}, Nama: {info['nama']}, Umur: {info['umur']}, Jabatan: {info['jabatan']}&quot;)
+print()
+
+# Mengubah jabatan karyawan
+karyawan[&quot;002&quot;][&quot;jabatan&quot;] = &quot;Senior Staff&quot;
+print(&quot;Data Karyawan setelah perubahan jabatan Budi:&quot;)
+for id_karyawan, info in karyawan.items():
+    print(f&quot;ID: {id_karyawan}, Nama: {info['nama']}, Umur: {info['umur']}, Jabatan: {info['jabatan']}&quot;)
+print()
+
+# Menghapus karyawan berdasarkan ID
+del karyawan[&quot;001&quot;]
+print(&quot;Data Karyawan setelah penghapusan Andi:&quot;)
+for id_karyawan, info in karyawan.items():
+    print(f&quot;ID: {id_karyawan}, Nama: {info['nama']}, Umur: {info['umur']}, Jabatan: {info['jabatan']}&quot;)
+print()
+
+# Menghitung jumlah karyawan
+print(&quot;Jumlah karyawan:&quot;, len(karyawan))  # Output: 3
+print()
+
+# Menggunakan nested dictionary sebagai key di dictionary lain (tidak umum tetapi memungkinkan)
+# Karena tuple immutable, mereka dapat digunakan sebagai key
+nested_key = (&quot;Departemen&quot;, &quot;Teknik&quot;)
+nilai_departemen = {
+    nested_key: {&quot;jumlah_proyek&quot;: 5, &quot;anggaran&quot;: 1000000}
+}
+print(&quot;Nilai Departemen Teknik:&quot;, nilai_departemen[nested_key])
+# Output: Nilai Departemen Teknik: {'jumlah_proyek': 5, 'anggaran': 1000000}
+print()
+
+# Mengiterasi dictionary dengan tuple sebagai key
+print(&quot;Semua data nilai departemen:&quot;)
+for key, nilai in nilai_departemen.items():
+    print(f&quot;Key: {key}, Nilai: {nilai}&quot;)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="set">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#set">#</doc-anchor-trigger>
+        <span>Set</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Operasi pada Set di Python
+
+# 1. Membuat Set
+# Membuat berbagai jenis set: set string, set angka, dan set campuran.
+buah = {&quot;apel&quot;, &quot;jeruk&quot;, &quot;mangga&quot;}
+angka = {1, 2, 3, 4, 5}
+campuran = {&quot;halo&quot;, 10, True}
+
+print(&quot;Set Buah:&quot;, buah)            # Output: Set Buah: {'apel', 'jeruk', 'mangga'}
+print(&quot;Set Angka:&quot;, angka)          # Output: Set Angka: {1, 2, 3, 4, 5}
+print(&quot;Set Campuran:&quot;, campuran)    # Output: Set Campuran: {'halo', 10, True}
+print()
+
+# 2. Mengakses Elemen di Set
+# Karena set tidak terurut, kamu tidak bisa mengakses elemen menggunakan indeks.
+# Namun, kamu bisa mengecek keberadaan elemen menggunakan 'in'.
+print(&quot;Apakah 'apel' ada dalam set buah?&quot;, &quot;apel&quot; in buah)     # Output: True
+print(&quot;Apakah 'pisang' ada dalam set buah?&quot;, &quot;pisang&quot; in buah) # Output: False
+print()
+
+# 3. Menambah Elemen ke Set
+# Menggunakan metode add() untuk menambah elemen ke set.
+print(&quot;Set buah sebelum add:&quot;, buah)      # Output: {'apel', 'jeruk', 'mangga'}
+buah.add(&quot;pisang&quot;)
+print(&quot;Set buah setelah add:&quot;, buah)      # Output: {'apel', 'pisang', 'jeruk', 'mangga'}
+print()
+
+# Jika elemen yang ditambahkan sudah ada, set tidak akan menambahkannya lagi.
+buah.add(&quot;apel&quot;)
+print(&quot;Set buah setelah menambah 'apel' lagi:&quot;, buah)  # Output tetap: {'apel', 'pisang', 'jeruk', 'mangga'}
+print()
+
+# 4. Menghapus Elemen dari Set
+# a. Menggunakan remove() untuk menghapus elemen tertentu. Akan menimbulkan KeyError jika elemen tidak ada.
+print(&quot;Set buah sebelum remove:&quot;, buah)   # Output: {'apel', 'pisang', 'jeruk', 'mangga'}
+buah.remove(&quot;jeruk&quot;)
+print(&quot;Set buah setelah remove 'jeruk':&quot;, buah)  # Output: {'apel', 'pisang', 'mangga'}
+print()
+
+# b. Menggunakan discard() untuk menghapus elemen tertentu. Tidak menimbulkan error jika elemen tidak ada.
+buah.discard(&quot;pisang&quot;)
+print(&quot;Set buah setelah discard 'pisang':&quot;, buah)  # Output: {'apel', 'mangga'}
+buah.discard(&quot;pisang&quot;)  # Tidak menimbulkan error
+print(&quot;Set buah setelah discard 'pisang' lagi:&quot;, buah)  # Output: {'apel', 'mangga'}
+print()
+
+# c. Menggunakan pop() untuk menghapus elemen acak dari set.
+# Karena set tidak terurut, elemen yang dihapus bisa berbeda-beda setiap kali.
+print(&quot;Set buah sebelum pop:&quot;, buah)      # Output: {'apel', 'mangga'}
+dihapus = buah.pop()
+print(f&quot;Elemen yang dihapus dengan pop(): {dihapus}&quot;)  # Output bisa: apel atau mangga
+print(&quot;Set buah setelah pop:&quot;, buah)      # Output: {'mangga'} atau {'apel'}
+print()
+
+# d. Menggunakan clear() untuk menghapus semua elemen dari set.
+buah.clear()
+print(&quot;Set buah setelah clear():&quot;, buah)  # Output: set()
+print()
+
+# 5. Operasi-operasi pada Set
+# a. Union (Gabungan)
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+gabungan = set1 | set2
+print(&quot;Union menggunakan |:&quot;, gabungan)    # Output: {1, 2, 3, 4, 5}
+
+gabungan_metode = set1.union(set2)
+print(&quot;Union menggunakan union():&quot;, gabungan_metode)  # Output: {1, 2, 3, 4, 5}
+print()
+
+# b. Intersection (Irisan)
+irisan = set1 &amp; set2
+print(&quot;Intersection menggunakan &amp;:&quot;, irisan)  # Output: {3}
+
+irisan_metode = set1.intersection(set2)
+print(&quot;Intersection menggunakan intersection():&quot;, irisan_metode)  # Output: {3}
+print()
+
+# c. Difference (Selisih)
+selisih = set1 - set2
+print(&quot;Difference menggunakan -:&quot;, selisih)  # Output: {1, 2}
+
+selisih_metode = set1.difference(set2)
+print(&quot;Difference menggunakan difference():&quot;, selisih_metode)  # Output: {1, 2}
+print()
+
+# d. Symmetric Difference (Selisih Simetris)
+selisih_simetris = set1 ^ set2
+print(&quot;Symmetric Difference menggunakan ^:&quot;, selisih_simetris)  # Output: {1, 2, 4, 5}
+
+selisih_simetris_metode = set1.symmetric_difference(set2)
+print(&quot;Symmetric Difference menggunakan symmetric_difference():&quot;, selisih_simetris_metode)  # Output: {1, 2, 4, 5}
+print()
+
+# 6. Looping di Set
+# Menggunakan for loop untuk mencetak setiap elemen dalam set.
+buah_buahan = {&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;}
+print(&quot;Looping melalui set buah_buahan:&quot;)
+for buah in buah_buahan:
+    print(f&quot;Buah: {buah}&quot;)
+# Output bisa dalam urutan yang berbeda setiap kali
+print()
+
+# 7. Fungsi-fungsi pada Set
+# a. Menggunakan len() untuk menghitung jumlah elemen dalam set.
+print(&quot;Jumlah elemen dalam set buah_buahan:&quot;, len(buah_buahan))  # Output: 3
+
+# b. Menggunakan in untuk mengecek keberadaan elemen dalam set.
+print(&quot;Apakah 'apel' ada dalam set buah_buahan?&quot;, &quot;apel&quot; in buah_buahan)  # Output: True
+print(&quot;Apakah 'mangga' ada dalam set buah_buahan?&quot;, &quot;mangga&quot; in buah_buahan)  # Output: False
+
+# c. Menggunakan copy() untuk membuat salinan dari set.
+buah_baru = buah_buahan.copy()
+print(&quot;Salinan set buah_buahan:&quot;, buah_baru)  # Output: {'apel', 'pisang', 'jeruk'}
+
+# 8. Tuple dalam Set
+# Set dapat mengandung tuple karena tuple immutable.
+tuple_set = {(1, 2), (3, 4)}
+print(&quot;Set yang mengandung tuple:&quot;, tuple_set)  # Output: {(1, 2), (3, 4)}
+print()
+
+# 9. Contoh Praktis: Menghilangkan Duplikat dari List
+# Menggunakan set untuk menghilangkan elemen duplikat dari list.
+list_duplikat = [1, 2, 2, 3, 4, 4, 5]
+print(&quot;List dengan duplikat:&quot;, list_duplikat)  # Output: [1, 2, 2, 3, 4, 4, 5]
+
+set_unik = set(list_duplikat)
+print(&quot;Set setelah menghilangkan duplikat:&quot;, set_unik)  # Output: {1, 2, 3, 4, 5}
+
+# Mengonversi kembali ke list jika diperlukan
+list_unik = list(set_unik)
+print(&quot;List unik:&quot;, list_unik)  # Output: [1, 2, 3, 4, 5]
+print()
+
+# 10. Operasi Lebih Lanjut: Menggunakan Set untuk Pemrosesan Data
+# Contoh: Menemukan elemen unik dari dua list
+list_a = [&quot;apel&quot;, &quot;pisang&quot;, &quot;jeruk&quot;, &quot;apel&quot;]
+list_b = [&quot;pisang&quot;, &quot;durian&quot;, &quot;mangga&quot;, &quot;jeruk&quot;]
+
+set_a = set(list_a)
+set_b = set(list_b)
+
+# Union
+union_set = set_a | set_b
+print(&quot;Union dari set_a dan set_b:&quot;, union_set)  # Output: {'apel', 'pisang', 'jeruk', 'durian', 'mangga'}
+
+# Intersection
+intersection_set = set_a &amp; set_b
+print(&quot;Intersection dari set_a dan set_b:&quot;, intersection_set)  # Output: {'pisang', 'jeruk'}
+
+# Difference
+difference_set = set_a - set_b
+print(&quot;Difference set_a - set_b:&quot;, difference_set)  # Output: {'apel'}
+
+# Symmetric Difference
+sym_diff_set = set_a ^ set_b
+print(&quot;Symmetric Difference dari set_a dan set_b:&quot;, sym_diff_set)  # Output: {'apel', 'durian', 'mangga'}
+print()
+
+# 11. Menggunakan Set sebagai Key dalam Dictionary
+# Karena set tidak dapat di-hash, mereka tidak bisa digunakan sebagai key dalam dictionary.
+# Namun, kamu bisa menggunakan frozenset yang immutable sebagai key.
+
+frozenset_key = frozenset([&quot;apel&quot;, &quot;jeruk&quot;])
+nilai = {
+    frozenset_key: &quot;Buah Tropis&quot;
+}
+print(&quot;Dictionary dengan frozenset sebagai key:&quot;, nilai)  # Output: {frozenset({'jeruk', 'apel'}): 'Buah Tropis'}
+
+# Mengakses nilai menggunakan frozenset sebagai key
+print(&quot;Nilai untuk frozenset_key:&quot;, nilai[frozenset([&quot;apel&quot;, &quot;jeruk&quot;])])  # Output: Buah Tropis
+print()
+
+# 12. Contoh Praktis: Menentukan Anggota Kelas
+# Menggunakan set untuk menentukan anggota unik dari kelas.
+
+anggota_kelas = {&quot;Budi&quot;, &quot;Siti&quot;, &quot;Ani&quot;, &quot;Budi&quot;, &quot;Dewi&quot;, &quot;Siti&quot;}
+print(&quot;Anggota Kelas (set):&quot;, anggota_kelas)  # Output: {'Dewi', 'Budi', 'Ani', 'Siti'}
+
+# Menambahkan anggota baru
+anggota_kelas.add(&quot;Rudi&quot;)
+print(&quot;Anggota Kelas setelah menambah Rudi:&quot;, anggota_kelas)  # Output: {'Dewi', 'Rudi', 'Budi', 'Ani', 'Siti'}
+
+# Menghapus anggota
+anggota_kelas.remove(&quot;Ani&quot;)
+print(&quot;Anggota Kelas setelah menghapus Ani:&quot;, anggota_kelas)  # Output: {'Dewi', 'Rudi', 'Budi', 'Siti'}
+print()
+
+# 13. Menggunakan Set untuk Mencari Elemen Unik dalam Teks
+# Menggunakan set untuk menemukan karakter unik dalam string.
+
+teks = &quot;hello world&quot;
+set_karakter = set(teks)
+print(&quot;Karakter unik dalam teks:&quot;, set_karakter)  # Output: {' ', 'd', 'e', 'h', 'l', 'o', 'r', 'w'}
+print()
+
+# 14. Membandingkan Dua Set
+# Menentukan apakah dua set sama, subset, atau superset.
+
+set_c = {1, 2, 3}
+set_d = {1, 2, 3, 4, 5}
+
+# Sama
+print(&quot;Apakah set_c sama dengan set_d?&quot;, set_c == set_d)  # Output: False
+
+# Subset
+print(&quot;Apakah set_c subset dari set_d?&quot;, set_c.issubset(set_d))  # Output: True
+
+# Superset
+print(&quot;Apakah set_d superset dari set_c?&quot;, set_d.issuperset(set_c))  # Output: True
+print()
+
+# 15. Membuat Set dari String
+# Set akan menghilangkan duplikat dan mengubah string menjadi karakter unik.
+
+kata = &quot;banana&quot;
+set_kata = set(kata)
+print(&quot;Set dari kata 'banana':&quot;, set_kata)  # Output: {'a', 'b', 'n'}
+print()
+
+# Mengonversi set kembali ke string
+string_unik = ''.join(set_kata)
+print(&quot;String unik dari set_kata:&quot;, string_unik)  # Output bisa: 'abn' (urutan bisa berbeda)
+print()</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="list-comprehension">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#list-comprehension">#</doc-anchor-trigger>
+        <span>List Comprehension</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Contoh Lengkap List Comprehension di Python
+
+# 1. Pengantar List Comprehension
+# List Comprehension adalah cara singkat dan elegan untuk membuat list baru dari list yang sudah ada atau dari iterable lainnya seperti range, string, dll.
+
+# Sintaks Dasar:
+# [expression for item in iterable]
+
+# Contoh Sederhana:
+angka = [i for i in range(5)]
+print(&quot;List angka:&quot;, angka)  # Output: [0, 1, 2, 3, 4]
+
+# **Penjelasan:**
+# - range(5) menghasilkan angka dari 0 hingga 4.
+# - Untuk setiap i dalam range tersebut, i dimasukkan ke dalam list baru 'angka'.
+# - Hasilnya adalah list [0, 1, 2, 3, 4].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 2. List Comprehension dengan Operasi Matematika
+# Kamu bisa melakukan operasi matematika atau manipulasi data lainnya di dalam list comprehension.
+
+kuadrat = [i**2 for i in range(5)]
+print(&quot;List kuadrat:&quot;, kuadrat)  # Output: [0, 1, 4, 9, 16]
+
+# **Penjelasan:**
+# - Untuk setiap i dalam range(5), i pangkat 2 (i**2) dihitung dan dimasukkan ke dalam list 'kuadrat'.
+# - Hasilnya adalah list [0, 1, 4, 9, 16].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 3. List Comprehension dengan Kondisi (If)
+# Kamu bisa menambahkan kondisi untuk menyaring elemen yang ingin dimasukkan ke dalam list baru.
+
+genap = [i for i in range(10) if i % 2 == 0]
+print(&quot;List angka genap:&quot;, genap)  # Output: [0, 2, 4, 6, 8]
+
+# **Penjelasan:**
+# - Hanya angka yang habis dibagi 2 (genap) yang akan dimasukkan ke dalam list 'genap'.
+# - Hasilnya adalah list [0, 2, 4, 6, 8].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 4. List Comprehension dengan If-Else
+# Kamu bisa menggunakan if-else untuk memilih nilai yang akan dimasukkan berdasarkan kondisi tertentu.
+
+angka_label = [&quot;genap&quot; if i % 2 == 0 else &quot;ganjil&quot; for i in range(5)]
+print(&quot;Label angka:&quot;, angka_label)  # Output: ['genap', 'ganjil', 'genap', 'ganjil', 'genap']
+
+# **Penjelasan:**
+# - Untuk setiap i dalam range(5), jika i genap, tambahkan string &quot;genap&quot;; jika tidak, tambahkan string &quot;ganjil&quot;.
+# - Hasilnya adalah list ['genap', 'ganjil', 'genap', 'ganjil', 'genap'].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 5. List Comprehension dengan Nested Loops (Loop Bersarang)
+# Kamu bisa menggunakan nested loops dalam list comprehension untuk membuat kombinasi dari dua atau lebih iterables.
+
+perkalian = [i * j for i in range(1, 4) for j in range(1, 4)]
+print(&quot;List perkalian:&quot;, perkalian)  # Output: [1, 2, 3, 2, 4, 6, 3, 6, 9]
+
+# **Penjelasan:**
+# - Mengalikan setiap i dari range(1,4) dengan setiap j dari range(1,4).
+# - Kombinasi yang dihasilkan adalah:
+#   1*1=1, 1*2=2, 1*3=3,
+#   2*1=2, 2*2=4, 2*3=6,
+#   3*1=3, 3*2=6, 3*3=9
+# - Hasilnya adalah list [1, 2, 3, 2, 4, 6, 3, 6, 9].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 6. Menggunakan Fungsi dalam List Comprehension
+# Kamu bisa memanggil fungsi atau metode dalam list comprehension untuk manipulasi data lebih lanjut.
+
+# Contoh 1: Mengubah Huruf menjadi Huruf Besar
+teks = &quot;python&quot;
+huruf_besar = [huruf.upper() for huruf in teks]
+print(&quot;Huruf besar dari 'python':&quot;, huruf_besar)  # Output: ['P', 'Y', 'T', 'H', 'O', 'N']
+
+# Contoh 2: Menggunakan Fungsi untuk Menghitung Panjang Kata
+kata = [&quot;apel&quot;, &quot;jeruk&quot;, &quot;mangga&quot;]
+panjang_kata = [len(k) for k in kata]
+print(&quot;Panjang kata:&quot;, panjang_kata)  # Output: [4, 5, 6]
+
+# **Penjelasan:**
+# - Dalam contoh pertama, setiap huruf dalam string 'python' diubah menjadi huruf besar menggunakan metode `upper()`.
+# - Dalam contoh kedua, fungsi `len()` digunakan untuk menghitung panjang setiap kata dalam list 'kata'.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 7. Contoh Praktis: Memfilter Data
+# Misalnya, kita memiliki list angka campuran dan ingin membuat list baru hanya dengan angka positif.
+
+list_duplikat = [-3, -2, -1, 0, 1, 2, 3]
+positif = [i for i in list_duplikat if i &gt; 0]
+print(&quot;List angka positif:&quot;, positif)  # Output: [1, 2, 3]
+
+# **Penjelasan:**
+# - Hanya angka yang lebih besar dari 0 yang dimasukkan ke dalam list 'positif'.
+# - Hasilnya adalah list [1, 2, 3].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 8. Contoh Praktis: Mengelola Data Mahasiswa
+# Menggunakan list comprehension untuk memproses data kompleks seperti list of dictionaries.
+
+mahasiswa = [
+    {&quot;nama&quot;: &quot;Budi&quot;, &quot;umur&quot;: 21, &quot;jurusan&quot;: &quot;Teknik Informatika&quot;},
+    {&quot;nama&quot;: &quot;Siti&quot;, &quot;umur&quot;: 22, &quot;jurusan&quot;: &quot;Sistem Informasi&quot;},
+    {&quot;nama&quot;: &quot;Ani&quot;, &quot;umur&quot;: 20, &quot;jurusan&quot;: &quot;Matematika&quot;}
+]
+
+# a. Membuat list nama mahasiswa
+nama_mahasiswa = [m[&quot;nama&quot;] for m in mahasiswa]
+print(&quot;Nama Mahasiswa:&quot;, nama_mahasiswa)  # Output: ['Budi', 'Siti', 'Ani']
+
+# b. Membuat list jurusan mahasiswa
+jurusan_mahasiswa = [m[&quot;jurusan&quot;] for m in mahasiswa]
+print(&quot;Jurusan Mahasiswa:&quot;, jurusan_mahasiswa)  # Output: ['Teknik Informatika', 'Sistem Informasi', 'Matematika']
+
+# c. Membuat list mahasiswa yang berumur lebih dari 20
+mahasiswa_lebih_20 = [m[&quot;nama&quot;] for m in mahasiswa if m[&quot;umur&quot;] &gt; 20]
+print(&quot;Mahasiswa berumur lebih dari 20:&quot;, mahasiswa_lebih_20)  # Output: ['Budi', 'Siti']
+
+# d. Membuat list tuple (nama, jurusan) untuk setiap mahasiswa
+nama_jurusan = [(m[&quot;nama&quot;], m[&quot;jurusan&quot;]) for m in mahasiswa]
+print(&quot;Nama dan Jurusan Mahasiswa:&quot;, nama_jurusan)
+# Output: [('Budi', 'Teknik Informatika'), ('Siti', 'Sistem Informasi'), ('Ani', 'Matematika')]
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 9. Menggunakan List Comprehension dengan Fungsi Eksternal
+# Misalnya, kita memiliki fungsi untuk mengkonversi suhu dari Celsius ke Fahrenheit.
+
+def celsius_ke_fahrenheit(c):
+    return (c * 9/5) + 32
+
+suhu_celsius = [0, 10, 20, 30, 40]
+suhu_fahrenheit = [celsius_ke_fahrenheit(c) for c in suhu_celsius]
+print(&quot;Suhu dalam Fahrenheit:&quot;, suhu_fahrenheit)  # Output: [32.0, 50.0, 68.0, 86.0, 104.0]
+
+# **Penjelasan:**
+# - Fungsi `celsius_ke_fahrenheit` digunakan untuk mengkonversi setiap suhu dalam list 'suhu_celsius' ke Fahrenheit.
+# - Hasilnya adalah list [32.0, 50.0, 68.0, 86.0, 104.0].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 10. List Comprehension dengan Multiple Conditions
+# Kamu bisa menambahkan lebih dari satu kondisi dalam list comprehension.
+
+# Contoh: Membuat list angka yang genap dan lebih dari 2 dari range 10
+angka_genap = [i for i in range(10) if i % 2 == 0 if i &gt; 2]
+print(&quot;List angka genap dan &gt;2:&quot;, angka_genap)  # Output: [4, 6, 8]
+
+# **Penjelasan:**
+# - Dua kondisi `if` diterapkan: i harus genap dan i harus lebih besar dari 2.
+# - Hasilnya adalah list [4, 6, 8].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 11. List Comprehension dengan Enumerate
+# Menggunakan `enumerate` untuk mendapatkan indeks dan nilai dalam iterable.
+
+# Contoh: Membuat list tuple (indeks, nilai)
+buah = [&quot;apel&quot;, &quot;jeruk&quot;, &quot;mangga&quot;]
+indeks_nilai = [(index, nilai) for index, nilai in enumerate(buah)]
+print(&quot;Indeks dan Nilai Buah:&quot;, indeks_nilai)
+# Output: [(0, 'apel'), (1, 'jeruk'), (2, 'mangga')]
+
+# **Penjelasan:**
+# - Fungsi `enumerate` mengembalikan pasangan (indeks, nilai) untuk setiap elemen dalam list 'buah'.
+# - List comprehension digunakan untuk membuat list of tuples dengan format (indeks, nilai).
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 12. List Comprehension dengan List of Lists
+# Membuat list dua dimensi menggunakan list comprehension.
+
+# Contoh: Membuat matriks 3x3 dengan nilai 0
+matriks = [[0 for _ in range(3)] for _ in range(3)]
+print(&quot;Matriks 3x3 dengan nilai 0:&quot;)
+for baris in matriks:
+    print(baris)
+# Output:
+# [0, 0, 0]
+# [0, 0, 0]
+# [0, 0, 0]
+
+# **Penjelasan:**
+# - List comprehension pertama `for _ in range(3)` membuat 3 baris.
+# - List comprehension kedua `for _ in range(3)` membuat 3 kolom dengan nilai 0 di setiap baris.
+# - Hasilnya adalah matriks 3x3 dengan semua elemen 0.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 13. List Comprehension dengan Conditional Expressions
+# Menggunakan ekspresi kondisi di dalam list comprehension untuk memilih nilai yang berbeda.
+
+# Contoh: Menambahkan &quot;Lebih tua&quot; atau &quot;Muda&quot; berdasarkan umur
+status_umur = [&quot;Lebih tua&quot; if umur &gt; 21 else &quot;Muda&quot; for umur in [20, 22, 19, 25, 21]]
+print(&quot;Status Umur:&quot;, status_umur)  # Output: ['Muda', 'Lebih tua', 'Muda', 'Lebih tua', 'Muda']
+
+# **Penjelasan:**
+# - Untuk setiap umur dalam list, jika umur &gt; 21, tambahkan &quot;Lebih tua&quot;; jika tidak, tambahkan &quot;Muda&quot;.
+# - Hasilnya adalah list ['Muda', 'Lebih tua', 'Muda', 'Lebih tua', 'Muda'].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 14. List Comprehension dengan Set dan Dictionary
+# Kamu juga bisa menggunakan list comprehension untuk membuat set atau dictionary, meskipun itu diluar scope list comprehension biasa.
+
+# Contoh: Membuat set dari list menggunakan list comprehension
+list_nama = [&quot;Budi&quot;, &quot;Siti&quot;, &quot;Budi&quot;, &quot;Ani&quot;]
+set_nama = {nama for nama in list_nama}
+print(&quot;Set nama unik:&quot;, set_nama)  # Output: {'Budi', 'Siti', 'Ani'}
+
+# Contoh: Membuat dictionary menggunakan list comprehension
+# Misalnya, membuat dictionary dengan key adalah angka dan value adalah kuadratnya
+dict_kuadrat = {i: i**2 for i in range(5)}
+print(&quot;Dictionary kuadrat:&quot;, dict_kuadrat)  # Output: {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+# **Penjelasan:**
+# - Untuk set, kurung kurawal `{}` digunakan dengan list comprehension untuk menghasilkan set unik.
+# - Untuk dictionary, format `{key: value for item in iterable}` digunakan untuk membuat key-value pairs.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 15. Menggunakan List Comprehension dengan List of Dictionaries
+# Misalnya, kita memiliki list of dictionaries dan ingin memfilter atau mengubahnya.
+
+mahasiswa = [
+    {&quot;nama&quot;: &quot;Budi&quot;, &quot;umur&quot;: 21, &quot;jurusan&quot;: &quot;Teknik Informatika&quot;},
+    {&quot;nama&quot;: &quot;Siti&quot;, &quot;umur&quot;: 22, &quot;jurusan&quot;: &quot;Sistem Informasi&quot;},
+    {&quot;nama&quot;: &quot;Ani&quot;, &quot;umur&quot;: 20, &quot;jurusan&quot;: &quot;Matematika&quot;}
+]
+
+# Contoh: Membuat list nama mahasiswa yang berjurusan Teknik Informatika
+nama_teknik = [m[&quot;nama&quot;] for m in mahasiswa if m[&quot;jurusan&quot;] == &quot;Teknik Informatika&quot;]
+print(&quot;Nama Mahasiswa Jurusan Teknik Informatika:&quot;, nama_teknik)  # Output: ['Budi']
+
+# Contoh: Membuat list tuple (nama, umur) untuk semua mahasiswa
+nama_umur = [(m[&quot;nama&quot;], m[&quot;umur&quot;]) for m in mahasiswa]
+print(&quot;Nama dan Umur Mahasiswa:&quot;, nama_umur)  # Output: [('Budi', 21), ('Siti', 22), ('Ani', 20)]
+
+# Contoh: Menambahkan field baru 'lulus' berdasarkan umur (umur &gt; 20)
+mahasiswa_lulus = [{**m, &quot;lulus&quot;: True if m[&quot;umur&quot;] &gt; 20 else False} for m in mahasiswa]
+print(&quot;Data Mahasiswa dengan Status Kelulusan:&quot;)
+for m in mahasiswa_lulus:
+    print(m)
+# Output:
+# {'nama': 'Budi', 'umur': 21, 'jurusan': 'Teknik Informatika', 'lulus': True}
+# {'nama': 'Siti', 'umur': 22, 'jurusan': 'Sistem Informasi', 'lulus': True}
+# {'nama': 'Ani', 'umur': 20, 'jurusan': 'Matematika', 'lulus': False}
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 16. List Comprehension untuk Membuat Matrix Identitas
+# Membuat matrix identitas 4x4 menggunakan list comprehension.
+
+ukuran = 4
+matrix_identitas = [[1 if i == j else 0 for j in range(ukuran)] for i in range(ukuran)]
+print(&quot;Matrix Identitas 4x4:&quot;)
+for baris in matrix_identitas:
+    print(baris)
+# Output:
+# [1, 0, 0, 0]
+# [0, 1, 0, 0]
+# [0, 0, 1, 0]
+# [0, 0, 0, 1]
+
+# **Penjelasan:**
+# - Untuk setiap baris i, kita membuat list dengan 1 di posisi j jika i == j, dan 0 lainnya.
+# - Hasilnya adalah matrix identitas 4x4.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 17. List Comprehension dengan Conditional Filtering dan Mapping
+# Misalnya, kita memiliki list angka dan ingin membuat list baru dengan angka genap dikalikan 2 dan angka ganjil tetap.
+
+list_angka = [1, 2, 3, 4, 5, 6]
+hasil = [i * 2 if i % 2 == 0 else i for i in list_angka]
+print(&quot;List setelah conditional mapping:&quot;, hasil)  # Output: [1, 4, 3, 8, 5, 12]
+
+# **Penjelasan:**
+# - Jika i genap, kalikan dengan 2; jika ganjil, tetap.
+# - Hasilnya adalah list [1, 4, 3, 8, 5, 12].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 18. List Comprehension dengan Penggabungan String
+# Misalnya, kita ingin membuat list dari kombinasi huruf depan dan belakang dari dua list yang berbeda.
+
+depan = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+belakang = [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
+
+kombinasi = [d + b for d in depan for b in belakang]
+print(&quot;Kombinasi huruf depan dan belakang:&quot;, kombinasi)
+# Output: ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+
+# **Penjelasan:**
+# - Menggabungkan setiap huruf dari list 'depan' dengan setiap huruf dari list 'belakang'.
+# - Hasilnya adalah semua kombinasi yang mungkin.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 19. List Comprehension untuk Validasi Data
+# Misalnya, kita memiliki list email dan ingin memfilter hanya email yang valid (mengandung '@').
+
+list_email = [&quot;budi@example.com&quot;, &quot;siti.com&quot;, &quot;ani@domain.org&quot;, &quot;invalidemail&quot;, &quot;dewi@service.net&quot;]
+email_valid = [email for email in list_email if &quot;@&quot; in email]
+print(&quot;Email valid:&quot;, email_valid)  
+# Output: ['budi@example.com', 'ani@domain.org', 'dewi@service.net']
+
+# **Penjelasan:**
+# - Hanya email yang mengandung karakter '@' yang dimasukkan ke dalam list 'email_valid'.
+# - Ini membantu dalam memfilter data yang tidak valid.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 20. List Comprehension untuk Flattening List of Lists
+# Misalnya, kita memiliki list of lists dan ingin mengubahnya menjadi satu list tunggal.
+
+list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+flatten = [num for sublist in list_of_lists for num in sublist]
+print(&quot;List setelah flattening:&quot;, flatten)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# **Penjelasan:**
+# - Mengiterasi setiap sublist dalam 'list_of_lists' dan setiap num dalam sublist tersebut.
+# - Memasukkan setiap num ke dalam list 'flatten'.
+# - Hasilnya adalah list tunggal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 21. List Comprehension untuk Membuat Dictionary dari List
+# Misalnya, kita ingin membuat dictionary di mana key adalah angka dan value adalah kuadratnya.
+
+list_numbers = [1, 2, 3, 4, 5]
+dict_kuadrat = {i: i**2 for i in list_numbers}
+print(&quot;Dictionary kuadrat:&quot;, dict_kuadrat)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# **Penjelasan:**
+# - Menggunakan format dictionary comprehension dengan `{key: value for item in iterable}`.
+# - Hasilnya adalah dictionary di mana setiap key adalah angka dan value adalah kuadratnya.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 22. List Comprehension dengan Multiple Conditions
+# Misalnya, kita ingin membuat list angka yang genap dan lebih dari 2 dari range 10.
+
+angka_multiple = [i for i in range(10) if i % 2 == 0 if i &gt; 2]
+print(&quot;List angka genap dan &gt;2:&quot;, angka_multiple)  # Output: [4, 6, 8]
+
+# **Penjelasan:**
+# - Dua kondisi `if` diterapkan: i harus genap dan i harus lebih besar dari 2.
+# - Hasilnya adalah list [4, 6, 8].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 23. List Comprehension dengan Enumerate
+# Menggunakan `enumerate` untuk mendapatkan indeks dan nilai dalam iterable.
+
+buah = [&quot;apel&quot;, &quot;jeruk&quot;, &quot;mangga&quot;]
+indeks_nilai = [(index, nilai) for index, nilai in enumerate(buah)]
+print(&quot;Indeks dan Nilai Buah:&quot;, indeks_nilai)  
+# Output: [(0, 'apel'), (1, 'jeruk'), (2, 'mangga')]
+
+# **Penjelasan:**
+# - Fungsi `enumerate` mengembalikan pasangan (indeks, nilai) untuk setiap elemen dalam list 'buah'.
+# - List comprehension digunakan untuk membuat list of tuples dengan format (indeks, nilai).
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 24. List Comprehension untuk Membuat Matrix Identitas
+# Membuat matrix identitas 4x4 menggunakan list comprehension.
+
+ukuran = 4
+matrix_identitas = [[1 if i == j else 0 for j in range(ukuran)] for i in range(ukuran)]
+print(&quot;Matrix Identitas 4x4:&quot;)
+for baris in matrix_identitas:
+    print(baris)
+# Output:
+# [1, 0, 0, 0]
+# [0, 1, 0, 0]
+# [0, 0, 1, 0]
+# [0, 0, 0, 1]
+
+# **Penjelasan:**
+# - Untuk setiap baris i, kita membuat list dengan 1 di posisi j jika i == j, dan 0 lainnya.
+# - Hasilnya adalah matrix identitas 4x4.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 25. List Comprehension dengan Conditional Filtering dan Mapping
+# Misalnya, kita memiliki list angka dan ingin membuat list baru dengan angka genap dikalikan 2 dan angka ganjil tetap.
+
+list_angka = [1, 2, 3, 4, 5, 6]
+hasil = [i * 2 if i % 2 == 0 else i for i in list_angka]
+print(&quot;List setelah conditional mapping:&quot;, hasil)  # Output: [1, 4, 3, 8, 5, 12]
+
+# **Penjelasan:**
+# - Jika i genap, kalikan dengan 2; jika ganjil, tetap.
+# - Hasilnya adalah list [1, 4, 3, 8, 5, 12].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 26. List Comprehension dengan Penggabungan String
+# Misalnya, kita ingin membuat list dari kombinasi huruf depan dan belakang dari dua list yang berbeda.
+
+depan = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+belakang = [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
+
+kombinasi = [d + b for d in depan for b in belakang]
+print(&quot;Kombinasi huruf depan dan belakang:&quot;, kombinasi)
+# Output: ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+
+# **Penjelasan:**
+# - Menggabungkan setiap huruf dari list 'depan' dengan setiap huruf dari list 'belakang'.
+# - Hasilnya adalah semua kombinasi yang mungkin.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 27. List Comprehension untuk Validasi Data
+# Misalnya, kita memiliki list email dan ingin memfilter hanya email yang valid (mengandung '@').
+
+list_email = [&quot;budi@example.com&quot;, &quot;siti.com&quot;, &quot;ani@domain.org&quot;, &quot;invalidemail&quot;, &quot;dewi@service.net&quot;]
+email_valid = [email for email in list_email if &quot;@&quot; in email]
+print(&quot;Email valid:&quot;, email_valid)  
+# Output: ['budi@example.com', 'ani@domain.org', 'dewi@service.net']
+
+# **Penjelasan:**
+# - Hanya email yang mengandung karakter '@' yang dimasukkan ke dalam list 'email_valid'.
+# - Ini membantu dalam memfilter data yang tidak valid.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 28. List Comprehension untuk Flattening List of Lists
+# Misalnya, kita memiliki list of lists dan ingin mengubahnya menjadi satu list tunggal.
+
+list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+flatten = [num for sublist in list_of_lists for num in sublist]
+print(&quot;List setelah flattening:&quot;, flatten)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# **Penjelasan:**
+# - Mengiterasi setiap sublist dalam 'list_of_lists' dan setiap num dalam sublist tersebut.
+# - Memasukkan setiap num ke dalam list 'flatten'.
+# - Hasilnya adalah list tunggal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 29. List Comprehension untuk Membuat Dictionary dari List
+# Misalnya, kita ingin membuat dictionary di mana key adalah angka dan value adalah kuadratnya.
+
+list_numbers = [1, 2, 3, 4, 5]
+dict_kuadrat = {i: i**2 for i in list_numbers}
+print(&quot;Dictionary kuadrat:&quot;, dict_kuadrat)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# **Penjelasan:**
+# - Menggunakan format dictionary comprehension dengan `{key: value for item in iterable}`.
+# - Hasilnya adalah dictionary di mana setiap key adalah angka dan value adalah kuadratnya.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 30. List Comprehension dengan Multiple Conditions
+# Misalnya, kita ingin membuat list angka yang genap dan lebih dari 2 dari range 10.
+
+angka_multiple = [i for i in range(10) if i % 2 == 0 if i &gt; 2]
+print(&quot;List angka genap dan &gt;2:&quot;, angka_multiple)  # Output: [4, 6, 8]
+
+# **Penjelasan:**
+# - Dua kondisi `if` diterapkan: i harus genap dan i harus lebih besar dari 2.
+# - Hasilnya adalah list [4, 6, 8].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 31. List Comprehension dengan Enumerate
+# Menggunakan `enumerate` untuk mendapatkan indeks dan nilai dalam iterable.
+
+buah = [&quot;apel&quot;, &quot;jeruk&quot;, &quot;mangga&quot;]
+indeks_nilai = [(index, nilai) for index, nilai in enumerate(buah)]
+print(&quot;Indeks dan Nilai Buah:&quot;, indeks_nilai)  
+# Output: [(0, 'apel'), (1, 'jeruk'), (2, 'mangga')]
+
+# **Penjelasan:**
+# - Fungsi `enumerate` mengembalikan pasangan (indeks, nilai) untuk setiap elemen dalam list 'buah'.
+# - List comprehension digunakan untuk membuat list of tuples dengan format (indeks, nilai).
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 32. List Comprehension untuk Membuat Matrix Identitas
+# Membuat matrix identitas 4x4 menggunakan list comprehension.
+
+ukuran = 4
+matrix_identitas = [[1 if i == j else 0 for j in range(ukuran)] for i in range(ukuran)]
+print(&quot;Matrix Identitas 4x4:&quot;)
+for baris in matrix_identitas:
+    print(baris)
+# Output:
+# [1, 0, 0, 0]
+# [0, 1, 0, 0]
+# [0, 0, 1, 0]
+# [0, 0, 0, 1]
+
+# **Penjelasan:**
+# - Untuk setiap baris i, kita membuat list dengan 1 di posisi j jika i == j, dan 0 lainnya.
+# - Hasilnya adalah matrix identitas 4x4.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 33. List Comprehension dengan Conditional Filtering dan Mapping
+# Misalnya, kita memiliki list angka dan ingin membuat list baru dengan angka genap dikalikan 2 dan angka ganjil tetap.
+
+list_angka = [1, 2, 3, 4, 5, 6]
+hasil = [i * 2 if i % 2 == 0 else i for i in list_angka]
+print(&quot;List setelah conditional mapping:&quot;, hasil)  # Output: [1, 4, 3, 8, 5, 12]
+
+# **Penjelasan:**
+# - Jika i genap, kalikan dengan 2; jika ganjil, tetap.
+# - Hasilnya adalah list [1, 4, 3, 8, 5, 12].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 34. List Comprehension dengan Penggabungan String
+# Misalnya, kita ingin membuat list dari kombinasi huruf depan dan belakang dari dua list yang berbeda.
+
+depan = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+belakang = [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
+
+kombinasi = [d + b for d in depan for b in belakang]
+print(&quot;Kombinasi huruf depan dan belakang:&quot;, kombinasi)
+# Output: ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+
+# **Penjelasan:**
+# - Menggabungkan setiap huruf dari list 'depan' dengan setiap huruf dari list 'belakang'.
+# - Hasilnya adalah semua kombinasi yang mungkin.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 35. List Comprehension untuk Validasi Data
+# Misalnya, kita memiliki list email dan ingin memfilter hanya email yang valid (mengandung '@').
+
+list_email = [&quot;budi@example.com&quot;, &quot;siti.com&quot;, &quot;ani@domain.org&quot;, &quot;invalidemail&quot;, &quot;dewi@service.net&quot;]
+email_valid = [email for email in list_email if &quot;@&quot; in email]
+print(&quot;Email valid:&quot;, email_valid)  
+# Output: ['budi@example.com', 'ani@domain.org', 'dewi@service.net']
+
+# **Penjelasan:**
+# - Hanya email yang mengandung karakter '@' yang dimasukkan ke dalam list 'email_valid'.
+# - Ini membantu dalam memfilter data yang tidak valid.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 36. List Comprehension untuk Flattening List of Lists
+# Misalnya, kita memiliki list of lists dan ingin mengubahnya menjadi satu list tunggal.
+
+list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+flatten = [num for sublist in list_of_lists for num in sublist]
+print(&quot;List setelah flattening:&quot;, flatten)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# **Penjelasan:**
+# - Mengiterasi setiap sublist dalam 'list_of_lists' dan setiap num dalam sublist tersebut.
+# - Memasukkan setiap num ke dalam list 'flatten'.
+# - Hasilnya adalah list tunggal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 37. List Comprehension untuk Membuat Dictionary dari List
+# Misalnya, kita ingin membuat dictionary di mana key adalah angka dan value adalah kuadratnya.
+
+list_numbers = [1, 2, 3, 4, 5]
+dict_kuadrat = {i: i**2 for i in list_numbers}
+print(&quot;Dictionary kuadrat:&quot;, dict_kuadrat)  # Output: {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+# **Penjelasan:**
+# - Menggunakan format dictionary comprehension dengan `{key: value for item in iterable}`.
+# - Hasilnya adalah dictionary di mana setiap key adalah angka dan value adalah kuadratnya.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 38. List Comprehension dengan Multiple Conditions
+# Misalnya, kita ingin membuat list angka yang genap dan lebih dari 2 dari range 10.
+
+angka_multiple = [i for i in range(10) if i % 2 == 0 if i &gt; 2]
+print(&quot;List angka genap dan &gt;2:&quot;, angka_multiple)  # Output: [4, 6, 8]
+
+# **Penjelasan:**
+# - Dua kondisi `if` diterapkan: i harus genap dan i harus lebih besar dari 2.
+# - Hasilnya adalah list [4, 6, 8].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 39. List Comprehension dengan Enumerate
+# Menggunakan `enumerate` untuk mendapatkan indeks dan nilai dalam iterable.
+
+buah = [&quot;apel&quot;, &quot;jeruk&quot;, &quot;mangga&quot;]
+indeks_nilai = [(index, nilai) for index, nilai in enumerate(buah)]
+print(&quot;Indeks dan Nilai Buah:&quot;, indeks_nilai)  
+# Output: [(0, 'apel'), (1, 'jeruk'), (2, 'mangga')]
+
+# **Penjelasan:**
+# - Fungsi `enumerate` mengembalikan pasangan (indeks, nilai) untuk setiap elemen dalam list 'buah'.
+# - List comprehension digunakan untuk membuat list of tuples dengan format (indeks, nilai).
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 40. List Comprehension untuk Membuat Matrix Identitas
+# Membuat matrix identitas 4x4 menggunakan list comprehension.
+
+ukuran = 4
+matrix_identitas = [[1 if i == j else 0 for j in range(ukuran)] for i in range(ukuran)]
+print(&quot;Matrix Identitas 4x4:&quot;)
+for baris in matrix_identitas:
+    print(baris)
+# Output:
+# [1, 0, 0, 0]
+# [0, 1, 0, 0]
+# [0, 0, 1, 0]
+# [0, 0, 0, 1]
+
+# **Penjelasan:**
+# - Untuk setiap baris i, kita membuat list dengan 1 di posisi j jika i == j, dan 0 lainnya.
+# - Hasilnya adalah matrix identitas 4x4.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 41. List Comprehension untuk Conditional Filtering dan Mapping
+# Misalnya, kita memiliki list angka dan ingin membuat list baru dengan angka genap dikalikan 2 dan angka ganjil tetap.
+
+list_angka = [1, 2, 3, 4, 5, 6]
+hasil = [i * 2 if i % 2 == 0 else i for i in list_angka]
+print(&quot;List setelah conditional mapping:&quot;, hasil)  # Output: [1, 4, 3, 8, 5, 12]
+
+# **Penjelasan:**
+# - Jika i genap, kalikan dengan 2; jika ganjil, tetap.
+# - Hasilnya adalah list [1, 4, 3, 8, 5, 12].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 42. List Comprehension dengan Penggabungan String
+# Misalnya, kita ingin membuat list dari kombinasi huruf depan dan belakang dari dua list yang berbeda.
+
+depan = [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;]
+belakang = [&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;]
+
+kombinasi = [d + b for d in depan for b in belakang]
+print(&quot;Kombinasi huruf depan dan belakang:&quot;, kombinasi)
+# Output: ['AX', 'AY', 'AZ', 'BX', 'BY', 'BZ', 'CX', 'CY', 'CZ']
+
+# **Penjelasan:**
+# - Menggabungkan setiap huruf dari list 'depan' dengan setiap huruf dari list 'belakang'.
+# - Hasilnya adalah semua kombinasi yang mungkin.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 43. List Comprehension untuk Validasi Data
+# Misalnya, kita memiliki list email dan ingin memfilter hanya email yang valid (mengandung '@').
+
+list_email = [&quot;budi@example.com&quot;, &quot;siti.com&quot;, &quot;ani@domain.org&quot;, &quot;invalidemail&quot;, &quot;dewi@service.net&quot;]
+email_valid = [email for email in list_email if &quot;@&quot; in email]
+print(&quot;Email valid:&quot;, email_valid)  
+# Output: ['budi@example.com', 'ani@domain.org', 'dewi@service.net']
+
+# **Penjelasan:**
+# - Hanya email yang mengandung karakter '@' yang dimasukkan ke dalam list 'email_valid'.
+# - Ini membantu dalam memfilter data yang tidak valid.
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)
+
+# 44. List Comprehension untuk Flattening List of Lists
+# Misalnya, kita memiliki list of lists dan ingin mengubahnya menjadi satu list tunggal.
+
+list_of_lists = [[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+flatten = [num for sublist in list_of_lists for num in sublist]
+print(&quot;List setelah flattening:&quot;, flatten)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# **Penjelasan:**
+# - Mengiterasi setiap sublist dalam 'list_of_lists' dan setiap num dalam sublist tersebut.
+# - Memasukkan setiap num ke dalam list 'flatten'.
+# - Hasilnya adalah list tunggal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+print(&quot;\n&quot; + &quot;=&quot;*50 + &quot;\n&quot;)</code></pre>
+</doc-codeblock></div>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../4-struktur-data/list_comprehension/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">List Comprehension</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../5-operasi-file/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">5 - Operasi File</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024 - Alfiki - All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Contoh Kode", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>

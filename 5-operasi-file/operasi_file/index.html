@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-root" content="/advanced-python">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.780139011443">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Operasi File di Python</title>
+    <meta name="title" content="Operasi File di Python">
+    <meta name="description" content="Python mempermudah kita dalam melakukan operasi file, baik untuk membaca, menulis, menghapus, maupun memanipulasi file.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/5-operasi-file/operasi_file/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/5-operasi-file/operasi_file/">
+    <meta property="og:title" content="Operasi File di Python">
+    <meta property="og:description" content="Python mempermudah kita dalam melakukan operasi file, baik untuk membaca, menulis, menghapus, maupun memanipulasi file.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/5-operasi-file/operasi_file/">
+    <meta property="twitter:title" content="Operasi File di Python">
+    <meta property="twitter:description" content="Python mempermudah kita dalam melakukan operasi file, baik untuk membaca, menulis, menghapus, maupun memanipulasi file.">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.780139011443" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780139011443" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780139011443" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780139011443" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="operasi-file-di-python" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#operasi-file-di-python">#</doc-anchor-trigger>
+        <span>Operasi File di Python</span>
+    </h1>
+</doc-anchor-target>
+<p>Python mempermudah kita dalam melakukan operasi file, baik untuk membaca, menulis, menghapus, maupun memanipulasi file. Dalam pengembangan aplikasi atau pengolahan data, kemampuan bekerja dengan file adalah hal yang sangat penting. Python menyediakan berbagai metode yang fleksibel untuk bekerja dengan file teks maupun binary.</p>
+<p>Pada bagian ini, kita akan membahas langkah-langkah penting dan teknik yang efisien dalam menangani file, dimulai dari membuka file, membaca konten, menulis data, hingga melakukan operasi lanjutan seperti menangani path dan direktori. Kami juga akan memperkenalkan cara yang lebih aman dalam membuka dan menutup file menggunakan <code v-pre>with</code>, serta cara menangani file yang besar tanpa menggunakan terlalu banyak memori.</p>
+<p>Baik kamu seorang pemula maupun sudah berpengalaman, memahami operasi file dengan baik akan membuka lebih banyak potensi dalam membuat program yang efisien dan mudah dipelihara. Mari kita mulai dengan dasar-dasarnya!</p>
+<doc-anchor-target id="membuka-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membuka-file">#</doc-anchor-trigger>
+        <span>Membuka File</span>
+    </h2>
+</doc-anchor-target>
+<p>Sebelum kita bisa membaca atau menulis file, kita harus buka file tersebut dulu. Di Python, kita menggunakan fungsi <code v-pre>open()</code> untuk itu.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">file = open(&quot;namafile.txt&quot;, &quot;mode&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Fungsi <code v-pre>open()</code> digunakan untuk membuka file dengan nama <code v-pre>namafile.txt</code> dalam mode yang ditentukan.</li>
+<li>Setelah selesai, jangan lupa untuk menutup file agar tidak terjadi kebocoran memori atau masalah lainnya.</li>
+</ul>
+<doc-anchor-target id="mode-yang-bisa-dipakai">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mode-yang-bisa-dipakai">#</doc-anchor-trigger>
+        <span>Mode yang Bisa Dipakai</span>
+    </h3>
+</doc-anchor-target>
+<p>Ada beberapa mode yang bisa kamu pakai, nih:</p>
+<ul>
+<li><code v-pre>&quot;r&quot;</code> : Membaca file (read). Ini mode default kalau kamu nggak spesifik mode lain. File harus sudah ada.</li>
+<li><code v-pre>&quot;w&quot;</code> : Menulis file (write). Kalau file belum ada, Python akan bikin file baru. Tapi hati-hati! File lama bakal di-<em>overwrite</em>.</li>
+<li><code v-pre>&quot;a&quot;</code> : Menambah di akhir file (append). Kalau file belum ada, Python akan bikin file baru.</li>
+<li><code v-pre>&quot;x&quot;</code> : Membuat file baru. Kalau file sudah ada, ini bakal error.</li>
+</ul>
+<p>Ada juga opsi tambahan untuk mode <em>binary</em> (<code v-pre>&quot;b&quot;</code>) dan mode teks (<code v-pre>&quot;t&quot;</code>). Biasanya file teks defaultnya adalah <code v-pre>&quot;t&quot;</code> (text), tapi kalau kamu mau buka file gambar, misalnya, pakai mode <code v-pre>&quot;b&quot;</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">file = open(&quot;gambar.png&quot;, &quot;rb&quot;)  # Membaca file gambar dalam mode binary</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Mode <code v-pre>&quot;rb&quot;</code> digunakan untuk membaca file dalam format binary, cocok untuk file seperti gambar atau audio.</li>
+</ul>
+<doc-anchor-target id="menggunakan-with-untuk-membuka-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menggunakan-with-untuk-membuka-file">#</doc-anchor-trigger>
+        <span>Menggunakan <code v-pre>with</code> untuk Membuka File</span>
+    </h3>
+</doc-anchor-target>
+<p>Di Python ada cara yang lebih simpel dan aman untuk buka file, yaitu menggunakan <code v-pre>with</code>. Dengan <code v-pre>with</code>, file akan otomatis ditutup setelah selesai digunakan, bahkan kalau terjadi error.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;namafile.txt&quot;, &quot;r&quot;) as file:
+    konten = file.read()
+    print(konten)
+# Tidak perlu file.close(), karena file otomatis ditutup</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Menggunakan <code v-pre>with</code> memastikan file ditutup secara otomatis setelah blok <code v-pre>with</code> selesai dieksekusi.</li>
+<li>Ini lebih aman dan mencegah kamu lupa menutup file secara manual.</li>
+</ul>
+<doc-anchor-target id="menangani-path-dengan-modul-os-dan-pathlib">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menangani-path-dengan-modul-os-dan-pathlib">#</doc-anchor-trigger>
+        <span>Menangani Path dengan Modul <code v-pre>os</code> dan <code v-pre>pathlib</code></span>
+    </h2>
+</doc-anchor-target>
+<p>Python menyediakan dua modul yang sangat berguna untuk bekerja dengan path: <code v-pre>os</code> dan <code v-pre>pathlib</code>. Mari kita lihat beberapa fungsi yang berguna dari masing-masing modul.</p>
+<doc-anchor-target id="modul-os">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modul-os">#</doc-anchor-trigger>
+        <span>Modul <code v-pre>os</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Modul <code v-pre>os</code> memberi kamu berbagai fungsi untuk memanipulasi path dan file. Beberapa yang sering digunakan:</p>
+<doc-anchor-target id="cek-apakah-path-adalah-file-atau-folder">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cek-apakah-path-adalah-file-atau-folder">#</doc-anchor-trigger>
+        <span>Cek Apakah Path Adalah File atau Folder</span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+if os.path.isfile(&quot;file.txt&quot;):
+    print(&quot;Ini adalah file.&quot;)
+if os.path.isdir(&quot;folderku&quot;):
+    print(&quot;Ini adalah folder.&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>os.path.isfile()</code> mengembalikan <code v-pre>True</code> jika path yang diberikan adalah file.</li>
+<li><code v-pre>os.path.isdir()</code> mengembalikan <code v-pre>True</code> jika path yang diberikan adalah folder.</li>
+</ul>
+<doc-anchor-target id="gabungkan-beberapa-bagian-path-secara-aman">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#gabungkan-beberapa-bagian-path-secara-aman">#</doc-anchor-trigger>
+        <span>Gabungkan Beberapa Bagian Path Secara Aman</span>
+    </h4>
+</doc-anchor-target>
+<p>Kalau kamu bekerja dengan path yang berbeda-beda (misalnya di Windows dan Linux), gunakan <code v-pre>os.path.join()</code> agar path yang kamu buat selalu benar.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+path = os.path.join(&quot;folder&quot;, &quot;subfolder&quot;, &quot;file.txt&quot;)
+print(path)  # Output: &quot;folder/subfolder/file.txt&quot; (atau &quot;folder\subfolder\file.txt&quot; di Windows)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>os.path.join()</code> menggabungkan beberapa bagian path dengan cara yang sesuai dengan sistem operasi yang digunakan.</li>
+</ul>
+<doc-anchor-target id="membuat-folder-baru">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membuat-folder-baru">#</doc-anchor-trigger>
+        <span>Membuat Folder Baru</span>
+    </h4>
+</doc-anchor-target>
+<p>Kalau kamu butuh buat folder baru:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+os.mkdir(&quot;folder_baru&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>os.mkdir()</code> digunakan untuk membuat folder baru dengan nama yang ditentukan.</li>
+</ul>
+<doc-anchor-target id="modul-pathlib">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#modul-pathlib">#</doc-anchor-trigger>
+        <span>Modul <code v-pre>pathlib</code></span>
+    </h3>
+</doc-anchor-target>
+<p><code v-pre>pathlib</code> adalah cara yang lebih modern dan pythonik untuk bekerja dengan path. Kodenya lebih bersih dan mudah dibaca.</p>
+<doc-anchor-target id="contoh-penggunaan-pathlib">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-penggunaan-pathlib">#</doc-anchor-trigger>
+        <span>Contoh Penggunaan <code v-pre>pathlib</code></span>
+    </h4>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">from pathlib import Path
+
+# Cek apakah file ada
+file_path = Path(&quot;file.txt&quot;)
+if file_path.exists():
+    print(f&quot;File {file_path} ada!&quot;)
+
+# Gabungkan path
+folder = Path(&quot;folder&quot;)
+subfolder = folder / &quot;subfolder&quot;  # Gunakan / untuk menggabungkan path
+print(subfolder)  # Output: &quot;folder/subfolder&quot;
+
+# Membuat direktori
+subfolder.mkdir(parents=True, exist_ok=True)  # Buat folder beserta semua parent folder kalau belum ada</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>Path(&quot;file.txt&quot;)</code> membuat objek path untuk <code v-pre>file.txt</code>.</li>
+<li><code v-pre>file_path.exists()</code> mengecek apakah file tersebut ada.</li>
+<li>Menggunakan operator <code v-pre>/</code> memudahkan penggabungan path.</li>
+<li><code v-pre>mkdir(parents=True, exist_ok=True)</code> membuat direktori beserta parent-nya jika belum ada, tanpa mengeluarkan error jika direktori sudah ada.</li>
+</ul>
+<doc-anchor-target id="membaca-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membaca-file">#</doc-anchor-trigger>
+        <span>Membaca File</span>
+    </h2>
+</doc-anchor-target>
+<p>Setelah file dibuka, kita bisa baca isinya dengan beberapa cara tergantung kebutuhan.</p>
+<doc-anchor-target id="read">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#read">#</doc-anchor-trigger>
+        <span><code v-pre>read()</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Fungsi ini akan membaca seluruh isi file sekaligus. Cocok digunakan jika file tidak terlalu besar.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;r&quot;) as file:
+    konten = file.read()
+    print(konten)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>File dibuka dalam mode baca (<code v-pre>&quot;r&quot;</code>).</li>
+<li><code v-pre>file.read()</code> membaca seluruh isi file dan menyimpannya dalam variabel <code v-pre>konten</code>.</li>
+<li>Isi file kemudian dicetak ke layar.</li>
+</ul>
+<doc-anchor-target id="readline">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#readline">#</doc-anchor-trigger>
+        <span><code v-pre>readline()</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Membaca satu baris saja setiap kali dipanggil.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;r&quot;) as file:
+    baris = file.readline()
+    print(baris)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>readline()</code> membaca satu baris dari file setiap kali dipanggil.</li>
+<li>Cocok untuk membaca file baris demi baris.</li>
+</ul>
+<doc-anchor-target id="readlines">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#readlines">#</doc-anchor-trigger>
+        <span><code v-pre>readlines()</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Membaca semua baris dan mengembalikannya dalam bentuk list.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;r&quot;) as file:
+    semua_baris = file.readlines()
+    print(semua_baris)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>readlines()</code> membaca semua baris dalam file dan mengembalikannya sebagai list.</li>
+<li>Setiap elemen dalam list adalah satu baris dari file.</li>
+</ul>
+<doc-anchor-target id="membaca-baris-dengan-loop">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#membaca-baris-dengan-loop">#</doc-anchor-trigger>
+        <span>Membaca Baris dengan Loop</span>
+    </h3>
+</doc-anchor-target>
+<p>Jika file yang kamu baca besar, mungkin lebih efisien membaca file baris per baris menggunakan <code v-pre>for</code> loop.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;r&quot;) as file:
+    for baris in file:
+        print(baris.strip())  # .strip() menghapus spasi atau karakter newline</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Menggunakan <code v-pre>for</code> loop untuk iterasi setiap baris dalam file.</li>
+<li><code v-pre>baris.strip()</code> digunakan untuk menghapus karakter spasi atau newline di akhir baris.</li>
+</ul>
+<doc-anchor-target id="menulis-ke-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menulis-ke-file">#</doc-anchor-trigger>
+        <span>Menulis ke File</span>
+    </h2>
+</doc-anchor-target>
+<p>Jika kamu ingin menulis data ke file, ada beberapa cara yang bisa digunakan.</p>
+<doc-anchor-target id="write">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#write">#</doc-anchor-trigger>
+        <span><code v-pre>write()</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Untuk menulis teks ke file, gunakan mode <code v-pre>&quot;w&quot;</code> atau <code v-pre>&quot;a&quot;</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;w&quot;) as file:
+    file.write(&quot;Hello, Dunia!\n&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Mode <code v-pre>&quot;w&quot;</code> akan menimpa file yang ada atau membuat file baru jika belum ada.</li>
+<li><code v-pre>write()</code> menulis teks ke file. Karakter <code v-pre>\n</code> digunakan untuk pindah baris.</li>
+</ul>
+<p>Jika pakai mode <code v-pre>&quot;a&quot;</code>, kamu bisa menambahkan teks ke file yang sudah ada tanpa menghapus isinya.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;a&quot;) as file:
+    file.write(&quot;Ini baris tambahan.\n&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Mode <code v-pre>&quot;a&quot;</code> membuka file untuk menambahkan isi di akhir file tanpa menghapus konten yang sudah ada.</li>
+</ul>
+<doc-anchor-target id="writelines">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#writelines">#</doc-anchor-trigger>
+        <span><code v-pre>writelines()</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Untuk menulis banyak baris sekaligus, kamu bisa menggunakan <code v-pre>writelines()</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">data = [&quot;Ini baris pertama.\n&quot;, &quot;Ini baris kedua.\n&quot;, &quot;Ini baris ketiga.\n&quot;]
+
+with open(&quot;file.txt&quot;, &quot;w&quot;) as file:
+    file.writelines(data)  # Writelines tidak menambahkan newline otomatis</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>writelines()</code> menerima list atau iterable yang berisi string dan menulisnya ke file.</li>
+<li>Perlu menambahkan <code v-pre>\n</code> secara manual untuk pindah baris.</li>
+</ul>
+<doc-anchor-target id="mode-r-dan-w">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mode-r-dan-w">#</doc-anchor-trigger>
+        <span>Mode <code v-pre>'r+'</code> dan <code v-pre>'w+'</code></span>
+    </h3>
+</doc-anchor-target>
+<p>Jika kamu ingin membuka file untuk <strong>membaca dan menulis sekaligus</strong>, kamu bisa gunakan mode <code v-pre>'r+'</code> (baca dan tulis) atau <code v-pre>'w+'</code> (tulis dan baca, isi file akan dihapus).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;r+&quot;) as file:
+    konten = file.read()
+    file.write(&quot;Tambahan teks baru!&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Mode <code v-pre>'r+'</code> membuka file untuk membaca dan menulis tanpa menghapus isi file.</li>
+<li>Mode <code v-pre>'w+'</code> akan menghapus isi file terlebih dahulu sebelum menulis.</li>
+<li>Pada contoh di atas, kita membaca isi file dan kemudian menambahkan teks baru di akhir file.</li>
+</ul>
+<doc-anchor-target id="menutup-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menutup-file">#</doc-anchor-trigger>
+        <span>Menutup File</span>
+    </h2>
+</doc-anchor-target>
+<p>Setelah kamu selesai melakukan operasi file, jangan lupa tutup filenya. Menutup file penting banget untuk menghindari masalah seperti kehilangan data.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">file = open(&quot;file.txt&quot;, &quot;r&quot;)
+# Lakukan operasi
+file.close()  # Penting untuk menutup file</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>file.close()</code> digunakan untuk menutup file setelah selesai digunakan.</li>
+<li>Jika kamu menggunakan <code v-pre>with</code>, kamu nggak perlu memanggil <code v-pre>close()</code> secara manual karena file akan otomatis ditutup setelah blok <code v-pre>with</code> selesai.</li>
+</ul>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;file.txt&quot;, &quot;r&quot;) as file:
+    konten = file.read()
+    print(konten)
+# Tidak perlu file.close(), karena file otomatis ditutup</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Menggunakan <code v-pre>with</code> memastikan file ditutup secara otomatis, bahkan jika terjadi error di dalam blok <code v-pre>with</code>.</li>
+</ul>
+<doc-anchor-target id="memeriksa-apakah-file-ada">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memeriksa-apakah-file-ada">#</doc-anchor-trigger>
+        <span>Memeriksa Apakah File Ada</span>
+    </h2>
+</doc-anchor-target>
+<p>Terkadang, sebelum membaca atau menulis file, kita perlu cek dulu apakah file tersebut ada. Kita bisa menggunakan modul <code v-pre>os</code> untuk melakukan ini.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+if os.path.exists(&quot;namafile.txt&quot;):
+    print(&quot;File ada!&quot;)
+else:
+    print(&quot;File tidak ditemukan.&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>os.path.exists()</code> mengecek apakah path yang diberikan ada, baik itu file atau folder.</li>
+<li>Ini berguna untuk menghindari error saat mencoba membuka file yang tidak ada.</li>
+</ul>
+<doc-anchor-target id="menghapus-dan-mengganti-nama-file">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menghapus-dan-mengganti-nama-file">#</doc-anchor-trigger>
+        <span>Menghapus dan Mengganti Nama File</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="menghapus-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menghapus-file">#</doc-anchor-trigger>
+        <span>Menghapus File</span>
+    </h3>
+</doc-anchor-target>
+<p>Kamu juga bisa menghapus file dengan Python menggunakan <code v-pre>os.remove()</code>. Hati-hati ya, karena setelah dihapus, file nggak bisa dikembalikan (kecuali kamu punya backup).</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+os.remove(&quot;namafile.txt&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>os.remove()</code> menghapus file dengan nama yang diberikan.</li>
+<li>Pastikan kamu benar-benar ingin menghapus file tersebut sebelum menjalankan perintah ini.</li>
+</ul>
+<p>Selain <code v-pre>os.remove()</code>, kamu juga bisa menghapus file dengan <code v-pre>pathlib</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">from pathlib import Path
+
+file_path = Path(&quot;file.txt&quot;)
+if file_path.exists():
+    file_path.unlink()  # Menghapus file</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>Path.unlink()</code> menghapus file jika file tersebut ada.</li>
+<li>Mirip dengan <code v-pre>os.remove()</code>, tetapi menggunakan pendekatan objek dari <code v-pre>pathlib</code>.</li>
+</ul>
+<doc-anchor-target id="mengganti-nama-atau-memindahkan-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mengganti-nama-atau-memindahkan-file">#</doc-anchor-trigger>
+        <span>Mengganti Nama atau Memindahkan File</span>
+    </h3>
+</doc-anchor-target>
+<p>Kamu bisa mengganti nama atau memindahkan file menggunakan <code v-pre>os.rename()</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">import os
+
+os.rename(&quot;filelama.txt&quot;, &quot;filebaru.txt&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>os.rename()</code> mengganti nama file dari <code v-pre>filelama.txt</code> menjadi <code v-pre>filebaru.txt</code>.</li>
+<li>Selain mengganti nama, fungsi ini juga bisa digunakan untuk memindahkan file ke direktori lain.</li>
+</ul>
+<p>Atau dengan <code v-pre>pathlib</code>:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">from pathlib import Path
+
+file_path = Path(&quot;filelama.txt&quot;)
+file_path.rename(&quot;filebaru.txt&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><code v-pre>Path.rename()</code> berfungsi sama seperti <code v-pre>os.rename()</code>, tetapi menggunakan objek <code v-pre>Path</code> dari <code v-pre>pathlib</code>.</li>
+</ul>
+<doc-anchor-target id="menangani-file-yang-besar">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menangani-file-yang-besar">#</doc-anchor-trigger>
+        <span>Menangani File yang Besar</span>
+    </h2>
+</doc-anchor-target>
+<p>Kalau kamu bekerja dengan file yang ukurannya besar, hati-hati jangan sampai menggunakan terlalu banyak memori dengan membaca file seluruhnya ke memori. Gunakan teknik seperti <strong>streaming</strong> dengan membaca file dalam potongan-potongan kecil:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">with open(&quot;filebesar.txt&quot;, &quot;r&quot;) as file:
+    while chunk := file.read(1024):  # Membaca file 1024 byte sekaligus
+        print(chunk)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Teknik ini membaca file dalam potongan kecil (misalnya 1024 byte) sekaligus.</li>
+<li>Menggunakan <code v-pre>while</code> loop dengan <code v-pre>file.read(1024)</code> memungkinkan kamu memproses file besar tanpa memakan banyak memori.</li>
+</ul>
+<doc-anchor-target id="menangani-error">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menangani-error">#</doc-anchor-trigger>
+        <span>Menangani Error</span>
+    </h2>
+</doc-anchor-target>
+<p>Kalau kamu bekerja dengan file, kemungkinan ada beberapa error yang bisa muncul, seperti file tidak ditemukan. Untuk menangani hal ini, kita bisa menggunakan blok <code v-pre>try-except</code>.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">try:
+    with open(&quot;filetidakada.txt&quot;, &quot;r&quot;) as file:
+        konten = file.read()
+except FileNotFoundError:
+    print(&quot;Oops, file tidak ditemukan!&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li>Blok <code v-pre>try</code> mencoba untuk membuka dan membaca file.</li>
+<li>Jika file tidak ditemukan, <code v-pre>FileNotFoundError</code> akan ditangkap oleh blok <code v-pre>except</code>, dan pesan error akan ditampilkan.</li>
+<li>Ini mencegah program crash dan memberikan cara yang elegan untuk menangani error.</li>
+</ul>
+<doc-anchor-target id="penutup">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#penutup">#</doc-anchor-trigger>
+        <span>Penutup</span>
+    </h2>
+</doc-anchor-target>
+<p>Selamat! Kamu telah mempelajari dasar-dasar operasi file di Python, mulai dari cara membuka, membaca, menulis, hingga menghapus file dengan aman dan efisien. Memahami cara bekerja dengan file adalah keterampilan yang sangat penting dalam pengembangan aplikasi, karena banyak tugas pemrograman yang melibatkan pengelolaan data eksternal. Dengan menggunakan teknik yang telah dibahas, kamu dapat lebih percaya diri dalam memanipulasi file, menangani berbagai skenario seperti file besar, dan bahkan bekerja dengan path secara lintas platform.</p>
+<p>Sebagai penutup, selalu ingat untuk menutup file yang sudah digunakan atau memanfaatkan with statement untuk memastikan file ditutup secara otomatis. Juga, pastikan untuk menangani error dengan baik agar programmu tetap berjalan stabil bahkan saat terjadi masalah pada file. Semoga pengetahuan ini bermanfaat dan membantu kamu dalam membangun aplikasi Python yang lebih canggih dan andal. Selamat mencoba!</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../5-operasi-file/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">5 - Operasi File</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../6-numpy/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">6 - Num​Py</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024 - Alfiki - All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Operasi File di Python", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
