@@ -10,33 +10,35 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>NumPy</title>
-    <meta name="title" content="NumPy">
-    <meta name="description" content="NumPy adalah singkatan dari Numerical Python, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien.">
+    <title>Persiapan Awal</title>
+    <meta name="title" content="Persiapan Awal">
+    <meta name="description" content="Kalau kamu baru mulai belajar atau mau memastikan lingkungan pemrograman Python kamu siap digunakan, artikel ini pas banget buat kamu.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/6-numpy/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/1-pengantar/setup/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/6-numpy/">
-    <meta property="og:title" content="NumPy">
-    <meta property="og:description" content="NumPy adalah singkatan dari Numerical Python, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien.">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/1-pengantar/setup/">
+    <meta property="og:title" content="Persiapan Awal">
+    <meta property="og:description" content="Kalau kamu baru mulai belajar atau mau memastikan lingkungan pemrograman Python kamu siap digunakan, artikel ini pas banget buat kamu.">
+    <meta property="og:image" content="https://miro.medium.com/v2/resize:fit:1344/0*7nOyowsPsGI19pZT.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/6-numpy/">
-    <meta property="twitter:title" content="NumPy">
-    <meta property="twitter:description" content="NumPy adalah singkatan dari Numerical Python, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien.">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/1-pengantar/setup/">
+    <meta property="twitter:title" content="Persiapan Awal">
+    <meta property="twitter:description" content="Kalau kamu baru mulai belajar atau mau memastikan lingkungan pemrograman Python kamu siap digunakan, artikel ini pas banget buat kamu.">
+    <meta property="twitter:image" content="https://miro.medium.com/v2/resize:fit:1344/0*7nOyowsPsGI19pZT.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.780363692490" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.780363692490" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.780363692490" data-turbo-eval="false" defer></script>
-    <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.780363692490" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.780363692490" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.780363692490" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.780363692490" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.780363692490" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -51,7 +53,7 @@
                 <!-- Logo -->
                 <div class="flex items-center justify-between h-full py-2 md:w-75">
                     <div class="flex items-center px-2 md:px-6">
-                        <a id="docs-site-logo" href="../" class="flex items-center leading-snug text-xl">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
                             <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
                         </a>
                     </div>
@@ -151,77 +153,228 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="numpy" class="break-words">
+<doc-anchor-target id="persiapan-awal" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#numpy">#</doc-anchor-trigger>
-        <span>NumPy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persiapan-awal">#</doc-anchor-trigger>
+        <span>Persiapan Awal</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="apa-itu-numpy">
+<p>Kalau kamu baru mulai belajar atau mau memastikan lingkungan pemrograman Python kamu siap digunakan, artikel ini pas banget buat kamu. Kita akan bahas mulai dari instalasi Python, pakai Visual Studio Code (VS Code), coba Jupyter Notebook, hingga Google Colab.</p>
+<doc-anchor-target id="instalasi-python">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-numpy">#</doc-anchor-trigger>
-        <span>Apa itu NumPy?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instalasi-python">#</doc-anchor-trigger>
+        <span>Instalasi Python</span>
     </h2>
 </doc-anchor-target>
-<p><strong>NumPy</strong> adalah singkatan dari <strong>Numerical Python</strong>, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien. NumPy menyediakan dukungan untuk array multidimensional (yang disebut <strong>ndarray</strong>) yang dapat menyimpan elemen dengan tipe data yang sama. Selain array, NumPy juga dilengkapi dengan berbagai fungsi yang memungkinkan kita untuk melakukan operasi matematis, statistik, logika, dan manipulasi data dengan cepat.</p>
-<p>Salah satu keunggulan utama NumPy dibandingkan list standar Python adalah kemampuannya untuk melakukan operasi <strong>elemen-wise</strong>, yaitu operasi yang diterapkan langsung pada setiap elemen array tanpa memerlukan loop eksplisit. Hal ini membuat kode lebih bersih dan eksekusi lebih cepat. Karena itu, NumPy sering digunakan dalam bidang seperti <strong>data science</strong>, <strong>machine learning</strong>, <strong>deep learning</strong>, <strong>pemrosesan gambar</strong>, dan <strong>komputasi ilmiah</strong> secara umum.</p>
-<p>NumPy juga menjadi fondasi bagi banyak library lain dalam ekosistem Python seperti <strong>Pandas</strong>, <strong>SciPy</strong>, dan <strong>Matplotlib</strong>, menjadikannya sebagai alat yang sangat esensial bagi para data scientist dan engineer.</p>
-<doc-anchor-target id="fitur-utama-numpy">
+<p>Sebelum ngoding, tentu aja kamu perlu install Python dulu di komputer. Python adalah kunci utama untuk semua yang bakal kita bahas nanti.</p>
+<doc-anchor-target id="langkah-langkah-instalasi">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fitur-utama-numpy">#</doc-anchor-trigger>
-        <span>Fitur Utama NumPy:</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-instalasi">#</doc-anchor-trigger>
+        <span>Langkah-langkah Instalasi:</span>
     </h3>
 </doc-anchor-target>
 <ol>
-<li><strong>Array Multidimensional</strong>: Mendukung array n-dimensi yang efisien dalam memori dan performa.</li>
-<li><strong>Operasi Matematis</strong>: Mendukung operasi matematika seperti penjumlahan, perkalian, trigonometri, logaritma, statistik, dan lainnya.</li>
-<li><strong>Integrasi dengan Komputasi Ilmiah</strong>: Digunakan bersama library lain seperti SciPy, Pandas, dan Matplotlib untuk analisis data yang lebih mendalam.</li>
-<li><strong>Kecepatan dan Efisiensi</strong>: NumPy sangat cepat karena ditulis sebagian besar dalam C dan Fortran, dua bahasa yang dikenal karena performanya dalam komputasi numerik.</li>
+<li><p><strong>Download Python</strong><br />
+Kunjungi situs resmi <a href="https://www.python.org/downloads/">python.org</a>. Di sana, pilih versi terbaru (biasanya Python 3.x).</p>
+</li>
+<li><p><strong>Jalankan Installer</strong><br />
+Buka file installer yang udah kamu download. Nah, penting nih: <strong>centang &quot;Add Python to PATH&quot;</strong> biar nanti kamu bisa jalanin Python dari mana aja di komputer.</p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1344/0*7nOyowsPsGI19pZT.png" alt="Add Python to PATH" title="Add Python to PATH" /></p>
+</li>
+<li><p><strong>Lanjutin Instalasi</strong><br />
+Ikuti petunjuk instalasinya sampai selesai. Nggak ribet kok, tinggal next-next aja.</p>
+</li>
+<li><p><strong>Cek Instalasi</strong><br />
+Setelah selesai, buka <strong>Command Prompt</strong> (Windows) atau <strong>Terminal</strong> (macOS/Linux), terus ketik:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">python --version</code></pre>
+</doc-codeblock></div>
+<p>atau</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">py --version</code></pre>
+</doc-codeblock></div>
+<p>atau kalau macOS/Linux:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">python3 --version</code></pre>
+</doc-codeblock></div>
+<p><img src="https://images.surferseo.art/8c04f41a-89e6-49fb-92ac-6121e8c6e4b8.png" alt="Cek Instalasi Python" title="Cek Instalasi Python" />
+Kalau muncul versi Python, berarti Python udah siap dipakai!</p>
+</li>
 </ol>
-<doc-anchor-target id="mengapa-menggunakan-numpy">
+<doc-anchor-target id="instalasi-visual-studio-code-vs-code">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-menggunakan-numpy">#</doc-anchor-trigger>
-        <span>Mengapa Menggunakan NumPy?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instalasi-visual-studio-code-vs-code">#</doc-anchor-trigger>
+        <span>Instalasi Visual Studio Code (VS Code)</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="1-performa-tinggi">
+<p>VS Code adalah text editor yang super populer buat ngoding, termasuk Python. Editor ini ringan, fleksibel, dan banyak fiturnya. Yuk, instal!</p>
+<doc-anchor-target id="cara-instalasi">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-performa-tinggi">#</doc-anchor-trigger>
-        <span>1. <strong>Performa Tinggi</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cara-instalasi">#</doc-anchor-trigger>
+        <span>Cara Instalasi:</span>
     </h3>
 </doc-anchor-target>
-<p>NumPy dirancang untuk komputasi performa tinggi, terutama untuk array besar dengan jutaan elemen. Operasi pada array NumPy lebih cepat dibandingkan operasi pada list Python biasa, karena NumPy menggunakan struktur data yang lebih efisien serta optimasi berbasis array C di belakang layar.</p>
-<doc-anchor-target id="2-memudahkan-pengolahan-data-ilmiah">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-memudahkan-pengolahan-data-ilmiah">#</doc-anchor-trigger>
-        <span>2. <strong>Memudahkan Pengolahan Data Ilmiah</strong></span>
-    </h3>
-</doc-anchor-target>
-<p>Bagi mereka yang bekerja dalam bidang <strong>data science</strong> atau <strong>komputasi ilmiah</strong>, NumPy menyediakan banyak sekali fungsi yang sangat berguna untuk melakukan pengolahan data. Dari aljabar linear hingga statistik, NumPy memungkinkan kita untuk melakukan analisis data dengan mudah dan cepat.</p>
-<doc-anchor-target id="3-ekosistem-yang-kuat">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-ekosistem-yang-kuat">#</doc-anchor-trigger>
-        <span>3. <strong>Ekosistem yang Kuat</strong></span>
-    </h3>
-</doc-anchor-target>
-<p>Banyak library populer lainnya di Python seperti <strong>Pandas</strong> (untuk analisis data), <strong>SciPy</strong> (untuk komputasi ilmiah), dan <strong>Matplotlib</strong> (untuk visualisasi data) semuanya dibangun di atas NumPy. Jadi, dengan mempelajari NumPy, kamu juga mempersiapkan dirimu untuk menggunakan library-library tersebut dengan lebih mudah.</p>
-<doc-anchor-target id="instalasi-numpy">
+<ol>
+<li><p><strong>Download VS Code</strong><br />
+Kunjungi <a href="https://code.visualstudio.com/">code.visualstudio.com</a> dan download sesuai OS kamu (Windows, macOS, atau Linux).</p>
+</li>
+<li><p><strong>Install</strong><br />
+Sama seperti instalasi Python tadi, tinggal next-next aja sampai selesai.</p>
+</li>
+<li><p><strong>Pasang Ekstensi Python di VS Code</strong><br />
+Buka VS Code, terus klik ikon <strong>Extensions</strong> (atau tekan <code v-pre>Ctrl+Shift+X</code> di Windows/Linux, <code v-pre>Cmd+Shift+X</code> di macOS). Cari &quot;Python&quot; dan instal ekstensi yang dibuat oleh Microsoft. Ekstensi ini penting biar VS Code ngerti kode Python kita.</p>
+<p><img src="https://opensource.com/sites/default/files/2022-10/codium-extension-python.webp" alt="Pasang ekstensi Python di Visual Studio Code" title="Pasang ekstensi Python di Visual Studio Code" /></p>
+</li>
+<li><p><strong>Atur Interpreter Python</strong><br />
+Setelah pasang ekstensi, tekan <code v-pre>Ctrl+Shift+P</code> (atau <code v-pre>Cmd+Shift+P</code> di macOS) buat buka Command Palette, terus ketik <code v-pre>Python: Select Interpreter</code>. Pilih Python yang tadi udah kamu install.</p>
+<p><img src="https://cdn.activestate.com/wp-content/uploads/2023/03/SelectInterpreter-1024x551.png" alt="Atur lokasi interpreter Python" /></p>
+</li>
+</ol>
+<doc-anchor-target id="menggunakan-jupyter-notebook">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instalasi-numpy">#</doc-anchor-trigger>
-        <span>Instalasi NumPy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menggunakan-jupyter-notebook">#</doc-anchor-trigger>
+        <span>Menggunakan Jupyter Notebook</span>
     </h2>
 </doc-anchor-target>
-<p>Untuk mulai menggunakan NumPy, pertama-tama kita harus menginstalnya. Cara termudah untuk menginstal NumPy adalah menggunakan Python Package Installer (pip), sebuah alat standar untuk mengelola paket di Python.</p>
-<p>Berikut cara menginstal NumPy dengan <code v-pre>pip</code>:</p>
+<p>Kalau kamu lebih suka ngoding sambil langsung liat hasilnya di tempat yang interaktif, bisa pakai Jupyter Notebook. Ini cocok untuk eksperimen, analisis data, dan bikin visualisasi.</p>
+<doc-anchor-target id="cara-instalasi-jupyter-notebook">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cara-instalasi-jupyter-notebook">#</doc-anchor-trigger>
+        <span>Cara Instalasi Jupyter Notebook:</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Install Jupyter</strong><br />
+Buka <strong>Command Prompt</strong> atau <strong>Terminal</strong>, terus ketik:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">pip install notebook</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p><strong>Jalankan Jupyter Notebook</strong><br />
+Setelah instalasi selesai, ketik:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">jupyter notebook</code></pre>
+</doc-codeblock></div>
+<p>Nanti bakal otomatis terbuka di browser, dan kamu bisa mulai ngoding di sana.</p>
+</li>
+<li><p><strong>Bikin Notebook Baru</strong><br />
+Klik <strong>&quot;New&quot;</strong> di kanan atas dan pilih <strong>&quot;Python 3&quot;</strong> buat mulai notebook baru. Sekarang kamu bisa ngoding dengan mudah dan liat hasilnya langsung!</p>
+</li>
+</ol>
+<doc-anchor-target id="eksplorasi-google-colab">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#eksplorasi-google-colab">#</doc-anchor-trigger>
+        <span>Eksplorasi Google Colab</span>
+    </h2>
+</doc-anchor-target>
+<p>Kalau kamu nggak mau repot instalasi di komputer atau pengen coba coding dari mana aja (bahkan HP!), kamu bisa pakai <strong>Google Colab</strong>. Ini layanan gratis dari Google buat ngoding Python secara online. Cocok buat berbagi proyek juga!</p>
+<doc-anchor-target id="cara-pakai-google-colab">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cara-pakai-google-colab">#</doc-anchor-trigger>
+        <span>Cara Pakai Google Colab:</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Buka Google Colab</strong><br />
+Langsung aja ke <a href="https://colab.research.google.com/">Google Colab</a>. Kamu butuh akun Google untuk akses, jadi pastikan kamu udah login.</p>
+</li>
+<li><p><strong>Mulai Notebook Baru</strong><br />
+Klik <strong>&quot;New Notebook&quot;</strong> di halaman utama. Interface-nya mirip Jupyter Notebook, jadi gampang banget dipahami.</p>
+</li>
+<li><p><strong>Jalankan Kode</strong><br />
+Tulis kode Python di sel, terus tekan <code v-pre>Shift+Enter</code> buat jalanin. Gampang kan?</p>
+</li>
+<li><p><strong>Simpan dan Berbagi</strong><br />
+Colab ini otomatis nyimpen semua di Google Drive kamu. Jadi, kalau mau berbagi proyek, tinggal kasih link-nya aja.</p>
+</li>
+</ol>
+<doc-anchor-target id="menyiapkan-virtual-environment-opsional">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#menyiapkan-virtual-environment-opsional">#</doc-anchor-trigger>
+        <span>Menyiapkan Virtual Environment (Opsional)</span>
+    </h2>
+</doc-anchor-target>
+<p>Kalau kamu nanti udah mulai bikin banyak proyek Python, ada baiknya kamu pakai <strong>virtual environment</strong> biar setiap proyek punya “lingkungan” sendiri-sendiri. Ini penting biar nggak ada konflik antara versi paket atau library yang dipakai tiap proyek.</p>
+<doc-anchor-target id="cara-bikin-virtual-environment">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cara-bikin-virtual-environment">#</doc-anchor-trigger>
+        <span>Cara Bikin Virtual Environment:</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Buat Virtual Environment</strong><br />
+Di terminal, arahkan ke folder proyek kamu dan ketik:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">python -m venv env</code></pre>
+</doc-codeblock></div>
+<p><em><code v-pre>env</code> bisa kamu ganti nama apa aja.</em></p>
+</li>
+<li><p><strong>Aktifkan Virtual Environment</strong></p>
+<ul>
+<li>Di Windows:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">env\Scripts\activate</code></pre>
+</doc-codeblock></div>
+</li>
+<li>Di macOS/Linux:
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">source env/bin/activate</code></pre>
+</doc-codeblock></div>
+</li>
+</ul>
+</li>
+<li><p><strong>Install Paket di Virtual Environment</strong><br />
+Setelah aktif, kamu bisa install paket dengan <code v-pre>pip</code> khusus buat proyek ini:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-bash"><code v-pre class="language-bash">pip install nama_paket</code></pre>
+</doc-codeblock></div>
+<p>misalnya:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">pip install numpy</code></pre>
 </doc-codeblock></div>
-<p>Setelah instalasi berhasil, kita bisa mulai menggunakannya dalam kode Python. Pertama-tama, impor library <strong>NumPy</strong> dengan menulis:</p>
+</li>
+<li><p><strong>Matikan Virtual Environment</strong><br />
+Kalau udah selesai, ketik <code v-pre>deactivate</code> buat menonaktifkan environment-nya.</p>
+</li>
+</ol>
+<doc-anchor-target id="cek-instalasi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cek-instalasi">#</doc-anchor-trigger>
+        <span>Cek Instalasi</span>
+    </h2>
+</doc-anchor-target>
+<p>Setelah semua diinstal, pastikan semuanya berjalan lancar. Berikut cara ceknya:</p>
+<ol>
+<li><p><strong>Cek Python</strong><br />
+Buka terminal dan ketik <code v-pre>python</code> atau <code v-pre>python3</code>, terus coba jalankan kode ini:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import numpy as np</code></pre>
+<pre class="language-python"><code v-pre class="language-python">print(&quot;Hello, Python!&quot;)</code></pre>
 </doc-codeblock></div>
-<p>Dalam penulisan kode, biasanya NumPy diimport dengan alias <strong>np</strong> agar lebih mudah dan singkat dalam penggunaannya. Misalnya, untuk membuat array, kamu bisa menulis <code v-pre>np.array()</code> alih-alih <code v-pre>numpy.array()</code>.
-Sekarang, mari kita mulai menjelajahi dunia komputasi numerik dengan NumPy!</p>
+<p>Kalau berhasil, Python udah siap!</p>
+</li>
+<li><p><strong>Cek VS Code</strong><br />
+Di VS Code, buat file baru <code v-pre>hello.py</code>, tulis:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">print(&quot;Hello from VS Code!&quot;)</code></pre>
+</doc-codeblock></div>
+<p>Terus coba jalanin pakai terminal atau fitur run di VS Code.</p>
+</li>
+<li><p><strong>Cek Jupyter Notebook</strong><br />
+Buka Jupyter Notebook, buat notebook baru, terus jalankan:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">print(&quot;Hello from Jupyter!&quot;)</code></pre>
+</doc-codeblock></div>
+</li>
+<li><p><strong>Cek Google Colab</strong><br />
+Buka Colab, buat notebook baru, tulis:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">print(&quot;Hello from Google Colab!&quot;)</code></pre>
+</doc-codeblock></div>
+<p>Kalau jalan, berarti kamu udah siap belajar Python di mana aja!</p>
+</li>
+</ol>
+<hr>
+<p>Sekarang kamu udah punya semua alat yang kamu butuhin buat mulai belajar Python. Yuk, mulai eksplorasi dan selamat berkoding ria!</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -231,20 +384,20 @@ Sekarang, mari kita mulai menjelajahi dunia komputasi numerik dengan NumPy!</p>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../5-operasi-file/operasi_file/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../1-pengantar/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Operasi File di Python</span>
+                                                <span class="block mt-1">1 - Pengantar</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../6-numpy/array/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../1-pengantar/tips_and_trick/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Mengelola Array</span>
+                                                <span class="block mt-1">Tips dan Trik</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -288,6 +441,6 @@ Sekarang, mari kita mulai menjelajahi dunia komputasi numerik dengan NumPy!</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "6 - NumPy", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Persiapan Awal", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
