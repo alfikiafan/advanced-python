@@ -10,24 +10,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Penggunaan NumPy untuk Statistika</title>
-    <meta name="title" content="Penggunaan NumPy untuk Statistika">
-    <meta name="description" content="Halo! Kali ini kita akan membahas statistika dengan menggunakan pustaka NumPy di Python.">
+    <title>Tugas: Pengelolaan Data Pengguna dalam Aplikasi E-Commerce</title>
+    <meta name="title" content="Tugas: Pengelolaan Data Pengguna dalam Aplikasi E-Commerce">
+    <meta name="description" content="Buatlah sebuah program Python yang mengelola data pengguna pada sebuah aplikasi e-commerce sederhana.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/6-numpy/statistika/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/4-struktur-data/assignment/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/6-numpy/statistika/">
-    <meta property="og:title" content="Penggunaan NumPy untuk Statistika">
-    <meta property="og:description" content="Halo! Kali ini kita akan membahas statistika dengan menggunakan pustaka NumPy di Python.">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/4-struktur-data/assignment/">
+    <meta property="og:title" content="Tugas: Pengelolaan Data Pengguna dalam Aplikasi E-Commerce">
+    <meta property="og:description" content="Buatlah sebuah program Python yang mengelola data pengguna pada sebuah aplikasi e-commerce sederhana.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/6-numpy/statistika/">
-    <meta property="twitter:title" content="Penggunaan NumPy untuk Statistika">
-    <meta property="twitter:description" content="Halo! Kali ini kita akan membahas statistika dengan menggunakan pustaka NumPy di Python.">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/4-struktur-data/assignment/">
+    <meta property="twitter:title" content="Tugas: Pengelolaan Data Pengguna dalam Aplikasi E-Commerce">
+    <meta property="twitter:description" content="Buatlah sebuah program Python yang mengelola data pengguna pada sebuah aplikasi e-commerce sederhana.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -151,268 +151,251 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="penggunaan-numpy-untuk-statistika" class="break-words">
+<doc-anchor-target id="tugas-pengelolaan-data-pengguna-dalam-aplikasi-e-commerce" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#penggunaan-numpy-untuk-statistika">#</doc-anchor-trigger>
-        <span>Penggunaan NumPy untuk Statistika</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tugas-pengelolaan-data-pengguna-dalam-aplikasi-e-commerce">#</doc-anchor-trigger>
+        <span>Tugas: Pengelolaan Data Pengguna dalam Aplikasi E-Commerce</span>
     </h1>
 </doc-anchor-target>
-<p>Halo! Kali ini kita akan membahas <strong>statistika</strong> dengan menggunakan pustaka <strong>NumPy</strong> di Python. NumPy tidak hanya berfungsi untuk operasi matriks, tapi juga punya fungsi-fungsi statistika yang cukup lengkap dan mudah digunakan. Dalam statistika, kita sering berurusan dengan data, dan NumPy akan membantu kita menganalisisnya dengan cepat.</p>
-<doc-anchor-target id="persiapan-data">
+<p>Buatlah sebuah program Python yang mengelola data pengguna pada sebuah aplikasi e-commerce sederhana. Kalian diminta untuk menentukan sendiri struktur data yang tepat untuk menyimpan dan mengelola data berikut. Program juga harus memanfaatkan <strong>list comprehension</strong> untuk menyelesaikan salah satu tugas yang diberikan.</p>
+<doc-anchor-target id="data-yang-perlu-dikelola">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persiapan-data">#</doc-anchor-trigger>
-        <span>Persiapan Data</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#data-yang-perlu-dikelola">#</doc-anchor-trigger>
+        <span>Data yang Perlu Dikelola</span>
     </h2>
 </doc-anchor-target>
-<p>Sebelum kita masuk ke statistika, mari kita siapkan dulu data sederhana yang akan kita gunakan sepanjang materi ini. Misalnya, kita punya data tinggi badan sekelompok siswa (dalam cm):</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import numpy as np
-
-# Data tinggi badan siswa (cm)
-data = np.array([150, 162, 158, 170, 165, 155, 172, 160, 168, 159])
-print(data)</code></pre>
-</doc-codeblock></div>
-<p><strong>Penjelasan:</strong></p>
-<ul>
-<li><code v-pre>np.array()</code> digunakan untuk membuat array NumPy yang merepresentasikan data kita.</li>
-</ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">[150 162 158 170 165 155 172 160 168 159]</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="mean-rata-rata">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mean-rata-rata">#</doc-anchor-trigger>
-        <span>Mean (Rata-rata)</span>
-    </h2>
-</doc-anchor-target>
-<p>Rata-rata adalah nilai yang sering digunakan untuk mewakili suatu kelompok data. Di NumPy, kita bisa menghitung rata-rata dengan fungsi <code v-pre>np.mean()</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Menghitung mean
-mean_data = np.mean(data)
-print(f&quot;Mean: {mean_data}&quot;)</code></pre>
-</doc-codeblock></div>
-<p><strong>Penjelasan:</strong></p>
-<ul>
-<li><code v-pre>np.mean()</code> digunakan untuk menghitung rata-rata dari data.</li>
-</ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Mean: 161.9</code></pre>
-</doc-codeblock></div>
-<p><strong>Interpretasi:</strong><br />
-Rata-rata tinggi badan siswa dalam kelompok ini adalah 161,9 cm.</p>
-<doc-anchor-target id="median">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#median">#</doc-anchor-trigger>
-        <span>Median</span>
-    </h2>
-</doc-anchor-target>
-<p>Median adalah nilai tengah dari suatu dataset yang telah diurutkan. Kita bisa menghitung median dengan <code v-pre>np.median()</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Menghitung median
-median_data = np.median(data)
-print(f&quot;Median: {median_data}&quot;)</code></pre>
-</doc-codeblock></div>
-<p><strong>Penjelasan:</strong></p>
-<ul>
-<li><code v-pre>np.median()</code> menghitung nilai tengah dari dataset.</li>
-</ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Median: 161.0</code></pre>
-</doc-codeblock></div>
-<p><strong>Interpretasi:</strong><br />
-Median tinggi badan siswa adalah 161 cm, yang berarti 50% siswa memiliki tinggi lebih dari 161 cm dan 50% siswa lainnya lebih rendah dari 161 cm.</p>
-<doc-anchor-target id="modus">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#modus">#</doc-anchor-trigger>
-        <span>Modus</span>
-    </h2>
-</doc-anchor-target>
-<p>NumPy secara langsung tidak menyediakan fungsi <code v-pre>mode()</code>, tapi kita bisa menghitung modus menggunakan gabungan dari  <code v-pre>np.unique()</code> dengan logika sederhana.</p>
-<p>Mari kita bahas dengan lebih detail dan langkah demi langkah bagaimana kita bisa menggunakan <strong><code v-pre>np.unique</code></strong> untuk menghitung <strong>modus</strong> dalam NumPy.</p>
-<doc-anchor-target id="fungsi-npunique">
+<doc-anchor-target id="1-data-pengguna">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fungsi-npunique">#</doc-anchor-trigger>
-        <span>Fungsi np.unique()</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-data-pengguna">#</doc-anchor-trigger>
+        <span>1. Data Pengguna</span>
     </h3>
 </doc-anchor-target>
-<p>Fungsi <code v-pre>np.unique()</code> digunakan untuk mencari semua nilai unik dalam sebuah array. Selain itu, kita bisa menggunakan parameter <strong><code v-pre>return_counts=True</code></strong> untuk menghitung berapa kali setiap nilai unik muncul dalam array.</p>
-<p>Contoh:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import numpy as np
-
-data = np.array([150, 162, 158, 170, 165, 155, 172, 160, 168, 159, 158])
-
-# Menggunakan np.unique untuk mendapatkan nilai unik dan jumlah kemunculannya
-values, counts = np.unique(data, return_counts=True)
-print(&quot;Nilai unik:&quot;, values)
-print(&quot;Jumlah kemunculan:&quot;, counts)</code></pre>
-</doc-codeblock></div>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Nilai unik: [150 155 158 159 160 162 165 168 170 172]
-Jumlah kemunculan: [1 1 2 1 1 1 1 1 1 1]</code></pre>
-</doc-codeblock></div>
+<p>Setiap pengguna memiliki informasi berikut:</p>
 <ul>
-<li><code v-pre>values</code> berisi semua nilai unik dari data: <code v-pre>[150, 155, 158, 159, 160, 162, 165, 168, 170, 172]</code>.</li>
-<li><code v-pre>counts</code> berisi jumlah kemunculan masing-masing nilai dalam array: <code v-pre>[1, 1, 2, 1, 1, 1, 1, 1, 1, 1]</code>.</li>
+<li><code v-pre>username</code> (nama pengguna)</li>
+<li><code v-pre>email</code> (alamat email pengguna)</li>
+<li><code v-pre>purchases</code> (produk yang dibeli pengguna)</li>
+<li><code v-pre>tags</code> (kategori minat pengguna, seperti &#x27;elektronik&#x27;, &#x27;fashion&#x27;, dll.)</li>
 </ul>
-<p>Ini berarti, misalnya:</p>
-<ul>
-<li>Nilai <code v-pre>150</code> muncul <strong>1 kali</strong>.</li>
-<li>Nilai <code v-pre>158</code> muncul <strong>2 kali</strong> (sebagai contoh nilai yang paling sering muncul).</li>
-</ul>
-<doc-anchor-target id="cari-modus">
+<doc-anchor-target id="2-harga-produk">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#cari-modus">#</doc-anchor-trigger>
-        <span>Cari Modus</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-harga-produk">#</doc-anchor-trigger>
+        <span>2. Harga Produk</span>
     </h3>
 </doc-anchor-target>
-<p>Modus adalah nilai yang muncul <strong>paling sering</strong>. Untuk menemukannya, kita bisa menggunakan <code v-pre>np.argmax()</code> pada array <code v-pre>counts</code> untuk mencari indeks di mana nilai kemunculannya paling besar.</p>
-<p>Contoh:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Mencari indeks dengan kemunculan terbanyak
-index_of_mode = np.argmax(counts)
-
-# Menggunakan indeks ini untuk mengambil nilai yang paling sering muncul
-modus = values[index_of_mode]
-print(f&quot;Modus: {modus}&quot;)</code></pre>
-</doc-codeblock></div>
-<ul>
-<li><code v-pre>np.argmax(counts)</code> mencari indeks dari nilai terbesar dalam array <code v-pre>counts</code>. Dalam hal ini, <code v-pre>np.argmax(counts)</code> akan mengembalikan indeks <strong>2</strong>, karena nilai <strong>2</strong> (jumlah kemunculan terbanyak) ada di posisi ketiga.</li>
-<li>Dengan menggunakan indeks ini, kita bisa mendapatkan nilai modus dari <code v-pre>values</code>. Jadi <code v-pre>values[2]</code> adalah <strong>158</strong>, yang merupakan nilai modus.</li>
-</ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Modus: 158</code></pre>
-</doc-codeblock></div>
-<doc-anchor-target id="ilustrasi">
+<p>Nama produk dan harga masing-masing produk.</p>
+<doc-anchor-target id="fitur-program-yang-harus-dibuat">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#fitur-program-yang-harus-dibuat">#</doc-anchor-trigger>
+        <span>Fitur Program yang Harus Dibuat</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="1-menambahkan-pengguna-baru">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#ilustrasi">#</doc-anchor-trigger>
-        <span>Ilustrasi</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-menambahkan-pengguna-baru">#</doc-anchor-trigger>
+        <span>1. Menambahkan Pengguna Baru</span>
     </h3>
 </doc-anchor-target>
-<p>Jika kita ambil dataset sederhana seperti ini:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">data = [150, 162, 158, 170, 165, 155, 172, 160, 168, 159, 158]</code></pre>
-</doc-codeblock></div>
-<ul>
-<li><p><strong>Langkah 1</strong>: <code v-pre>np.unique(data, return_counts=True)</code> menghasilkan dua array:</p>
-<ul>
-<li><code v-pre>values</code>: <code v-pre>[150, 155, 158, 159, 160, 162, 165, 168, 170, 172]</code></li>
-<li><code v-pre>counts</code>: <code v-pre>[1, 1, 2, 1, 1, 1, 1, 1, 1, 1]</code></li>
-</ul>
-</li>
-<li><p><strong>Langkah 2</strong>: <code v-pre>np.argmax(counts)</code> mencari indeks dengan frekuensi kemunculan terbanyak. Dalam kasus ini, indeks <strong>2</strong> (karena <code v-pre>counts[2] = 2</code>).</p>
-</li>
-<li><p><strong>Langkah 3</strong>: Dari array <code v-pre>values</code>, kita ambil nilai di indeks <strong>2</strong>, yaitu <strong>158</strong>, yang merupakan modus dari dataset ini.</p>
-</li>
-</ul>
-<doc-anchor-target id="varians">
+<p>Program harus bisa menambah pengguna baru berdasarkan input yang diberikan.</p>
+<doc-anchor-target id="2-mencari-pengguna-berdasarkan-username">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-mencari-pengguna-berdasarkan-username">#</doc-anchor-trigger>
+        <span>2. Mencari Pengguna Berdasarkan Username</span>
+    </h3>
+</doc-anchor-target>
+<p>Cari pengguna berdasarkan <code v-pre>username</code> menggunakan metode yang efisien.</p>
+<doc-anchor-target id="3-menghitung-total-belanjaan-pengguna">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-menghitung-total-belanjaan-pengguna">#</doc-anchor-trigger>
+        <span>3. Menghitung Total Belanjaan Pengguna</span>
+    </h3>
+</doc-anchor-target>
+<p>Program harus menghitung total belanjaan pengguna berdasarkan produk yang dibeli dan harga masing-masing produk.</p>
+<doc-anchor-target id="4-menampilkan-pengguna-berdasarkan-minat">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-menampilkan-pengguna-berdasarkan-minat">#</doc-anchor-trigger>
+        <span>4. Menampilkan Pengguna Berdasarkan Minat</span>
+    </h3>
+</doc-anchor-target>
+<p>Tampilkan semua pengguna yang tertarik pada kategori tertentu (misalnya: semua pengguna yang tertarik pada kategori <code v-pre>fashion</code>).</p>
+<doc-anchor-target id="5-menggabungkan-semua-produk-yang-pernah-dibeli">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-menggabungkan-semua-produk-yang-pernah-dibeli">#</doc-anchor-trigger>
+        <span>5. Menggabungkan Semua Produk yang Pernah Dibeli</span>
+    </h3>
+</doc-anchor-target>
+<p>Gabungkan daftar semua produk yang pernah dibeli oleh pengguna tanpa ada duplikat.</p>
+<doc-anchor-target id="6-list-comprehension">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-list-comprehension">#</doc-anchor-trigger>
+        <span>6. List Comprehension</span>
+    </h3>
+</doc-anchor-target>
+<p>Kalian <strong>wajib</strong> menggunakan list comprehension minimal di salah satu fitur di atas (misalnya, saat mencari pengguna berdasarkan kategori minat atau menghitung total pembelian).</p>
+<doc-anchor-target id="instruksi">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#varians">#</doc-anchor-trigger>
-        <span>Varians</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instruksi">#</doc-anchor-trigger>
+        <span>Instruksi</span>
     </h2>
 </doc-anchor-target>
-<p>Varians adalah ukuran penyebaran data. Kita dapat menghitung varians dengan <code v-pre>np.var()</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Menghitung varians
-variance_data = np.var(data)
-print(f&quot;Varians: {variance_data}&quot;)</code></pre>
-</doc-codeblock></div>
-<p><strong>Penjelasan:</strong></p>
 <ul>
-<li><code v-pre>np.var()</code> digunakan untuk menghitung varians data.</li>
+<li>Kalian <strong>bebas menentukan struktur data</strong> yang paling sesuai untuk setiap bagian (misalnya, apakah data <code v-pre>purchases</code> harus disimpan dalam bentuk list, tuple, atau set).</li>
+<li>Jelaskan alasan pemilihan struktur data dalam komentar di kode.</li>
 </ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Varians: 44.89</code></pre>
-</doc-codeblock></div>
-<p><strong>Interpretasi:</strong><br />
-Varians menunjukkan bahwa tinggi badan siswa tersebar dengan nilai penyebaran sekitar 44,89.</p>
-<doc-anchor-target id="standar-deviasi">
+<doc-anchor-target id="contoh-kode">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#standar-deviasi">#</doc-anchor-trigger>
-        <span>Standar Deviasi</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode">#</doc-anchor-trigger>
+        <span>Contoh Kode</span>
     </h2>
 </doc-anchor-target>
-<p>Standar deviasi adalah akar kuadrat dari varians, yang menunjukkan seberapa jauh data menyebar dari rata-rata. Kita bisa menghitungnya dengan <code v-pre>np.std()</code>.</p>
+<p>Berikut adalah contoh kode awal yang bisa kalian gunakan untuk memulai mengerjakan program:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Menghitung standar deviasi
-std_dev_data = np.std(data)
-print(f&quot;Standar Deviasi: {std_dev_data}&quot;)</code></pre>
+<pre class="language-python"><code v-pre class="language-python"># Data awal pengguna dan harga produk
+users = [
+    {
+        &quot;&quot;&quot;
+        Data pengguna pertama
+        Harus memuat informasi username, email, produk yang dibeli, dan kategori minat
+        Sesuaikan dengan struktur data yang sesuai menurutmu
+        &quot;&quot;&quot;
+    },
+    {
+        &quot;&quot;&quot;
+        Data pengguna kedua
+        Harus memuat informasi username, email, produk yang dibeli, dan kategori minat
+        Teruskan sampai beberapa pengguna (minimal 3)
+        &quot;&quot;&quot;
+    }
+]
+
+product_prices = {
+    &quot;&quot;&quot;
+    Berisi daftar dan harga seluruh produk. Pilih struktur data yang menurutmu paling tepat 
+    &quot;&quot;&quot;
+}
+
+# Fungsi untuk menambahkan pengguna baru
+def add_user():
+    &quot;&quot;&quot;
+    Fungsi ini harus meminta input dari pengguna berupa username, email,
+    produk yang dibeli, dan kategori minat (tags). 
+    Data pengguna baru harus ditambahkan ke dalam list `users`.
+    &quot;&quot;&quot;
+    pass  # Implementasikan fungsi ini
+
+# Fungsi untuk mencari pengguna berdasarkan username
+def find_user_by_username():
+    &quot;&quot;&quot;
+    Fungsi ini harus meminta input username dan mencari pengguna
+    dalam list `users`. Jika ditemukan, tampilkan informasi pengguna.
+    Jika tidak, beri pesan bahwa pengguna tidak ditemukan.
+    &quot;&quot;&quot;
+    pass  # Implementasikan fungsi ini
+
+# Fungsi untuk menghitung total belanjaan pengguna
+def calculate_total_spent():
+    &quot;&quot;&quot;
+    Fungsi ini harus meminta input username, mencari pengguna,
+    dan menghitung total harga dari produk yang dibeli berdasarkan
+    `product_prices`. Jika pengguna tidak ditemukan, beri pesan.
+    &quot;&quot;&quot;
+    pass  # Implementasikan fungsi ini
+
+# Fungsi untuk menampilkan pengguna berdasarkan minat (tags)
+def find_users_by_tag():
+    &quot;&quot;&quot;
+    Fungsi ini harus meminta input kategori minat (tag) dan mencari
+    pengguna yang memiliki minat tersebut. Jika ditemukan, tampilkan
+    daftar pengguna yang sesuai.
+    &quot;&quot;&quot;
+    pass  # Implementasikan fungsi ini
+
+# Fungsi untuk menggabungkan semua produk yang pernah dibeli
+def get_all_purchased_products():
+    &quot;&quot;&quot;
+    Fungsi ini harus menggabungkan semua produk yang pernah dibeli oleh
+    seluruh pengguna tanpa ada duplikasi, pilih struktur data yang menurutmu cocok.
+    Tampilkan daftar produk yang sudah dibeli.
+    &quot;&quot;&quot;
+    pass  # Implementasikan fungsi ini
+
+# Fungsi untuk menampilkan menu CLI
+def show_menu():
+    print(&quot;\n=== Aplikasi E-Commerce CLI ===&quot;)
+    print(&quot;1. Tambah Pengguna Baru&quot;)
+    print(&quot;2. Cari Pengguna Berdasarkan Username&quot;)
+    print(&quot;3. Hitung Total Belanjaan Pengguna&quot;)
+    print(&quot;4. Cari Pengguna Berdasarkan Minat/Kategori&quot;)
+    print(&quot;5. Lihat Semua Produk yang Pernah Dibeli&quot;)
+    print(&quot;6. Keluar&quot;)
+
+# Fungsi utama yang mengontrol alur program
+def main():
+    while True:
+        show_menu()
+        choice = input(&quot;Pilih opsi (1-6): &quot;).strip()
+        
+        if choice == '1':
+            add_user()
+        elif choice == '2':
+            find_user_by_username()
+        elif choice == '3':
+            calculate_total_spent()
+        elif choice == '4':
+            find_users_by_tag()
+        elif choice == '5':
+            get_all_purchased_products()
+        elif choice == '6':
+            print(&quot;Keluar dari aplikasi.&quot;)
+            break
+        else:
+            print(&quot;Pilihan tidak valid. Silakan pilih opsi yang benar.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    main()</code></pre>
 </doc-codeblock></div>
-<p><strong>Penjelasan:</strong></p>
-<ul>
-<li><code v-pre>np.std()</code> menghitung standar deviasi dari data.</li>
-</ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Standar Deviasi: 6.704471673392635</code></pre>
-</doc-codeblock></div>
-<p><strong>Interpretasi:</strong><br />
-Standar deviasi dari tinggi badan siswa adalah sekitar 6,7 cm. Ini menunjukkan bahwa data cenderung menyebar sekitar 6,7 cm dari rata-ratanya.</p>
-<doc-anchor-target id="kuartil">
+<doc-anchor-target id="contoh-output-program">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#kuartil">#</doc-anchor-trigger>
-        <span>Kuartil</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-output-program">#</doc-anchor-trigger>
+        <span>Contoh Output Program</span>
     </h2>
 </doc-anchor-target>
-<p>Kuartil membagi data menjadi empat bagian. Kuartil pertama (Q1) dan ketiga (Q3) adalah nilai yang masing-masing memisahkan 25% dan 75% data. Kita bisa menggunakan <code v-pre>np.percentile()</code> untuk menghitungnya.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Menghitung kuartil pertama (Q1) dan kuartil ketiga (Q3)
-Q1 = np.percentile(data, 25)
-Q3 = np.percentile(data, 75)
-print(f&quot;Kuartil 1 (Q1): {Q1}&quot;)
-print(f&quot;Kuartil 3 (Q3): {Q3}&quot;)</code></pre>
+<pre class="language-bash"><code v-pre class="language-bash">=== Aplikasi E-Commerce CLI ===
+1. Tambah Pengguna Baru
+2. Cari Pengguna Berdasarkan Username
+3. Hitung Total Belanjaan Pengguna
+4. Cari Pengguna Berdasarkan Minat/Kategori
+5. Lihat Semua Produk yang Pernah Dibeli
+6. Keluar
+Pilih opsi (1-6): 1
+Masukkan username: aldo
+Masukkan email: aldo@example.com
+Masukkan produk yang dibeli (pisahkan dengan koma): laptop, headphone
+Masukkan minat pengguna (pisahkan dengan koma): teknologi, gaming
+Pengguna aldo berhasil ditambahkan!</code></pre>
 </doc-codeblock></div>
-<p><strong>Penjelasan:</strong></p>
-<ul>
-<li><code v-pre>np.percentile()</code> digunakan untuk menghitung persentil tertentu dalam data. Kuartil pertama adalah persentil ke-25, dan kuartil ketiga adalah persentil ke-75.</li>
-</ul>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Kuartil 1 (Q1): 158.0
-Kuartil 3 (Q3): 167.25</code></pre>
-</doc-codeblock></div>
-<p><strong>Interpretasi:</strong></p>
-<ul>
-<li>Q1 (158 cm) adalah nilai di bawahnya terdapat 25% data.</li>
-<li>Q3 (167,25 cm) adalah nilai di bawahnya terdapat 75% data.</li>
-</ul>
-<doc-anchor-target id="rentang-interkuartil-iqr">
+<doc-anchor-target id="ketentuan-pengumpulan">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#rentang-interkuartil-iqr">#</doc-anchor-trigger>
-        <span>Rentang Interkuartil (IQR)</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ketentuan-pengumpulan">#</doc-anchor-trigger>
+        <span>Ketentuan Pengumpulan</span>
     </h2>
 </doc-anchor-target>
-<p>Rentang interkuartil adalah selisih antara kuartil ketiga dan kuartil pertama, digunakan untuk mengukur penyebaran tengah data.</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Menghitung rentang interkuartil (IQR)
-IQR = Q3 - Q1
-print(f&quot;Rentang Interkuartil (IQR): {IQR}&quot;)</code></pre>
-</doc-codeblock></div>
-<p>Output:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-none"><code v-pre class="language-none">Rentang Interkuartil (IQR): 9.25</code></pre>
-</doc-codeblock></div>
-<p><strong>Interpretasi:</strong><br />
-IQR sebesar 9,25 cm menunjukkan bahwa penyebaran data di antara kuartil pertama dan ketiga cukup kecil.</p>
-<doc-anchor-target id="studi-kasus-analisis-tinggi-badan">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#studi-kasus-analisis-tinggi-badan">#</doc-anchor-trigger>
-        <span>Studi Kasus: Analisis Tinggi Badan</span>
-    </h2>
+<doc-anchor-target id="deadline">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#deadline">#</doc-anchor-trigger>
+        <span>Deadline</span>
+    </h3>
 </doc-anchor-target>
-<p>Mari kita lakukan analisis kecil dari data tinggi badan siswa ini.</p>
-<ul>
-<li><strong>Rata-rata (mean)</strong> tinggi badan siswa adalah 161,9 cm. Ini bisa menjadi gambaran umum tentang tinggi badan rata-rata di kelompok ini.</li>
-<li><strong>Median</strong> (161 cm) menunjukkan bahwa distribusi data cukup merata, dengan separuh siswa lebih tinggi dan separuh lainnya lebih pendek dari 161 cm.</li>
-<li><strong>Standar deviasi</strong> (6,7 cm) menunjukkan bahwa ada variasi tinggi badan siswa, tetapi kebanyakan siswa memiliki tinggi sekitar 6-7 cm di sekitar rata-rata.</li>
-<li><strong>IQR</strong> sebesar 9,25 cm juga menunjukkan bahwa data tidak terlalu tersebar luas di antara kuartil pertama dan ketiga.</li>
-</ul>
+<p>Kumpulkan tugas kalian dalam bentuk file Python (.py) ke dalam Google Classroom paling lambat Senin, 7 Oktober 2024 pukul 21.00 WIB.</p>
+<doc-anchor-target id="nama-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#nama-file">#</doc-anchor-trigger>
+        <span>Nama File</span>
+    </h3>
+</doc-anchor-target>
+<p>Tugas3_NIM_Nama.py</p>
+<p><strong>Selamat mengerjakan!</strong></p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -422,16 +405,23 @@ IQR sebesar 9,25 cm menunjukkan bahwa penyebaran data di antara kuartil pertama 
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../6-numpy/matriks/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../4-struktur-data/code/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Perhitungan Matriks</span>
+                                                <span class="block mt-1">Contoh Kode</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../5-operasi-file/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">5 - Operasi File</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -472,6 +462,6 @@ IQR sebesar 9,25 cm menunjukkan bahwa penyebaran data di antara kuartil pertama 
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Penggunaan NumPy untuk Statistika", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Tugas", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>

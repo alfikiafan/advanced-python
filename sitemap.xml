@@ -8,12 +8,7 @@
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/</loc>
     <lastmod>2024-09-16T12:17:28Z</lastmod>
-    <priority>0.82</priority>
-  </url>
-  <url>
-    <loc>https://alfiki.my.id/advanced-python/1-pengantar/</loc>
-    <lastmod>2024-09-22T23:30:37Z</lastmod>
-    <priority>0.8</priority>
+    <priority>0.79</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/</loc>
@@ -21,49 +16,54 @@
     <priority>0.78</priority>
   </url>
   <url>
+    <loc>https://alfiki.my.id/advanced-python/1-pengantar/</loc>
+    <lastmod>2024-09-22T23:30:37Z</lastmod>
+    <priority>0.77</priority>
+  </url>
+  <url>
     <loc>https://alfiki.my.id/advanced-python/2-oop-bagian-1/</loc>
     <lastmod>2024-09-16T12:05:59Z</lastmod>
-    <priority>0.72</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/6-numpy/</loc>
     <lastmod>2024-09-20T01:48:39Z</lastmod>
-    <priority>0.59</priority>
+    <priority>0.56</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/5-operasi-file/</loc>
     <lastmod>2024-09-20T08:59:57Z</lastmod>
-    <priority>0.51</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/1-pengantar/setup/</loc>
     <lastmod>2024-09-22T23:27:04Z</lastmod>
-    <priority>0.46</priority>
+    <priority>0.45</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/1-pengantar/tips_and_trick/</loc>
     <lastmod>2024-09-22T23:32:51Z</lastmod>
-    <priority>0.45</priority>
+    <priority>0.44</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/1-pengantar/python_basic/</loc>
     <lastmod>2024-09-22T23:33:24Z</lastmod>
-    <priority>0.45</priority>
+    <priority>0.44</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/1-pengantar/code/</loc>
     <lastmod>2024-09-16T06:36:09Z</lastmod>
-    <priority>0.44</priority>
+    <priority>0.43</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/2-oop-bagian-1/class_object/</loc>
     <lastmod>2024-09-20T09:24:21Z</lastmod>
-    <priority>0.43</priority>
+    <priority>0.42</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/2-oop-bagian-1/code/</loc>
     <lastmod>2024-09-16T06:36:02Z</lastmod>
-    <priority>0.42</priority>
+    <priority>0.41</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/2-oop-bagian-1/assignment/</loc>
@@ -73,7 +73,7 @@
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/inheritance/</loc>
     <lastmod>2024-09-20T09:24:28Z</lastmod>
-    <priority>0.4</priority>
+    <priority>0.39</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/encapsulation/</loc>
@@ -83,12 +83,12 @@
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/polymorphism/</loc>
     <lastmod>2024-09-20T09:24:37Z</lastmod>
-    <priority>0.39</priority>
+    <priority>0.38</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/abstraction/</loc>
     <lastmod>2024-09-22T23:40:55Z</lastmod>
-    <priority>0.38</priority>
+    <priority>0.37</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/code/</loc>
@@ -97,8 +97,8 @@
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/3-oop-bagian-2/assignment/</loc>
-    <lastmod>2024-09-16T09:25:10Z</lastmod>
-    <priority>0.37</priority>
+    <lastmod>2024-09-25T08:57:10Z</lastmod>
+    <priority>0.36</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/list/</loc>
@@ -108,12 +108,12 @@
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/tuple/</loc>
     <lastmod>2024-09-20T09:24:55Z</lastmod>
-    <priority>0.35</priority>
+    <priority>0.34</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/dictionary/</loc>
     <lastmod>2024-09-20T09:25:01Z</lastmod>
-    <priority>0.34</priority>
+    <priority>0.33</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/set/</loc>
@@ -123,7 +123,7 @@
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/list_comprehension/</loc>
     <lastmod>2024-09-20T09:25:06Z</lastmod>
-    <priority>0.33</priority>
+    <priority>0.32</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/4-struktur-data/code/</loc>
@@ -131,23 +131,28 @@
     <priority>0.32</priority>
   </url>
   <url>
+    <loc>https://alfiki.my.id/advanced-python/4-struktur-data/assignment/</loc>
+    <lastmod>2024-09-25T08:59:37Z</lastmod>
+    <priority>0.31</priority>
+  </url>
+  <url>
     <loc>https://alfiki.my.id/advanced-python/5-operasi-file/operasi_file/</loc>
     <lastmod>2024-09-20T09:25:12Z</lastmod>
-    <priority>0.31</priority>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/6-numpy/array/</loc>
     <lastmod>2024-09-20T09:12:30Z</lastmod>
-    <priority>0.29</priority>
+    <priority>0.28</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/6-numpy/matriks/</loc>
     <lastmod>2024-09-20T09:25:19Z</lastmod>
-    <priority>0.29</priority>
+    <priority>0.28</priority>
   </url>
   <url>
     <loc>https://alfiki.my.id/advanced-python/6-numpy/statistika/</loc>
     <lastmod>2024-09-20T09:25:22Z</lastmod>
-    <priority>0.24</priority>
+    <priority>0.23</priority>
   </url>
 </urlset>
