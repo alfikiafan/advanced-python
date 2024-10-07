@@ -10,21 +10,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Contoh Kode Python Dasar</title>
-    <meta name="title" content="Contoh Kode Python Dasar">
+    <title>Assignment</title>
+    <meta name="title" content="Assignment">
+    <meta name="description" content="Buat satu file Python ( tugas_praktikum.py) untuk menyelesaikan semua soal di bawah.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/1-pengantar/code/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/6-numpy/assignment/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/1-pengantar/code/">
-    <meta property="og:title" content="Contoh Kode Python Dasar">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/6-numpy/assignment/">
+    <meta property="og:title" content="Assignment">
+    <meta property="og:description" content="Buat satu file Python ( tugas_praktikum.py) untuk menyelesaikan semua soal di bawah.">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/1-pengantar/code/">
-    <meta property="twitter:title" content="Contoh Kode Python Dasar">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/6-numpy/assignment/">
+    <meta property="twitter:title" content="Assignment">
+    <meta property="twitter:description" content="Buat satu file Python ( tugas_praktikum.py) untuk menyelesaikan semua soal di bawah.">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -33,7 +36,6 @@
     <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.781585054007" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.781585054007" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.781585054007" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -148,87 +150,179 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="contoh-kode-python-dasar" class="break-words">
+<doc-anchor-target id="assignment" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode-python-dasar">#</doc-anchor-trigger>
-        <span>Contoh Kode Python Dasar</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#assignment">#</doc-anchor-trigger>
+        <span>Assignment</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="praktikum-operasi-file-dan-numpy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#praktikum-operasi-file-dan-numpy">#</doc-anchor-trigger>
+        <span><strong>Praktikum: Operasi File dan NumPy</strong></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="instruksi-umum">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instruksi-umum">#</doc-anchor-trigger>
+        <span><strong>Instruksi Umum:</strong></span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li>Buat satu file Python (<code v-pre>tugas_praktikum.py</code>) untuk menyelesaikan semua soal di bawah.</li>
+<li>Gunakan modul <strong>os</strong> dan <strong>pathlib</strong> untuk menangani file, serta <strong>NumPy</strong> untuk perhitungan matriks dan statistik.</li>
+<li>Setelah menyelesaikan semua tugas, kirimkan file Python yang berisi solusi Anda.</li>
+</ol>
+<doc-anchor-target id="bagian-1-operasi-file">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bagian-1-operasi-file">#</doc-anchor-trigger>
+        <span><strong>Bagian 1: Operasi File</strong></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="soal-1-membaca-dan-menulis-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#soal-1-membaca-dan-menulis-file">#</doc-anchor-trigger>
+        <span><strong>Soal 1: Membaca dan Menulis File</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Buat file teks baru bernama <strong>&quot;data.txt&quot;</strong>.</li>
+<li>Isi file tersebut dengan angka-angka berikut, masing-masing pada satu baris:
 <div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python"># Mendeklarasikan variabel dengan tipe data yang berbeda
-x = 10           # Kotak x berisi angka bulat (integer) 10
-y = 3.14         # Kotak y berisi angka desimal (float) 3.14
-name = &quot;Fiki&quot;    # Kotak name berisi teks (string) &quot;Fiki&quot;
-is_active = True # Kotak is_active berisi nilai boolean True
-
-# Operator Aritmatika
-a = 5
-b = 2
-print(a + b)  # Menjumlahkan 5 dan 2, hasilnya 7
-print(a - b)  # Mengurangi 5 dengan 2, hasilnya 3
-print(a * b)  # Mengalikan 5 dengan 2, hasilnya 10
-print(a / b)  # Membagi 5 dengan 2, hasilnya 2.5
-print(a // b) # Pembagian bulat 5 dibagi 2, hasilnya 2
-print(a % b)  # Sisa pembagian 5 dengan 2, hasilnya 1
-print(a ** b) # 5 dipangkatkan 2, hasilnya 25
-
-# Operator Pembanding
-print(a == b) # Apakah 5 sama dengan 2? Hasilnya False
-print(a != b) # Apakah 5 tidak sama dengan 2? Hasilnya True
-print(a &gt; b)  # Apakah 5 lebih besar dari 2? Hasilnya True
-print(a &lt; b)  # Apakah 5 lebih kecil dari 2? Hasilnya False
-
-# Operator Logika
-x = True
-y = False
-print(x and y) # Apakah x dan y keduanya True? Hasilnya False
-print(x or y)  # Apakah x atau y salah satunya True? Hasilnya True
-print(not x)   # Negasi dari x, hasilnya False
-
-# Program menentukan jenis segitiga
-a = 3
-b = 4
-c = 5
-
-if a == b == c:
-    print(&quot;Segitiga sama sisi&quot;)
-elif a == b or b == c or a == c:
-    print(&quot;Segitiga sama kaki&quot;)
-else:
-    print(&quot;Segitiga sembarang&quot;)
-
-# Menghitung jumlah bilangan dari 1 hingga 5
-total = 0
-for i in range(1, 6):
-    print(i)
-    total += i
-print(&quot;Jumlah bilangan dari 1 hingga 5 adalah:&quot;, total)
-
-# Menghitung faktorial dari sebuah angka menggunakan while loop
-n = 5
-faktorial = 1
-while n &gt; 0:
-    faktorial *= n
-    n -= 1
-print(&quot;Faktorial dari 5 adalah:&quot;, faktorial)
-
-# Mendefinisikan fungsi untuk menghitung kuadrat dari sebuah angka
-def kuadrat(x):
-    return x * x
-
-# Memanggil fungsi
-angka = 4
-print(&quot;Kuadrat dari&quot;, angka, &quot;adalah&quot;, kuadrat(angka))
-
-# Fungsi untuk menghitung luas segitiga
-def luas_segitiga(alas, tinggi):
-    return int(0.5 * alas * tinggi)
-
-# Memanggil fungsi dengan parameter
-alas = 5
-tinggi = 10
-print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tinggi, &quot;adalah&quot;, luas_segitiga(alas, tinggi))</code></pre>
+<pre class="language-none"><code v-pre class="language-none">10
+20
+30
+40
+50</code></pre>
 </doc-codeblock></div>
+</li>
+<li>Setelah menulis, baca kembali isi file dan cetak hasilnya ke layar.</li>
+</ul>
+<p><strong>Hint:</strong></p>
+<ul>
+<li>Gunakan mode <strong>&quot;w&quot;</strong> untuk menulis file.</li>
+<li>Gunakan mode <strong>&quot;r&quot;</strong> untuk membaca file.</li>
+<li>Pastikan file ditutup dengan benar, baik secara manual maupun menggunakan <code v-pre>with</code>.</li>
+</ul>
+<doc-anchor-target id="soal-2-menghapus-dan-mengganti-nama-file">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#soal-2-menghapus-dan-mengganti-nama-file">#</doc-anchor-trigger>
+        <span><strong>Soal 2: Menghapus dan Mengganti Nama File</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Buatlah program yang mengecek apakah file <strong>&quot;data.txt&quot;</strong> ada atau tidak. Jika ada, ganti nama file tersebut menjadi <strong>&quot;data_baru.txt&quot;</strong>.</li>
+<li>Jika file tidak ada, tampilkan pesan &quot;File tidak ditemukan&quot;.</li>
+</ul>
+<p><strong>Hint:</strong></p>
+<ul>
+<li>Gunakan <code v-pre>os.rename()</code> atau <code v-pre>Path.rename()</code> untuk mengganti nama file.</li>
+<li>Gunakan <code v-pre>os.path.exists()</code> atau <code v-pre>Path.exists()</code> untuk mengecek keberadaan file.</li>
+</ul>
+<hr>
+<doc-anchor-target id="bagian-2-operasi-numpy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bagian-2-operasi-numpy">#</doc-anchor-trigger>
+        <span><strong>Bagian 2: Operasi NumPy</strong></span>
+    </h3>
+</doc-anchor-target>
+<doc-anchor-target id="soal-3-pengolahan-data-dengan-numpy">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#soal-3-pengolahan-data-dengan-numpy">#</doc-anchor-trigger>
+        <span><strong>Soal 3: Pengolahan Data dengan NumPy</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Setelah mengubah nama file di Soal 2, baca kembali file <strong>&quot;data_baru.txt&quot;</strong> dan simpan isi file tersebut ke dalam array NumPy.</li>
+<li>Cetak array tersebut.</li>
+</ul>
+<p><strong>Hint:</strong></p>
+<ul>
+<li>Gunakan <code v-pre>np.loadtxt()</code> untuk membaca file dan mengubahnya menjadi array NumPy.</li>
+</ul>
+<doc-anchor-target id="soal-4-operasi-matriks">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#soal-4-operasi-matriks">#</doc-anchor-trigger>
+        <span><strong>Soal 4: Operasi Matriks</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Buat matriks baru dari array yang diperoleh dari Soal 3.
+<ul>
+<li>Jika panjang array adalah 5 (sesuai isi file), bentuk matriks 5x1.</li>
+<li>Cetak matriks tersebut.</li>
+</ul>
+</li>
+<li>Lakukan operasi berikut pada matriks:
+<ul>
+<li><strong>Transpose</strong> dari matriks.</li>
+<li><strong>Perkalian matriks</strong> antara matriks dan transposenya.</li>
+</ul>
+</li>
+<li>Cetak hasil operasi tersebut.</li>
+</ul>
+<p><strong>Hint:</strong></p>
+<ul>
+<li>Gunakan <code v-pre>.reshape()</code> untuk mengubah array menjadi matriks.</li>
+<li>Gunakan <code v-pre>np.transpose()</code> untuk transpose matriks.</li>
+<li>Gunakan <code v-pre>np.dot()</code> untuk perkalian matriks.</li>
+</ul>
+<doc-anchor-target id="soal-5-statistika">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#soal-5-statistika">#</doc-anchor-trigger>
+        <span><strong>Soal 5: Statistika</strong></span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li>Dari array di Soal 3, hitung nilai-nilai berikut:
+<ul>
+<li><strong>Rata-rata</strong> (mean)</li>
+<li><strong>Median</strong></li>
+<li><strong>Standar deviasi</strong></li>
+<li><strong>Kuartil pertama</strong> (Q1)</li>
+<li><strong>Kuartil ketiga</strong> (Q3)</li>
+</ul>
+</li>
+<li>Cetak semua hasil perhitungan ke layar.</li>
+</ul>
+<p><strong>Hint:</strong></p>
+<ul>
+<li>Gunakan <code v-pre>np.mean()</code>, <code v-pre>np.median()</code>, <code v-pre>np.std()</code>, dan <code v-pre>np.percentile()</code> untuk menghitung statistik.</li>
+</ul>
+<hr>
+<doc-anchor-target id="penilaian">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#penilaian">#</doc-anchor-trigger>
+        <span><strong>Penilaian</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Soal 1:</strong> 20 poin</li>
+<li><strong>Soal 2:</strong> 20 poin</li>
+<li><strong>Soal 3:</strong> 20 poin</li>
+<li><strong>Soal 4:</strong> 20 poin</li>
+<li><strong>Soal 5:</strong> 20 poin</li>
+</ul>
+<p>Total: <strong>100 poin</strong></p>
+<doc-anchor-target id="tips-pengerjaan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tips-pengerjaan">#</doc-anchor-trigger>
+        <span><strong>Tips Pengerjaan:</strong></span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li>Kerjakan sesuai urutan. Pastikan setiap bagian bekerja sebelum melanjutkan ke soal berikutnya.</li>
+<li>Gunakan <code v-pre>print()</code> untuk mengecek hasil setiap langkah.</li>
+<li>Jika ada error, gunakan pesan error untuk memperbaiki masalah.</li>
+</ul>
+<doc-anchor-target id="batas-waktu">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#batas-waktu">#</doc-anchor-trigger>
+        <span><strong>Batas Waktu:</strong></span>
+    </h3>
+</doc-anchor-target>
+<p>1 Jam.</p>
+<p>Jika ada yang tidak jelas atau membutuhkan bantuan, silakan tanyakan ke pengajar selama praktikum berlangsung.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -238,23 +332,16 @@ print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tingg
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../1-pengantar/python_basic/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../6-numpy/statistika/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Dasar-​dasar Python</span>
+                                                <span class="block mt-1">Penggunaan Num​Py untuk Statistika</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../2-oop-bagian-1/">
-                                            <span>
-                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">2 - OOP Bagian 1</span>
-                                            </span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
-                                        </a>
                                     </div>
                                 </nav>
                             </footer>
@@ -295,6 +382,6 @@ print(&quot;Luas segitiga dengan alas&quot;, alas, &quot;dan tinggi&quot;, tingg
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Contoh Kode Python Dasar", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Assignment", level: 2, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
