@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/advanced-python">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.781585054007">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.782024761835">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>NumPy</title>
-    <meta name="title" content="NumPy">
-    <meta name="description" content="NumPy adalah singkatan dari Numerical Python, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien.">
+    <title>Analisis Data dengan Python</title>
+    <meta name="title" content="Analisis Data dengan Python">
+    <meta name="description" content="Analisis data adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://alfiki.my.id/advanced-python/6-numpy/">
@@ -20,23 +20,23 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alfiki.my.id/advanced-python/6-numpy/">
-    <meta property="og:title" content="NumPy">
-    <meta property="og:description" content="NumPy adalah singkatan dari Numerical Python, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien.">
+    <meta property="og:title" content="Analisis Data dengan Python">
+    <meta property="og:description" content="Analisis data adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan...">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/6-numpy/">
-    <meta property="twitter:title" content="NumPy">
-    <meta property="twitter:description" content="NumPy adalah singkatan dari Numerical Python, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien.">
+    <meta property="twitter:title" content="Analisis Data dengan Python">
+    <meta property="twitter:description" content="Analisis data adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan...">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../resources/css/retype.css?v=3.6.0.781585054007" rel="stylesheet">
+    <link href="../resources/css/retype.css?v=3.6.0.782024761835" rel="stylesheet">
 
-    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.781585054007" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.782024761835" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.781585054007" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.781585054007" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.782024761835" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.782024761835" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -151,21 +151,65 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="numpy" class="break-words">
+<doc-anchor-target id="analisis-data-dengan-python" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#numpy">#</doc-anchor-trigger>
-        <span>NumPy</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#analisis-data-dengan-python">#</doc-anchor-trigger>
+        <span>Analisis Data dengan Python</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="apa-itu-numpy">
+<doc-anchor-target id="apa-itu-analisis-data">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-numpy">#</doc-anchor-trigger>
-        <span>Apa itu NumPy?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-analisis-data">#</doc-anchor-trigger>
+        <span>Apa Itu Analisis Data?</span>
     </h2>
 </doc-anchor-target>
-<p><strong>NumPy</strong> adalah singkatan dari <strong>Numerical Python</strong>, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien. NumPy menyediakan dukungan untuk array multidimensional (yang disebut <strong>ndarray</strong>) yang dapat menyimpan elemen dengan tipe data yang sama. Selain array, NumPy juga dilengkapi dengan berbagai fungsi yang memungkinkan kita untuk melakukan operasi matematis, statistik, logika, dan manipulasi data dengan cepat.</p>
-<p>Salah satu keunggulan utama NumPy dibandingkan list standar Python adalah kemampuannya untuk melakukan operasi <strong>elemen-wise</strong>, yaitu operasi yang diterapkan langsung pada setiap elemen array tanpa memerlukan loop eksplisit. Hal ini membuat kode lebih bersih dan eksekusi lebih cepat. Karena itu, NumPy sering digunakan dalam bidang seperti <strong>data science</strong>, <strong>machine learning</strong>, <strong>deep learning</strong>, <strong>pemrosesan gambar</strong>, dan <strong>komputasi ilmiah</strong> secara umum.</p>
-<p>NumPy juga menjadi fondasi bagi banyak library lain dalam ekosistem Python seperti <strong>Pandas</strong>, <strong>SciPy</strong>, dan <strong>Matplotlib</strong>, menjadikannya sebagai alat yang sangat esensial bagi para data scientist dan engineer.</p>
+<p><strong>Analisis data</strong> adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan yang dapat mendukung pengambilan keputusan. Proses ini membantu memahami tren yang ada dalam data, memprediksi hasil di masa depan, atau mengidentifikasi masalah yang mungkin perlu diselesaikan.</p>
+<doc-anchor-target id="mengapa-analisis-data-penting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-analisis-data-penting">#</doc-anchor-trigger>
+        <span>Mengapa Analisis Data Penting?</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Pengambilan Keputusan yang Lebih Baik</strong>
+Dengan analisis data, keputusan dapat diambil berdasarkan fakta dan data yang akurat, bukan hanya berdasarkan intuisi atau asumsi.</li>
+<li><strong>Identifikasi Peluang</strong>
+Memahami data dengan baik dapat membantu menemukan peluang bisnis baru, efisiensi proses, atau produk baru yang dibutuhkan oleh pelanggan.</li>
+<li><strong>Optimasi Proses</strong>
+Analisis data dapat membantu mengidentifikasi area yang dapat dioptimalkan dalam sebuah proses bisnis, sehingga meningkatkan efisiensi dan produktivitas.</li>
+</ul>
+<doc-anchor-target id="python-dalam-analisis-data">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#python-dalam-analisis-data">#</doc-anchor-trigger>
+        <span>Python dalam Analisis Data</span>
+    </h2>
+</doc-anchor-target>
+<p>Python adalah salah satu bahasa pemrograman yang sangat populer di kalangan ilmuwan data, analis, dan pengembang. Alasan mengapa Python sangat populer dalam analisis data antara lain:</p>
+<ul>
+<li><strong>Sederhana dan Mudah Dipelajari</strong></li>
+<li><strong>Ekosistem Library yang Kaya</strong>
+<ul>
+<li><strong>NumPy</strong> untuk komputasi numerik.</li>
+<li><strong>Pandas</strong> untuk manipulasi dan analisis data.</li>
+<li><strong>Matplotlib</strong> dan <strong>Seaborn</strong> untuk visualisasi data.</li>
+<li><strong>Scikit-Learn</strong> untuk machine learning.</li>
+</ul>
+</li>
+<li><strong>Komunitas yang Aktif</strong></li>
+</ul>
+<doc-anchor-target id="numpy">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#numpy">#</doc-anchor-trigger>
+        <span>NumPy</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="apa-itu-numpy">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-numpy">#</doc-anchor-trigger>
+        <span>Apa itu NumPy?</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>NumPy</strong> adalah singkatan dari <strong>Numerical Python</strong>, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien. NumPy menyediakan dukungan untuk array multidimensional (yang disebut <strong>ndarray</strong>) yang dapat menyimpan elemen dengan tipe data yang sama. Selain array, NumPy juga dilengkapi dengan berbagai fungsi yang memungkinkan untuk melakukan operasi matematis, statistik, logika, dan manipulasi data dengan cepat.</p>
 <doc-anchor-target id="fitur-utama-numpy">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#fitur-utama-numpy">#</doc-anchor-trigger>
@@ -179,49 +223,31 @@
 <li><strong>Kecepatan dan Efisiensi</strong>: NumPy sangat cepat karena ditulis sebagian besar dalam C dan Fortran, dua bahasa yang dikenal karena performanya dalam komputasi numerik.</li>
 </ol>
 <doc-anchor-target id="mengapa-menggunakan-numpy">
-    <h2>
+    <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-menggunakan-numpy">#</doc-anchor-trigger>
         <span>Mengapa Menggunakan NumPy?</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="1-performa-tinggi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-performa-tinggi">#</doc-anchor-trigger>
-        <span>1. <strong>Performa Tinggi</strong></span>
     </h3>
 </doc-anchor-target>
-<p>NumPy dirancang untuk komputasi performa tinggi, terutama untuk array besar dengan jutaan elemen. Operasi pada array NumPy lebih cepat dibandingkan operasi pada list Python biasa, karena NumPy menggunakan struktur data yang lebih efisien serta optimasi berbasis array C di belakang layar.</p>
-<doc-anchor-target id="2-memudahkan-pengolahan-data-ilmiah">
+<ul>
+<li><strong>Performa Tinggi</strong>: Dirancang untuk komputasi performa tinggi, terutama untuk array besar dengan jutaan elemen. Operasi pada array NumPy lebih cepat dibandingkan list Python biasa.</li>
+<li><strong>Memudahkan Pengolahan Data Ilmiah</strong>: NumPy menyediakan banyak sekali fungsi untuk pengolahan data ilmiah, seperti aljabar linear dan statistik.</li>
+<li><strong>Ekosistem yang Kuat</strong>: Banyak library populer lainnya di Python, seperti <strong>Pandas</strong> dan <strong>SciPy</strong>, dibangun di atas NumPy, menjadikannya dasar penting dalam analisis data.</li>
+</ul>
+<doc-anchor-target id="instalasi-dan-penggunaan-dasar-numpy">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-memudahkan-pengolahan-data-ilmiah">#</doc-anchor-trigger>
-        <span>2. <strong>Memudahkan Pengolahan Data Ilmiah</strong></span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#instalasi-dan-penggunaan-dasar-numpy">#</doc-anchor-trigger>
+        <span>Instalasi dan Penggunaan Dasar NumPy</span>
     </h3>
 </doc-anchor-target>
-<p>Bagi mereka yang bekerja dalam bidang <strong>data science</strong> atau <strong>komputasi ilmiah</strong>, NumPy menyediakan banyak sekali fungsi yang sangat berguna untuk melakukan pengolahan data. Dari aljabar linear hingga statistik, NumPy memungkinkan kita untuk melakukan analisis data dengan mudah dan cepat.</p>
-<doc-anchor-target id="3-ekosistem-yang-kuat">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-ekosistem-yang-kuat">#</doc-anchor-trigger>
-        <span>3. <strong>Ekosistem yang Kuat</strong></span>
-    </h3>
-</doc-anchor-target>
-<p>Banyak library populer lainnya di Python seperti <strong>Pandas</strong> (untuk analisis data), <strong>SciPy</strong> (untuk komputasi ilmiah), dan <strong>Matplotlib</strong> (untuk visualisasi data) semuanya dibangun di atas NumPy. Jadi, dengan mempelajari NumPy, kamu juga mempersiapkan dirimu untuk menggunakan library-library tersebut dengan lebih mudah.</p>
-<doc-anchor-target id="instalasi-numpy">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instalasi-numpy">#</doc-anchor-trigger>
-        <span>Instalasi NumPy</span>
-    </h2>
-</doc-anchor-target>
-<p>Untuk mulai menggunakan NumPy, pertama-tama kita harus menginstalnya. Cara termudah untuk menginstal NumPy adalah menggunakan Python Package Installer (pip), sebuah alat standar untuk mengelola paket di Python.</p>
-<p>Berikut cara menginstal NumPy dengan <code v-pre>pip</code>:</p>
+<p>NumPy dapat diinstal menggunakan <code v-pre>pip</code>:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-bash"><code v-pre class="language-bash">pip install numpy</code></pre>
 </doc-codeblock></div>
-<p>Setelah instalasi berhasil, kita bisa mulai menggunakannya dalam kode Python. Pertama-tama, impor library <strong>NumPy</strong> dengan menulis:</p>
+<p>Setelah terinstal, impor library <strong>NumPy</strong> dengan menulis:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre class="language-python"><code v-pre class="language-python">import numpy as np</code></pre>
 </doc-codeblock></div>
-<p>Dalam penulisan kode, biasanya NumPy diimport dengan alias <strong>np</strong> agar lebih mudah dan singkat dalam penggunaannya. Misalnya, untuk membuat array, kamu bisa menulis <code v-pre>np.array()</code> alih-alih <code v-pre>numpy.array()</code>.
-Sekarang, mari kita mulai menjelajahi dunia komputasi numerik dengan NumPy!</p>
+<p>NumPy biasanya diimport dengan alias <strong>np</strong> agar lebih mudah dan singkat dalam penggunaannya.</p>
 
                                 
                                 <!-- Required only on API pages -->
