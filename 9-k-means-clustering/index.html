@@ -10,24 +10,26 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Analisis Data dengan Python</title>
-    <meta name="title" content="Analisis Data dengan Python">
-    <meta name="description" content="Analisis data adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan...">
+    <title>Clustering</title>
+    <meta name="title" content="Clustering">
+    <meta name="description" content="Clustering adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan...">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/6-numpy/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/9-k-means-clustering/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/6-numpy/">
-    <meta property="og:title" content="Analisis Data dengan Python">
-    <meta property="og:description" content="Analisis data adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan...">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/9-k-means-clustering/">
+    <meta property="og:title" content="Clustering">
+    <meta property="og:description" content="Clustering adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan...">
+    <meta property="og:image" content="https://alfiki.my.id/advanced-python/img/kmeans-01.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/6-numpy/">
-    <meta property="twitter:title" content="Analisis Data dengan Python">
-    <meta property="twitter:description" content="Analisis data adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan...">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/9-k-means-clustering/">
+    <meta property="twitter:title" content="Clustering">
+    <meta property="twitter:description" content="Clustering adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan...">
+    <meta property="twitter:image" content="https://alfiki.my.id/advanced-python/img/kmeans-01.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -36,7 +38,6 @@
     <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.783969561338" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.783969561338" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../resources/js/prism.js?v=3.6.0.783969561338" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -151,103 +152,396 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="analisis-data-dengan-python" class="break-words">
+<doc-anchor-target id="clustering" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#analisis-data-dengan-python">#</doc-anchor-trigger>
-        <span>Analisis Data dengan Python</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clustering">#</doc-anchor-trigger>
+        <span>Clustering</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="apa-itu-analisis-data">
+<p><strong>Clustering</strong> adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan atau kemiripan fitur yang dimiliki. Tujuan utama dari clustering adalah untuk mengungkap struktur atau pola tersembunyi dalam data tanpa membutuhkan label atau informasi yang telah ditetapkan sebelumnya. Ini menempatkan clustering sebagai salah satu metode dalam <em>unsupervised learning</em>, yaitu pendekatan di mana model tidak dilatih menggunakan data berlabel, melainkan hanya menggunakan data fitur untuk menemukan pola-pola tersebut.</p>
+<p><figure class="content-center">
+    <img src="../img/kmeans-01.png" alt="Ilustrasi Pengelompokan Buku">
+    <figcaption class="caption">Ilustrasi Pengelompokan Buku</figcaption>
+</figure>
+</p>
+<p>Bayangkan kalian adalah seorang pustakawan yang baru saja menerima koleksi buku untuk perpustakaan. Tugas kalian adalah mengatur buku-buku tersebut ke dalam rak-rak tanpa mengetahui kategori yang ada sebelumnya. Kalian mulai dengan mengumpulkan semua buku baru, yang mencakup berbagai genre seperti fiksi, non-fiksi, dan ilmiah.</p>
+<p>Kemudian, kalian memutuskan untuk mengelompokkan buku-buku tersebut berdasarkan genre sebagai fitur utama. Dengan pendekatan ini, buku-buku fiksi akan diletakkan di rak yang sama, sementara buku non-fiksi dan ilmiah akan ditempatkan di rak yang berbeda. Proses ini serupa dengan clustering, yaitu pengelompokan data berdasarkan kesamaan fitur untuk memudahkan pengorganisasian dan pemahaman, tanpa memerlukan informasi tambahan tentang kategori yang sudah ada.</p>
+<doc-anchor-target id="langkah-langkah-melakukan-clustering">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-analisis-data">#</doc-anchor-trigger>
-        <span>Apa Itu Analisis Data?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-melakukan-clustering">#</doc-anchor-trigger>
+        <span>Langkah-langkah Melakukan Clustering</span>
     </h2>
 </doc-anchor-target>
-<p><strong>Analisis data</strong> adalah proses mengumpulkan, membersihkan, mengolah, dan menganalisis data untuk menemukan informasi yang bermanfaat, pola, atau wawasan yang dapat mendukung pengambilan keputusan. Proses ini membantu memahami tren yang ada dalam data, memprediksi hasil di masa depan, atau mengidentifikasi masalah yang mungkin perlu diselesaikan.</p>
-<doc-anchor-target id="mengapa-analisis-data-penting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-analisis-data-penting">#</doc-anchor-trigger>
-        <span>Mengapa Analisis Data Penting?</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Pengambilan Keputusan yang Lebih Baik</strong>
-Dengan analisis data, keputusan dapat diambil berdasarkan fakta dan data yang akurat, bukan hanya berdasarkan intuisi atau asumsi.</li>
-<li><strong>Identifikasi Peluang</strong>
-Memahami data dengan baik dapat membantu menemukan peluang bisnis baru, efisiensi proses, atau produk baru yang dibutuhkan oleh pelanggan.</li>
-<li><strong>Optimasi Proses</strong>
-Analisis data dapat membantu mengidentifikasi area yang dapat dioptimalkan dalam sebuah proses bisnis, sehingga meningkatkan efisiensi dan produktivitas.</li>
-</ul>
-<doc-anchor-target id="python-dalam-analisis-data">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#python-dalam-analisis-data">#</doc-anchor-trigger>
-        <span>Python dalam Analisis Data</span>
-    </h2>
-</doc-anchor-target>
-<p>Python adalah salah satu bahasa pemrograman yang sangat populer di kalangan ilmuwan data, analis, dan pengembang. Alasan mengapa Python sangat populer dalam analisis data antara lain:</p>
-<ul>
-<li><strong>Sederhana dan Mudah Dipelajari</strong></li>
-<li><strong>Ekosistem Library yang Kaya</strong>
-<ul>
-<li><strong>NumPy</strong> untuk komputasi numerik.</li>
-<li><strong>Pandas</strong> untuk manipulasi dan analisis data.</li>
-<li><strong>Matplotlib</strong> dan <strong>Seaborn</strong> untuk visualisasi data.</li>
-<li><strong>Scikit-Learn</strong> untuk machine learning.</li>
-</ul>
-</li>
-<li><strong>Komunitas yang Aktif</strong></li>
-</ul>
-<doc-anchor-target id="numpy">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#numpy">#</doc-anchor-trigger>
-        <span>NumPy</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="apa-itu-numpy">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-numpy">#</doc-anchor-trigger>
-        <span>Apa itu NumPy?</span>
-    </h3>
-</doc-anchor-target>
-<p><strong>NumPy</strong> adalah singkatan dari <strong>Numerical Python</strong>, sebuah library Python yang sangat populer digunakan untuk melakukan komputasi numerik dengan efisien. NumPy menyediakan dukungan untuk array multidimensional (yang disebut <strong>ndarray</strong>) yang dapat menyimpan elemen dengan tipe data yang sama. Selain array, NumPy juga dilengkapi dengan berbagai fungsi yang memungkinkan untuk melakukan operasi matematis, statistik, logika, dan manipulasi data dengan cepat.</p>
-<doc-anchor-target id="fitur-utama-numpy">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#fitur-utama-numpy">#</doc-anchor-trigger>
-        <span>Fitur Utama NumPy:</span>
-    </h3>
-</doc-anchor-target>
+<p>Clustering adalah proses yang sangat bermanfaat dalam analisis data untuk mengelompokkan data ke dalam grup-grup berdasarkan kesamaan atau kemiripan fitur. Berikut adalah tahapan-tahapan dalam proses clustering:</p>
 <ol>
-<li><strong>Array Multidimensional</strong>: Mendukung array n-dimensi yang efisien dalam memori dan performa.</li>
-<li><strong>Operasi Matematis</strong>: Mendukung operasi matematika seperti penjumlahan, perkalian, trigonometri, logaritma, statistik, dan lainnya.</li>
-<li><strong>Integrasi dengan Komputasi Ilmiah</strong>: Digunakan bersama library lain seperti SciPy, Pandas, dan Matplotlib untuk analisis data yang lebih mendalam.</li>
-<li><strong>Kecepatan dan Efisiensi</strong>: NumPy sangat cepat karena ditulis sebagian besar dalam C dan Fortran, dua bahasa yang dikenal karena performanya dalam komputasi numerik.</li>
+<li><strong>Pengumpulan Data</strong></li>
+<li><strong>Pemilihan Fitur</strong></li>
+<li><strong>Pra-pemrosesan Data</strong></li>
+<li><strong>Pemilihan Metode Pengukuran Jarak</strong></li>
+<li><strong>Pemilihan Algoritma Clustering</strong></li>
+<li><strong>Penerapan Algoritma Clustering</strong></li>
+<li><strong>Evaluasi Hasil Clustering</strong></li>
+<li><strong>Interpretasi dan Tindakan</strong></li>
 </ol>
-<doc-anchor-target id="mengapa-menggunakan-numpy">
+<p>Mari kita bahas setiap langkah tersebut secara mendetail!</p>
+<p><figure class="content-center">
+    <img src="../img/kmeans-02.png" alt="Ilustrasi Langkah-Langkah Clustering">
+    <figcaption class="caption">Ilustrasi Langkah-Langkah Clustering</figcaption>
+</figure>
+</p>
+<doc-anchor-target id="1-pengumpulan-data">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-menggunakan-numpy">#</doc-anchor-trigger>
-        <span>Mengapa Menggunakan NumPy?</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-pengumpulan-data">#</doc-anchor-trigger>
+        <span>1. Pengumpulan Data</span>
     </h3>
 </doc-anchor-target>
+<p>Langkah pertama dalam proses clustering adalah mengumpulkan semua data relevan yang akan dianalisis. Data ini bisa berupa berbagai jenis informasi, seperti data numerik, kategorikal, atau teks, tergantung pada tujuan analisis clustering.</p>
+<p>Contohnya, jika kalian ingin menganalisis segmen pelanggan, kalian akan mengumpulkan data dari database pelanggan, seperti usia, pendapatan, dan riwayat pembelian. Penting untuk memastikan bahwa data yang dikumpulkan valid dan mencukupi agar memungkinkan identifikasi pola atau struktur yang signifikan dalam proses clustering.</p>
+<p><strong>Contoh Data Pelanggan</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>ID Pelanggan</th>
+<th>Usia</th>
+<th>Pendapatan (Juta IDR)</th>
+<th>Riwayat Pembelian</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>25</td>
+<td>5.0</td>
+<td>Elektronik</td>
+</tr>
+<tr>
+<td>2</td>
+<td>30</td>
+<td>8.0</td>
+<td>Pakaian</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22</td>
+<td>4.5</td>
+<td>Elektronik</td>
+</tr>
+<tr>
+<td>4</td>
+<td>35</td>
+<td>0.0</td>
+<td>Pakaian</td>
+</tr>
+<tr>
+<td>5</td>
+<td>29</td>
+<td>6.0</td>
+<td>Elektronik</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="2-pemilihan-fitur">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-pemilihan-fitur">#</doc-anchor-trigger>
+        <span>2. Pemilihan Fitur</span>
+    </h3>
+</doc-anchor-target>
+<p>Setelah data terkumpul, langkah selanjutnya adalah memilih fitur, yaitu atribut-atribut yang akan digunakan untuk mengelompokkan data. Fitur harus dipilih berdasarkan relevansinya dengan tujuan analisis dan kemampuannya untuk membedakan antar kelompok.</p>
+<p>Misalnya, dalam analisis pelanggan, fitur yang relevan bisa berupa usia dan pendapatan. Pemilihan fitur yang tepat sangat penting karena fitur yang tidak relevan atau berlebihan dapat mengaburkan hasil clustering dan membuat interpretasi menjadi kurang akurat.</p>
+<p><strong>Contoh Fitur yang Dipilih untuk Clustering</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>ID Pelanggan</th>
+<th>Usia</th>
+<th>Pendapatan (Juta IDR)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>25</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>2</td>
+<td>30</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22</td>
+<td>4.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>35</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>5</td>
+<td>29</td>
+<td>6.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="3-pra-pemrosesan-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#3-pra-pemrosesan-data">#</doc-anchor-trigger>
+        <span>3. Pra-pemrosesan Data</span>
+    </h3>
+</doc-anchor-target>
+<p>Pra-pemrosesan data adalah tahap di mana data yang telah dikumpulkan dibersihkan dan dinormalisasi untuk memastikan kualitas serta konsistensinya. Aktivitas ini mencakup penanganan nilai yang hilang, penghapusan duplikasi, dan normalisasi skala fitur.</p>
+<p>Contohnya, kalian perlu menormalkan data pendapatan dan usia agar berada pada skala yang sama sehingga semua fitur memberikan kontribusi yang setara dalam proses clustering. Pra-pemrosesan membantu memastikan bahwa data siap digunakan dalam algoritma clustering tanpa terganggu oleh masalah kualitas data.</p>
+<p><strong>Contoh Data Setelah Pra-pemrosesan</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>ID Pelanggan</th>
+<th>Usia (Normalisasi)</th>
+<th>Pendapatan (Normalisasi)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.231</td>
+<td>0.625</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.615</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.000</td>
+<td>0.563</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.000</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.538</td>
+<td>0.750</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="4-pemilihan-metode-pengukuran-jarak">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#4-pemilihan-metode-pengukuran-jarak">#</doc-anchor-trigger>
+        <span>4. Pemilihan Metode Pengukuran Jarak</span>
+    </h3>
+</doc-anchor-target>
+<p>Memilih metode pengukuran jarak adalah langkah krusial untuk menentukan bagaimana mengukur kemiripan atau jarak antara objek dalam data. Metode ini akan mempengaruhi cara data dikelompokkan dan hasil clustering yang diperoleh.</p>
+<p>Contohnya, jarak Euclidean sering digunakan untuk data numerik karena mengukur jarak linier antara dua titik dalam ruang fitur. Untuk data teks, cosine similarity lebih sesuai karena mengukur seberapa mirip dua dokumen berdasarkan isi kata-katanya. Pemilihan metode pengukuran jarak yang tepat adalah kunci untuk mendapatkan hasil clustering yang akurat.</p>
+<p><strong>Contoh Pengukuran Jarak Euclidean</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>ID Pelanggan 1</th>
+<th>ID Pelanggan 2</th>
+<th>Pendapatan (Normalisasi)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>0.537</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+<td>0.239</td>
+</tr>
+<tr>
+<td>1</td>
+<td>4</td>
+<td>0.722</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>0.322</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3</td>
+<td>0.429</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>0.708</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>0.422</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+<td>0.671</td>
+</tr>
+<tr>
+<td>3</td>
+<td>5</td>
+<td>0.341</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>0.809</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Berikut adalah contoh rincian untuk beberapa pasangan.</p>
+<p><figure class="content-center">
+    <img src="../img/kmeans-03.png" alt="Ilustrasi Pengukuran Jarak Euclidean">
+    <figcaption class="caption">Ilustrasi Pengukuran Jarak Euclidean</figcaption>
+</figure>
+</p>
+<p>Lakukan perhitungan serupa untuk pasangan pelanggan lainnya menggunakan data normalisasi yang telah disediakan.</p>
+<doc-anchor-target id="5-pemilihan-algoritma-clustering">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#5-pemilihan-algoritma-clustering">#</doc-anchor-trigger>
+        <span>5. Pemilihan Algoritma Clustering</span>
+    </h3>
+</doc-anchor-target>
+<p>Memilih algoritma clustering melibatkan keputusan tentang metode yang akan digunakan untuk mengelompokkan data. Berbagai algoritma clustering, seperti K-Means, DBSCAN, atau hierarchical clustering, memiliki pendekatan yang berbeda dalam mengelompokkan data. Pilihan algoritma bergantung pada jenis data yang kalian miliki dan tujuan analisis.</p>
+<p>Misalnya, K-Means dipilih jika kalian sudah mengetahui jumlah klaster yang diinginkan, sedangkan DBSCAN lebih cocok jika ingin mengidentifikasi klaster dengan bentuk yang tidak teratur dan juga menangani noise dalam data.</p>
+<doc-anchor-target id="6-penerapan-algoritma-clustering">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#6-penerapan-algoritma-clustering">#</doc-anchor-trigger>
+        <span>6. Penerapan Algoritma Clustering</span>
+    </h3>
+</doc-anchor-target>
+<p>Setelah algoritma clustering dipilih, langkah berikutnya adalah menerapkannya pada data. Pada tahap ini, algoritma yang telah dipilih digunakan untuk mengelompokkan data ke dalam klaster berdasarkan fitur yang telah ditentukan.</p>
+<p>Misalnya, dengan K-Means, algoritma akan membagi data pelanggan ke dalam sejumlah klaster yang telah ditentukan berdasarkan kesamaan fitur, seperti usia dan pendapatan. Penerapan algoritma ini menghasilkan klaster yang mencerminkan kelompok-kelompok data dengan karakteristik serupa.</p>
+<p><strong>Contoh Hasil Penerapan K-Means</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>ID Pelanggan</th>
+<th>Usia</th>
+<th>Pendapatan (Juta IDR)</th>
+<th>Riwayat Pembelian</th>
+<th>Cluster</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>25</td>
+<td>5.0</td>
+<td>Elektronik</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>30</td>
+<td>8.0</td>
+<td>Pakaian</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>22</td>
+<td>4.5</td>
+<td>Elektronik</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>35</td>
+<td>0.0</td>
+<td>Pakaian</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>29</td>
+<td>6.0</td>
+<td>Elektronik</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="7-evaluasi-hasil-clustering">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#7-evaluasi-hasil-clustering">#</doc-anchor-trigger>
+        <span>7. Evaluasi Hasil Clustering</span>
+    </h3>
+</doc-anchor-target>
+<p>Evaluasi hasil clustering adalah proses untuk menilai seberapa baik data telah dikelompokkan setelah algoritma diterapkan. Berbagai metrik digunakan untuk mengevaluasi kualitas klaster, seperti silhouette score yang mengukur seberapa baik setiap objek berada dalam klaster-nya sendiri dibandingkan dengan klaster lainnya, atau Davies-Bouldin Index yang mengukur keterpisahan antar klaster. Evaluasi ini membantu memastikan bahwa klaster yang terbentuk valid dan sesuai dengan tujuan analisis.</p>
+<p><strong>Contoh Evaluasi dengan Silhouette Score</strong></p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>ID Pelanggan 1</th>
+<th>Silhouette Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.68</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.77</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0.71</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0.72</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0.65</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="8-interpretasi-dan-tindakan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#8-interpretasi-dan-tindakan">#</doc-anchor-trigger>
+        <span>8. Interpretasi dan Tindakan</span>
+    </h3>
+</doc-anchor-target>
+<p>Langkah terakhir adalah interpretasi dan tindakan berdasarkan hasil clustering. Setelah clustering selesai, hasilnya perlu dianalisis untuk memahami pola atau struktur yang muncul dalam data. Berdasarkan temuan ini, langkah-langkah tindak lanjut dapat diambil, seperti pengembangan strategi bisnis, pembuatan laporan, atau penelitian lebih lanjut.</p>
+<p>Misalnya, jika clustering mengidentifikasi segmen pelanggan baru, kalian mungkin akan merancang strategi pemasaran yang lebih terarah untuk setiap segmen. Interpretasi yang baik dari hasil clustering memungkinkan kalian membuat keputusan yang lebih informatif dan strategis berdasarkan analisis data.</p>
+<p><strong>Contoh Interpretasi dan Tindakan</strong></p>
+<p><strong>Interpretasi Hasil</strong></p>
 <ul>
-<li><strong>Performa Tinggi</strong>: Dirancang untuk komputasi performa tinggi, terutama untuk array besar dengan jutaan elemen. Operasi pada array NumPy lebih cepat dibandingkan list Python biasa.</li>
-<li><strong>Memudahkan Pengolahan Data Ilmiah</strong>: NumPy menyediakan banyak sekali fungsi untuk pengolahan data ilmiah, seperti aljabar linear dan statistik.</li>
-<li><strong>Ekosistem yang Kuat</strong>: Banyak library populer lainnya di Python, seperti <strong>Pandas</strong> dan <strong>SciPy</strong>, dibangun di atas NumPy, menjadikannya dasar penting dalam analisis data.</li>
+<li><strong>Cluster 1:</strong> Terdiri dari pelanggan dengan usia lebih muda dan pendapatan menengah, lebih suka membeli elektronik.</li>
+<li><strong>Cluster 2:</strong> Terdiri dari pelanggan dengan usia lebih tua dan pendapatan lebih tinggi, lebih suka membeli pakaian.</li>
 </ul>
-<doc-anchor-target id="instalasi-dan-penggunaan-dasar-numpy">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#instalasi-dan-penggunaan-dasar-numpy">#</doc-anchor-trigger>
-        <span>Instalasi dan Penggunaan Dasar NumPy</span>
-    </h3>
-</doc-anchor-target>
-<p>NumPy dapat diinstal menggunakan <code v-pre>pip</code>:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-bash"><code v-pre class="language-bash">pip install numpy</code></pre>
-</doc-codeblock></div>
-<p>Setelah terinstal, impor library <strong>NumPy</strong> dengan menulis:</p>
-<div class="codeblock-wrapper"><doc-codeblock>
-<pre class="language-python"><code v-pre class="language-python">import numpy as np</code></pre>
-</doc-codeblock></div>
-<p>NumPy biasanya diimport dengan alias <strong>np</strong> agar lebih mudah dan singkat dalam penggunaannya.</p>
+<p><strong>Tindakan</strong></p>
+<ul>
+<li>Rancang kampanye pemasaran yang ditargetkan untuk masing-masing klaster, seperti promosi produk elektronik untuk Cluster 1 dan penawaran eksklusif pakaian untuk Cluster 2.</li>
+</ul>
+<p>Dengan menerapkan metode clustering yang tepat dan melakukan evaluasi secara cermat, kita dapat mengidentifikasi pola-pola tersembunyi dan membuat keputusan yang lebih strategis. Misalnya, dalam konteks pemasaran, hasil clustering dapat digunakan untuk merancang kampanye yang lebih terarah dan efektif berdasarkan karakteristik masing-masing kelompok pelanggan.</p>
+<p>Clustering tidak hanya membantu dalam segmentasi pasar serta analisis data, tetapi juga dalam berbagai aplikasi lain seperti deteksi anomali dan pengelompokan dokumen. Dengan memahami dan menerapkan teknik clustering secara efektif, kita dapat memanfaatkan data dengan lebih baik serta mendukung pengambilan keputusan yang lebih informatif dan berbasis data.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -257,20 +551,20 @@ Analisis data dapat membantu mengidentifikasi area yang dapat dioptimalkan dalam
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../5-operasi-file/operasi_file/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../8-matplotlib/practicum/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Operasi File di Python</span>
+                                                <span class="block mt-1">Praktikum 2</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../6-numpy/array/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../9-k-means-clustering/k-means/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Mengelola Array</span>
+                                                <span class="block mt-1">K-​Means Clustering</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -314,6 +608,6 @@ Analisis data dapat membantu mengidentifikasi area yang dapat dioptimalkan dalam
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "6 - NumPy", level: 1, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "9 - K-Means Clustering", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
