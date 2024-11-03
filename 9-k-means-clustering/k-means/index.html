@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="turbo-root" content="/advanced-python">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783969561338">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.783970079942">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Modul Materi: K-Means Clustering di Python</title>
-    <meta name="title" content="Modul Materi: K-Means Clustering di Python">
-    <meta name="description" content="Selamat datang di modul pembelajaran K-Means Clustering! Modul ini akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari...">
+    <title>K-Means Clustering</title>
+    <meta name="title" content="K-Means Clustering">
+    <meta name="description" content="Selamat datang di materi K-Means Clustering! Di sini kita akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari konsep...">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://alfiki.my.id/advanced-python/9-k-means-clustering/k-means/">
@@ -20,25 +20,25 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://alfiki.my.id/advanced-python/9-k-means-clustering/k-means/">
-    <meta property="og:title" content="Modul Materi: K-Means Clustering di Python">
-    <meta property="og:description" content="Selamat datang di modul pembelajaran K-Means Clustering! Modul ini akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari...">
+    <meta property="og:title" content="K-Means Clustering">
+    <meta property="og:description" content="Selamat datang di materi K-Means Clustering! Di sini kita akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari konsep...">
     <meta property="og:image" content="https://alfiki.my.id/advanced-python/img/kmeans-04.jpeg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/9-k-means-clustering/k-means/">
-    <meta property="twitter:title" content="Modul Materi: K-Means Clustering di Python">
-    <meta property="twitter:description" content="Selamat datang di modul pembelajaran K-Means Clustering! Modul ini akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari...">
+    <meta property="twitter:title" content="K-Means Clustering">
+    <meta property="twitter:description" content="Selamat datang di materi K-Means Clustering! Di sini kita akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari konsep...">
     <meta property="twitter:image" content="https://alfiki.my.id/advanced-python/img/kmeans-04.jpeg">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../resources/css/retype.css?v=3.6.0.783969561338" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.6.0.783970079942" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783969561338" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.783970079942" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783969561338" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783969561338" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.783970079942" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.783970079942" defer></script>
     <link href="../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -155,10 +155,10 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="modul-materi-k-means-clustering-di-python" class="break-words">
+<doc-anchor-target id="k-means-clustering" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#modul-materi-k-means-clustering-di-python">#</doc-anchor-trigger>
-        <span>Modul Materi: K-Means Clustering di Python</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#k-means-clustering">#</doc-anchor-trigger>
+        <span>K-Means Clustering</span>
     </h1>
 </doc-anchor-target>
 <p>Selamat datang di materi <strong>K-Means Clustering</strong>! Di sini kita akan membahas secara mendalam mengenai algoritma K-Means Clustering, mulai dari konsep dasar hingga implementasinya menggunakan Python.</p>
@@ -793,7 +793,7 @@ Centroid 3: Ukuran = 6.00 cm, Harga = 25.00 IDR</code></pre>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">9 - K-​Means Clustering</span>
+                                                <span class="block mt-1">9 - Clustering</span>
                                             </span>
                                         </a>
                                     </div>
