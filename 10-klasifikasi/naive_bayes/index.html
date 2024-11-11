@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-root" content="/advanced-python">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.784606914614">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Naive Bayes</title>
+    <meta name="title" content="Naive Bayes">
+    <meta name="description" content="Naive Bayes adalah algoritma klasifikasi berbasis probabilitas yang didasarkan pada Teorema Bayes, dengan asumsi bahwa setiap fitur dalam data saling...">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/10-klasifikasi/naive_bayes/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/10-klasifikasi/naive_bayes/">
+    <meta property="og:title" content="Naive Bayes">
+    <meta property="og:description" content="Naive Bayes adalah algoritma klasifikasi berbasis probabilitas yang didasarkan pada Teorema Bayes, dengan asumsi bahwa setiap fitur dalam data saling...">
+    <meta property="og:image" content="https://alfiki.my.id/advanced-python/img/naivebayes-1.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/10-klasifikasi/naive_bayes/">
+    <meta property="twitter:title" content="Naive Bayes">
+    <meta property="twitter:description" content="Naive Bayes adalah algoritma klasifikasi berbasis probabilitas yang didasarkan pada Teorema Bayes, dengan asumsi bahwa setiap fitur dalam data saling...">
+    <meta property="twitter:image" content="https://alfiki.my.id/advanced-python/img/naivebayes-1.jpeg">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.784606914614" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.784606914614" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.784606914614" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.784606914614" defer></script>
+    <link href="../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../resources/js/katex.js?v=3.6.0" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="naive-bayes" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#naive-bayes">#</doc-anchor-trigger>
+        <span>Naive Bayes</span>
+    </h1>
+</doc-anchor-target>
+<p>Naive Bayes adalah algoritma klasifikasi berbasis probabilitas yang didasarkan pada <strong>Teorema Bayes</strong>, dengan asumsi bahwa setiap fitur dalam data saling independen satu sama lain. Nama &quot;naive&quot; (naif) mencerminkan asumsi independensi ini, yang sering kali tidak realistis dalam praktik. Meskipun demikian, Naive Bayes seringkali menghasilkan model yang efektif dan efisien. Algoritma ini menggunakan prinsip probabilitas untuk memprediksi kelas dari data baru berdasarkan pengamatan fitur yang ada.</p>
+<p>Secara matematis, Naive Bayes bekerja dengan menghitung kemungkinan bahwa suatu data termasuk dalam kelas tertentu berdasarkan dua komponen utama: kemungkinan awal dari setiap kelas (<em>probabilitas prior</em>). dan kemungkinan fitur dalam data jika kelas tersebut benar (<em>probabilitas likelihood</em>)..</p>
+<p><figure class="content-center">
+    <img src="../../img/naivebayes-1.jpeg" alt="Naive Bayes">
+    <figcaption class="caption">Naive Bayes</figcaption>
+</figure>
+</p>
+<p>Rumus untuk menghitung probabilitas posterior <span class="math">P(A|B)</span> dalam konteks Teorema Bayes adalah sebagai berikut:</p>
+<p><span class="math">P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}</span></p>
+<p><strong>Penjelasan:</strong></p>
+<ul>
+<li><span class="math">P(A|B)</span>: Probabilitas posterior dari kelas A jika data B diberikan.</li>
+<li><span class="math">P(B|A)</span>: Probabilitas likelihood dari data B jika kelas A benar.</li>
+<li><span class="math">P(A)</span>: Probabilitas prior dari kelas A.</li>
+<li><span class="math">P(B)</span>: Probabilitas prior dari data B.</li>
+</ul>
+<p>Untuk memahami bagaimana <strong>Teorema Bayes</strong> diterapkan dalam klasifikasi email spam dan tidak spam, mari kita lihat contoh praktis berikut. Contoh ini akan menunjukkan bagaimana menghitung <strong>probabilitas posterior</strong> <span class="math">P(\text{Spam}|\text{kata &quot;gratis&quot;})</span> menggunakan rumus Teorema Bayes.</p>
+<doc-anchor-target id="definisi-variabel">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#definisi-variabel">#</doc-anchor-trigger>
+        <span>Definisi Variabel</span>
+    </h4>
+</doc-anchor-target>
+<ul>
+<li><strong>Kelas A:</strong> Email adalah spam (<span class="math">\text{Spam}</span>)</li>
+<li><strong>Fitur B:</strong> Email mengandung kata &quot;gratis&quot; (<span class="math">\text{kata &quot;gratis&quot;}</span>)</li>
+</ul>
+<doc-anchor-target id="rumus-teorema-bayes">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rumus-teorema-bayes">#</doc-anchor-trigger>
+        <span>Rumus Teorema Bayes</span>
+    </h4>
+</doc-anchor-target>
+<p><span class="math">P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}</span></p>
+<p>Dalam konteks ini:</p>
+<p><span class="math">P(\text{Spam}|\text{kata &quot;gratis&quot;}) = \frac{P(\text{kata &quot;gratis&quot;}|\text{Spam}) \times P(\text{Spam})}{P(\text{kata &quot;gratis&quot;})}</span></p>
+<doc-anchor-target id="langkah-langkah-perhitungan">
+    <h4>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-perhitungan">#</doc-anchor-trigger>
+        <span>Langkah-langkah Perhitungan</span>
+    </h4>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Menghitung Probabilitas Prior (<span class="math">P(\text{Spam})</span>):</strong></p>
+<p>Probabilitas prior adalah probabilitas bahwa sebuah email adalah spam tanpa mempertimbangkan fitur tertentu.</p>
+<p><span class="math">P(\text{Spam}) = \frac{\text{Jumlah Email Spam}}{\text{Total Jumlah Email}}</span></p>
+<p><strong>Contoh:</strong></p>
+<ul>
+<li>Jumlah Email Spam: 60</li>
+<li>Jumlah Email Tidak Spam: 40</li>
+<li>Total Email: 100</li>
+</ul>
+<p><span class="math">P(\text{Spam}) = \frac{60}{100} = 0.6</span></p>
+</li>
+<li><p><strong>Menghitung Probabilitas Likelihood (<span class="math">P(\text{kata &quot;gratis&quot;}|\text{Spam})</span>):</strong></p>
+<p>Probabilitas likelihood adalah probabilitas bahwa kata &quot;gratis&quot; muncul dalam email yang merupakan spam.</p>
+<p><span class="math">P(\text{kata &quot;gratis&quot;}|\text{Spam}) = \frac{\text{Jumlah Email Spam yang Mengandung &quot;gratis&quot;}}{\text{Jumlah Email Spam}}</span></p>
+<p><strong>Contoh:</strong></p>
+<ul>
+<li>Jumlah Email Spam yang Mengandung &quot;gratis&quot;: 30</li>
+<li>Jumlah Email Spam: 60</li>
+</ul>
+<p><span class="math">P(\text{kata &quot;gratis&quot;}|\text{Spam}) = \frac{30}{60} = 0.5</span></p>
+</li>
+<li><p><strong>Menghitung Probabilitas Fitur (<span class="math">P(\text{kata &quot;gratis&quot;})</span>):</strong></p>
+<p>Probabilitas fitur adalah probabilitas bahwa kata &quot;gratis&quot; muncul dalam email, baik spam maupun tidak spam.</p>
+<p><span class="math">P(\text{kata &quot;gratis&quot;}) = \frac{\text{Jumlah Email yang Mengandung &quot;gratis&quot;}}{\text{Total Jumlah Email}}</span></p>
+<p><strong>Contoh:</strong></p>
+<ul>
+<li>Jumlah Email yang Mengandung &quot;gratis&quot; (Spam + Tidak Spam): 30 (Spam) + 10 (Tidak Spam) = 40</li>
+<li>Total Email: 100</li>
+</ul>
+<p><span class="math">P(\text{kata &quot;gratis&quot;}) = \frac{40}{100} = 0.4</span></p>
+</li>
+<li><p><strong>Menghitung Probabilitas Posterior (<span class="math">P(\text{Spam}|\text{kata &quot;gratis&quot;})</span>):</strong></p>
+<p>Dengan menggantikan nilai-nilai yang telah dihitung ke dalam rumus Teorema Bayes:</p>
+<p><span class="math">P(\text{Spam}|\text{kata &quot;gratis&quot;}) = \frac{0.5 \times 0.6}{0.4} = \frac{0.3}{0.4} = 0.75</span></p>
+<p><strong>Interpretasi:</strong></p>
+<ul>
+<li>Probabilitas bahwa sebuah email adalah spam jika mengandung kata &quot;gratis&quot; adalah 75%.</li>
+</ul>
+</li>
+</ol>
+<p>Setelah menghitung kemungkinan untuk setiap kelas, model ini memilih kelas dengan probabilitas posterior tertinggi sebagai hasil klasifikasi. Naive Bayes dapat diterapkan pada berbagai jenis data, seperti teks, gambar, atau data tabular, dan sering digunakan dalam aplikasi seperti filter spam, analisis sentimen, serta pengenalan pola.</p>
+<doc-anchor-target id="parameter-utama-naive-bayes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parameter-utama-naive-bayes">#</doc-anchor-trigger>
+        <span>Parameter Utama Naive Bayes</span>
+    </h2>
+</doc-anchor-target>
+<p>Dalam penerapan algoritma Naive Bayes, terdapat beberapa parameter penting yang perlu disesuaikan untuk mengoptimalkan kinerja model. Berikut adalah beberapa parameter utama tersebut:</p>
+<ol>
+<li><strong>Laplace Smoothing</strong></li>
+<li><strong>Probabilitas Prior</strong></li>
+<li><strong>Probabilitas Likelihood</strong></li>
+</ol>
+<p>Mari dibahas lebih rinci masing-masing parameternya!</p>
+<doc-anchor-target id="laplace-smoothing">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#laplace-smoothing">#</doc-anchor-trigger>
+        <span>Laplace Smoothing</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Laplace smoothing</strong>, juga dikenal sebagai <strong>smoothing</strong> atau <strong>add-one smoothing</strong>, adalah teknik yang digunakan untuk menangani masalah ketika fitur tertentu tidak muncul dalam data pelatihan untuk kelas tertentu. Teknik ini menambahkan nilai kecil ke setiap frekuensi fitur untuk mencegah probabilitas nol.</p>
+<p><strong>Contoh:</strong>
+Jika tidak dilakukan smoothing dan kata &quot;gratis&quot; tidak muncul dalam SMS spam, model akan menganggap bahwa kata &quot;gratis&quot; tidak ada dalam spam. Dengan smoothing, sedikit nilai ditambahkan ke semua kata sehingga meskipun kata &quot;gratis&quot; tidak muncul, model tetap mempertimbangkan kemungkinan kecil bahwa kata ini bisa ada dalam spam.</p>
+<doc-anchor-target id="probabilitas-prior">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#probabilitas-prior">#</doc-anchor-trigger>
+        <span>Probabilitas Prior</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Probabilitas prior</strong> adalah probabilitas awal dari setiap kelas sebelum mempertimbangkan fitur yang ada. Ini mencerminkan seberapa umum atau sering suatu kelas muncul dalam data pelatihan. Probabilitas prior dihitung dengan membagi jumlah data untuk masing-masing kelas dengan total jumlah data.</p>
+<p><strong>Contoh:</strong>
+Jika dalam 100 SMS yang dimiliki, 60 di antaranya adalah spam, probabilitas prior untuk spam adalah 60% atau 0.6. Probabilitas prior memberikan informasi tentang kemungkinan awal setiap kelas sebelum melihat fitur-fitur dalam data.</p>
+<doc-anchor-target id="probabilitas-likelihood">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#probabilitas-likelihood">#</doc-anchor-trigger>
+        <span>Probabilitas Likelihood</span>
+    </h3>
+</doc-anchor-target>
+<p><strong>Probabilitas likelihood</strong> adalah probabilitas kemunculan fitur tertentu dalam data pelatihan untuk setiap kelas. Ini menunjukkan seberapa sering fitur muncul dalam data yang sudah diberi label dengan kelas tertentu.</p>
+<p><strong>Contoh:</strong>
+Jika kata &quot;diskon&quot; muncul 30 kali dalam 50 SMS spam dan 10 kali dalam 50 SMS non-spam, probabilitas likelihood kata &quot;diskon&quot; akan lebih tinggi untuk spam dibandingkan dengan non-spam. Ini membantu model menentukan relevansi fitur tertentu dalam konteks masing-masing kelas.</p>
+<doc-anchor-target id="cara-kerja-naive-bayes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cara-kerja-naive-bayes">#</doc-anchor-trigger>
+        <span>Cara Kerja Naive Bayes</span>
+    </h2>
+</doc-anchor-target>
+<p>Naive Bayes adalah metode klasifikasi berbasis pada prinsip probabilitas dan Teorema Bayes yang digunakan untuk memprediksi kelas atau kategori dari data baru berdasarkan informasi yang telah ada.</p>
+<p><figure class="content-center">
+    <img src="../../img/naivebayes-2.jpeg" alt="Cara Kerja Naive Bayes">
+    <figcaption class="caption">Cara Kerja Naive Bayes</figcaption>
+</figure>
+</p>
+<p>Metode ini bekerja dengan cara menghitung probabilitas berbagai kelas berdasarkan fitur-fitur pada data pelatihan. Berikut adalah langkah-langkah detail dalam cara kerja algoritma Naive Bayes:</p>
+<doc-anchor-target id="langkah-1-mengumpulkan-dan-menyiapkan-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-1-mengumpulkan-dan-menyiapkan-data">#</doc-anchor-trigger>
+        <span>Langkah 1: Mengumpulkan dan Menyiapkan Data</span>
+    </h3>
+</doc-anchor-target>
+<p>Langkah pertama adalah mengumpulkan data yang akan digunakan untuk melatih model Naive Bayes. Data ini harus mencakup berbagai contoh yang sudah diberi label dengan benar. Dalam konteks klasifikasi teks, data bisa berupa kumpulan dokumen dengan label kategori, seperti &quot;spam&quot; atau &quot;non-spam.&quot;</p>
+<p>Setelah pengumpulan data, proses pembersihan dilakukan untuk menghilangkan noise, kesalahan, atau data yang tidak relevan. Selanjutnya, fitur-fitur penting diidentifikasi dan diekstraksi. Pada kasus teks, fitur biasanya adalah kata-kata atau istilah yang muncul dalam dokumen. Data kemudian dibagi menjadi dua bagian, yaitu fitur (misalnya, kata-kata dalam SMS) dan label kelas (misalnya, spam atau non-spam), yang akan digunakan untuk pelatihan model.</p>
+<doc-anchor-target id="langkah-2-menghitung-probabilitas-prior">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-2-menghitung-probabilitas-prior">#</doc-anchor-trigger>
+        <span>Langkah 2: Menghitung Probabilitas Prior</span>
+    </h3>
+</doc-anchor-target>
+<p>Setelah data siap, langkah berikutnya adalah menghitung probabilitas prior untuk setiap kelas. Probabilitas prior adalah estimasi frekuensi kemunculan setiap kelas dalam data pelatihan tanpa mempertimbangkan fitur individual. Ini dihitung dengan membagi jumlah data untuk masing-masing kelas dengan total jumlah data.</p>
+<p><strong>Contoh:</strong>
+Jika dari 100 SMS, 60 adalah spam, probabilitas prior untuk spam adalah 0.6. Probabilitas prior memberikan informasi tentang kemungkinan awal setiap kelas sebelum mempertimbangkan fitur-fitur dalam data.</p>
+<doc-anchor-target id="langkah-3-menghitung-probabilitas-likelihood">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-3-menghitung-probabilitas-likelihood">#</doc-anchor-trigger>
+        <span>Langkah 3: Menghitung Probabilitas Likelihood</span>
+    </h3>
+</doc-anchor-target>
+<p>Langkah ini melibatkan perhitungan probabilitas likelihood, yaitu seberapa sering fitur tertentu muncul dalam data untuk setiap kelas. Probabilitas likelihood diukur dengan menghitung frekuensi kemunculan fitur dalam data yang telah dilabeli dengan kelas tertentu.</p>
+<p><strong>Contoh:</strong>
+Jika kata &quot;diskon&quot; muncul 15 kali dalam SMS spam dan 5 kali dalam SMS non-spam, probabilitas likelihood kata &quot;diskon&quot; untuk spam adalah 15/60 = 0.25 dan untuk non-spam adalah 5/40 = 0.125. Ini membantu menentukan seberapa relevan fitur-fitur tertentu dalam konteks masing-masing kelas.</p>
+<doc-anchor-target id="langkah-4-menerapkan-teorema-bayes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-4-menerapkan-teorema-bayes">#</doc-anchor-trigger>
+        <span>Langkah 4: Menerapkan Teorema Bayes</span>
+    </h3>
+</doc-anchor-target>
+<p>Teorema Bayes digunakan untuk menghitung probabilitas posterior, yaitu probabilitas bahwa suatu data termasuk dalam kelas tertentu berdasarkan fitur yang diberikan. Formula Teorema Bayes menggabungkan probabilitas prior dan probabilitas likelihood dari fitur untuk menghasilkan probabilitas posterior.</p>
+<doc-anchor-target id="langkah-5-klasifikasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-5-klasifikasi">#</doc-anchor-trigger>
+        <span>Langkah 5: Klasifikasi</span>
+    </h3>
+</doc-anchor-target>
+<p>Setelah menghitung probabilitas posterior untuk setiap kelas, langkah terakhir adalah menentukan kategori akhir untuk data uji. Kelas dengan probabilitas posterior tertinggi dipilih sebagai hasil klasifikasi. Ini berarti bahwa berdasarkan fitur yang diberikan dan probabilitas yang dihitung, kelas dengan probabilitas posterior tertinggi adalah yang paling mungkin untuk data uji tersebut.</p>
+<p><strong>Contoh:</strong>
+Jika probabilitas posterior untuk SMS lebih tinggi untuk kategori spam dibandingkan dengan non-spam, SMS tersebut diklasifikasikan sebagai spam.</p>
+<p>Dengan langkah-langkah ini, Naive Bayes menggunakan prinsip probabilitas sederhana untuk melakukan klasifikasi yang efektif pada berbagai jenis data.</p>
+<doc-anchor-target id="kelebihan-dan-kekurangan-naive-bayes">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kelebihan-dan-kekurangan-naive-bayes">#</doc-anchor-trigger>
+        <span>Kelebihan dan Kekurangan Naive Bayes</span>
+    </h2>
+</doc-anchor-target>
+<p>Naive Bayes adalah algoritma klasifikasi yang terkenal karena kesederhanaan dan efektivitasnya dalam berbagai aplikasi. Meskipun model ini memiliki beberapa keunggulan, seperti kemudahan implementasi dan kemampuan bekerja dengan data besar, juga terdapat kekurangan yang perlu dipertimbangkan.</p>
+<doc-anchor-target id="kelebihan-naive-bayes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kelebihan-naive-bayes">#</doc-anchor-trigger>
+        <span>Kelebihan Naive Bayes</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><strong>Kelebihan Naive Bayes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sederhana dan Mudah Diimplementasikan:</strong> Memiliki dasar matematis yang sederhana dan mudah dipahami, sehingga mudah diimplementasikan tanpa memerlukan banyak penyesuaian.</td>
+</tr>
+<tr>
+<td><strong>Kecepatan dalam Pelatihan dan Prediksi:</strong> Algoritma ini sangat efisien dalam hal waktu pelatihan dan prediksi, bahkan dengan dataset yang besar.</td>
+</tr>
+<tr>
+<td><strong>Non-parametrik:</strong> Tidak mengasumsikan distribusi data tertentu, sehingga cocok untuk berbagai jenis data.</td>
+</tr>
+<tr>
+<td><strong>Kemampuan untuk Bekerja dengan Data Besar:</strong> Dapat menangani data dengan jumlah fitur yang besar tanpa memerlukan banyak sumber daya komputasi.</td>
+</tr>
+<tr>
+<td><strong>Kemampuan Menangani Data Hilang:</strong> Dapat menangani data yang hilang dengan baik, sering kali menggunakan estimasi berbasis frekuensi.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="kekurangan-naive-bayes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kekurangan-naive-bayes">#</doc-anchor-trigger>
+        <span>Kekurangan Naive Bayes</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th><strong>Kekurangan Naive Bayes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Asumsi Independensi Fitur:</strong> Mengasumsikan bahwa semua fitur bersifat independen satu sama lain, yang sering kali tidak sesuai dengan kenyataan dan dapat mengurangi akurasi model.</td>
+</tr>
+<tr>
+<td><strong>Kinerja pada Data dengan Fitur Bergantung:</strong> Dalam kasus ketika fitur-fitur saling terkait, akurasi model bisa menurun karena tidak dapat menangkap interaksi antara fitur.</td>
+</tr>
+<tr>
+<td><strong>Keterbatasan pada Data Tidak Seimbang:</strong> Model ini dapat memiliki performa yang buruk pada data yang sangat tidak seimbang, di mana beberapa kelas jauh lebih jarang daripada kelas lainnya.</td>
+</tr>
+<tr>
+<td><strong>Asumsi Distribusi Data:</strong> Algoritma ini mungkin tidak bekerja dengan baik jika data tidak mengikuti distribusi yang diasumsikan, seperti distribusi Gaussian atau multinomial.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Dengan memahami kelebihan dan kekurangan ini, pengguna dapat membuat keputusan yang lebih baik tentang kapan dan bagaimana menggunakan Naive Bayes untuk masalah klasifikasi tertentu.</p>
+<doc-anchor-target id="implementasi-dalam-kode">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#implementasi-dalam-kode">#</doc-anchor-trigger>
+        <span>Implementasi dalam Kode</span>
+    </h2>
+</doc-anchor-target>
+<p>Dalam praktikum ini, kita akan mencoba mengimplementasikan algoritma Naive Bayes untuk klasifikasi SMS spam/tidak spam menggunakan dataset SMS Spam Collection. Implementasi ini akan menggunakan bahasa pemrograman Python dan library Scikit-learn untuk membangun dan mengevaluasi model Naive Bayes. Dataset dapat diunduh dari <a href="https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset">Kaggle</a></p>
+<doc-anchor-target id="langkah-langkah-implementasi-naive-bayes">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-implementasi-naive-bayes">#</doc-anchor-trigger>
+        <span>Langkah-langkah Implementasi Naive Bayes</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><strong>Import Library yang Dibutuhkan</strong></li>
+<li><strong>Memuat dan Menyiapkan Dataset</strong></li>
+<li><strong>Preprocessing Data (Tokenisasi dan Vektorisasi)</strong></li>
+<li><strong>Membagi Data Menjadi Training dan Testing</strong></li>
+<li><strong>Membuat Model Naive Bayes</strong></li>
+<li><strong>Melatih Model</strong></li>
+<li><strong>Membuat Prediksi</strong></li>
+<li><strong>Mengevaluasi Model</strong></li>
+</ol>
+<doc-anchor-target id="contoh-kode-implementasi-naive-bayes-untuk-klasifikasi-email-spamtidak-spam">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#contoh-kode-implementasi-naive-bayes-untuk-klasifikasi-email-spamtidak-spam">#</doc-anchor-trigger>
+        <span>Contoh Kode Implementasi Naive Bayes untuk Klasifikasi Email Spam/Tidak Spam</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python"># Import library yang diperlukan
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+# Langkah 2: Memuat dan Menyiapkan Dataset
+# Misalkan dataset berada dalam file 'spam.csv' dengan kolom 'label' dan 'message'
+# Label: 'spam' atau 'ham' (tidak spam)
+data = pd.read_csv('spam.csv', encoding='latin-1')[['v1', 'v2']]
+data = data.rename(columns={'v1': 'label', 'v2': 'message'})
+
+# Langkah 3: Preprocessing Data (Tokenisasi dan Vektorisasi)
+vectorizer = CountVectorizer()
+X = vectorizer.fit_transform(data['message'])
+y = data['label'].map({'ham': 0, 'spam': 1})  # Mengubah label menjadi numerik
+
+# Langkah 4: Membagi Data Menjadi Training dan Testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Langkah 5: Membuat Model Naive Bayes
+nb_model = MultinomialNB()
+
+# Langkah 6: Melatih Model
+nb_model.fit(X_train, y_train)
+
+# Langkah 7: Membuat Prediksi
+y_pred = nb_model.predict(X_test)
+
+# Langkah 8: Mengevaluasi Model
+accuracy = accuracy_score(y_test, y_pred)
+conf_matrix = confusion_matrix(y_test, y_pred)
+class_report = classification_report(y_test, y_pred, target_names=['Tidak Spam', 'Spam'])
+
+print(f&quot;Akurasi Model: {accuracy:.2f}&quot;)
+print(&quot;Confusion Matrix:&quot;)
+print(conf_matrix)
+print(&quot;Classification Report:&quot;)
+print(class_report)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="penjelasan-kode">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#penjelasan-kode">#</doc-anchor-trigger>
+        <span>Penjelasan Kode</span>
+    </h3>
+</doc-anchor-target>
+<ol>
+<li><p><strong>Import Library yang Dibutuhkan:</strong></p>
+<ul>
+<li><code v-pre>pandas</code> untuk manipulasi data.</li>
+<li><code v-pre>train_test_split</code> dari Scikit-learn untuk membagi data menjadi set pelatihan dan pengujian.</li>
+<li><code v-pre>CountVectorizer</code> untuk mengubah teks menjadi fitur numerik.</li>
+<li><code v-pre>MultinomialNB</code> dari Scikit-learn untuk membuat model Naive Bayes.</li>
+<li><code v-pre>accuracy_score</code>, <code v-pre>confusion_matrix</code>, dan <code v-pre>classification_report</code> untuk evaluasi model.</li>
+</ul>
+</li>
+<li><p><strong>Memuat dan Menyiapkan Dataset:</strong></p>
+<ul>
+<li>Dataset spam dimuat dari file &#x27;spam.csv&#x27;, yang berisi kolom &#x27;v1&#x27; (label) dan &#x27;v2&#x27; (pesan).</li>
+<li>Kolom tersebut diubah namanya menjadi &#x27;label&#x27; dan &#x27;message&#x27; untuk memudahkan pemahaman.</li>
+<li>Label diubah menjadi numerik: &#x27;ham&#x27; menjadi 0 (tidak spam) dan &#x27;spam&#x27; menjadi 1.</li>
+</ul>
+</li>
+<li><p><strong>Preprocessing Data (Tokenisasi dan Vektorisasi):</strong></p>
+<ul>
+<li><code v-pre>CountVectorizer</code> digunakan untuk mengubah teks menjadi representasi matriks frekuensi kata.</li>
+<li>Fitur teks diubah menjadi vektor numerik yang dapat digunakan oleh model Naive Bayes.</li>
+</ul>
+</li>
+<li><p><strong>Membagi Data Menjadi Training dan Testing:</strong></p>
+<ul>
+<li>Data dibagi dengan proporsi 80% untuk pelatihan dan 20% untuk pengujian.</li>
+<li><code v-pre>random_state=42</code> memastikan bahwa pembagian data konsisten setiap kali kode dijalankan.</li>
+</ul>
+</li>
+<li><p><strong>Membuat Model Naive Bayes:</strong></p>
+<ul>
+<li><code v-pre>MultinomialNB</code> dipilih karena cocok untuk data yang dihitung frekuensinya, seperti teks.</li>
+</ul>
+</li>
+<li><p><strong>Melatih Model:</strong></p>
+<ul>
+<li>Model dilatih menggunakan data pelatihan (<code v-pre>X_train</code> dan <code v-pre>y_train</code>).</li>
+</ul>
+</li>
+<li><p><strong>Membuat Prediksi:</strong></p>
+<ul>
+<li>Model digunakan untuk memprediksi label pada data pengujian (<code v-pre>X_test</code>).</li>
+</ul>
+</li>
+<li><p><strong>Mengevaluasi Model:</strong></p>
+<ul>
+<li><strong>Akurasi:</strong> Mengukur persentase prediksi yang benar.</li>
+<li><strong>Confusion Matrix:</strong> Menampilkan jumlah prediksi benar dan salah untuk setiap kelas.</li>
+<li><strong>Classification Report:</strong> Menyediakan metrik presisi, recall, dan F1-score untuk masing-masing kelas, memberikan gambaran mendetail tentang kinerja model pada setiap kelas.</li>
+</ul>
+</li>
+</ol>
+<doc-anchor-target id="output-yang-diharapkan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#output-yang-diharapkan">#</doc-anchor-trigger>
+        <span>Output yang Diharapkan</span>
+    </h3>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Akurasi Model: 0.98
+Confusion Matrix:
+[[ 952   13]
+ [  11  139]]
+Classification Report:
+               precision    recall  f1-score   support
+
+Tidak Spam       0.99      0.99      0.99        965
+Spam            0.91      0.93      0.92        150
+
+    accuracy                           0.98        1115
+   macro avg       0.95      0.96      0.95        1115
+weighted avg       0.98      0.98      0.98        1115</code></pre>
+</doc-codeblock></div>
+<p><strong>Penjelasan Output:</strong></p>
+<ul>
+<li><p><strong>Akurasi Model:</strong> Persentase prediksi yang benar. Dalam contoh ini, model mencapai akurasi 98%, yang menunjukkan performa yang sangat baik.</p>
+</li>
+<li><p><strong>Support:</strong> Jumlah data yang mendukung setiap kelas.</p>
+</li>
+<li><p><strong>Confusion Matrix:</strong> Menampilkan jumlah prediksi benar dan salah untuk setiap kelas. Misalnya, 952 SMS yang sebenarnya tidak spam diprediksi dengan benar, 13 SMS tidak spam salah diprediksi sebagai spam, 11 SMS spam salah diprediksi sebagai tidak spam, dan 139 SMS spam diprediksi dengan benar.</p>
+</li>
+<li><p><strong>Classification Report:</strong> Menyediakan metrik presisi, recall, dan F1-score untuk masing-masing kelas, memberikan gambaran mendetail tentang kinerja model pada setiap kelas.</p>
+</li>
+</ul>
+<doc-anchor-target id="referensi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#referensi">#</doc-anchor-trigger>
+        <span>Referensi</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><a href="https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset">SMS Spam Collection Dataset</a></li>
+<li>Dicoding. <em>Belajar Machine Learning untuk Pemula</em>. <a href="https://www.dicoding.com/academies/184/tutorials/38728">https://www.dicoding.com/academies/184/tutorials/38728</a></li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../10-klasifikasi/knn/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">K-​Nearest Neighbors</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024 - Alfiki - All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Naive Bayes", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+</body>
+</html>
