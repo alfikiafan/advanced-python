@@ -10,26 +10,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Clustering</title>
-    <meta name="title" content="Clustering">
-    <meta name="description" content="Clustering adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan...">
+    <title>Pengantar Klasifikasi</title>
+    <meta name="title" content="Pengantar Klasifikasi">
+    <meta name="description" content="Klasifikasi merupakan salah satu cabang utama dalam Pembelajaran Mesin (Machine Learning).">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/9-k-means-clustering/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/10-klasifikasi/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/9-k-means-clustering/">
-    <meta property="og:title" content="Clustering">
-    <meta property="og:description" content="Clustering adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan...">
-    <meta property="og:image" content="https://alfiki.my.id/advanced-python/img/kmeans-01.png">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/10-klasifikasi/">
+    <meta property="og:title" content="Pengantar Klasifikasi">
+    <meta property="og:description" content="Klasifikasi merupakan salah satu cabang utama dalam Pembelajaran Mesin (Machine Learning).">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/9-k-means-clustering/">
-    <meta property="twitter:title" content="Clustering">
-    <meta property="twitter:description" content="Clustering adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan...">
-    <meta property="twitter:image" content="https://alfiki.my.id/advanced-python/img/kmeans-01.png">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/10-klasifikasi/">
+    <meta property="twitter:title" content="Pengantar Klasifikasi">
+    <meta property="twitter:description" content="Klasifikasi merupakan salah satu cabang utama dalam Pembelajaran Mesin (Machine Learning).">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -38,6 +36,8 @@
     <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.784606914614" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.784606914614" data-turbo-eval="false" defer></script>
+    <link href="../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -152,396 +152,274 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="clustering" class="break-words">
+<doc-anchor-target id="pengantar-klasifikasi" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#clustering">#</doc-anchor-trigger>
-        <span>Clustering</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pengantar-klasifikasi">#</doc-anchor-trigger>
+        <span>Pengantar Klasifikasi</span>
     </h1>
 </doc-anchor-target>
-<p><strong>Clustering</strong> adalah teknik dalam analisis data yang digunakan untuk mengelompokkan objek-objek data ke dalam grup-grup atau klaster berdasarkan kesamaan atau kemiripan fitur yang dimiliki. Tujuan utama dari clustering adalah untuk mengungkap struktur atau pola tersembunyi dalam data tanpa membutuhkan label atau informasi yang telah ditetapkan sebelumnya. Ini menempatkan clustering sebagai salah satu metode dalam <em>unsupervised learning</em>, yaitu pendekatan di mana model tidak dilatih menggunakan data berlabel, melainkan hanya menggunakan data fitur untuk menemukan pola-pola tersebut.</p>
-<p><figure class="content-center">
-    <img src="../img/kmeans-01.png" alt="Ilustrasi Pengelompokan Buku">
-    <figcaption class="caption">Ilustrasi Pengelompokan Buku</figcaption>
-</figure>
-</p>
-<p>Bayangkan kalian adalah seorang pustakawan yang baru saja menerima koleksi buku untuk perpustakaan. Tugas kalian adalah mengatur buku-buku tersebut ke dalam rak-rak tanpa mengetahui kategori yang ada sebelumnya. Kalian mulai dengan mengumpulkan semua buku baru, yang mencakup berbagai genre seperti fiksi, non-fiksi, dan ilmiah.</p>
-<p>Kemudian, kalian memutuskan untuk mengelompokkan buku-buku tersebut berdasarkan genre sebagai fitur utama. Dengan pendekatan ini, buku-buku fiksi akan diletakkan di rak yang sama, sementara buku non-fiksi dan ilmiah akan ditempatkan di rak yang berbeda. Proses ini serupa dengan clustering, yaitu pengelompokan data berdasarkan kesamaan fitur untuk memudahkan pengorganisasian dan pemahaman, tanpa memerlukan informasi tambahan tentang kategori yang sudah ada.</p>
-<doc-anchor-target id="langkah-langkah-melakukan-clustering">
+<doc-anchor-target id="pendahuluan">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-melakukan-clustering">#</doc-anchor-trigger>
-        <span>Langkah-langkah Melakukan Clustering</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pendahuluan">#</doc-anchor-trigger>
+        <span>Pendahuluan</span>
     </h2>
 </doc-anchor-target>
-<p>Clustering adalah proses yang sangat bermanfaat dalam analisis data untuk mengelompokkan data ke dalam grup-grup berdasarkan kesamaan atau kemiripan fitur. Berikut adalah tahapan-tahapan dalam proses clustering:</p>
+<doc-anchor-target id="apa-itu-klasifikasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-klasifikasi">#</doc-anchor-trigger>
+        <span>Apa Itu Klasifikasi?</span>
+    </h3>
+</doc-anchor-target>
+<p>Klasifikasi merupakan salah satu cabang utama dalam <strong>Pembelajaran Mesin (Machine Learning)</strong>. Secara sederhana, klasifikasi adalah proses mengelompokkan data ke dalam kategori atau kelas yang telah ditentukan sebelumnya berdasarkan karakteristik atau fitur yang dimiliki data tersebut. Contohnya, menentukan apakah sebuah email termasuk spam atau bukan, atau mengidentifikasi jenis bunga berdasarkan fitur-fiturnya.</p>
+<doc-anchor-target id="mengapa-klasifikasi-penting">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-klasifikasi-penting">#</doc-anchor-trigger>
+        <span>Mengapa Klasifikasi Penting?</span>
+    </h3>
+</doc-anchor-target>
+<p>Klasifikasi memiliki berbagai aplikasi praktis yang membantu dalam memecahkan berbagai masalah sehari-hari, seperti:</p>
+<ul>
+<li>Memisahkan email masuk ke dalam kategori spam dan bukan spam.</li>
+<li>Mengklasifikasikan pasien berdasarkan gejala untuk menentukan penyakit yang diderita.</li>
+<li>Mengidentifikasi individu dari gambar wajah.</li>
+<li>*Menentukan apakah ulasan atau komentar bersifat positif, negatif, atau netral.</li>
+</ul>
+<doc-anchor-target id="dasar-dasar-klasifikasi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dasar-dasar-klasifikasi">#</doc-anchor-trigger>
+        <span>Dasar-dasar Klasifikasi</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="pembelajaran-terawasi-supervised-learning">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pembelajaran-terawasi-supervised-learning">#</doc-anchor-trigger>
+        <span>Pembelajaran Terawasi (Supervised Learning)</span>
+    </h3>
+</doc-anchor-target>
+<p>Klasifikasi termasuk dalam kategori <strong>Pembelajaran Terawasi</strong>, di mana model dilatih menggunakan data yang telah diberi label. Data ini terdiri dari fitur-fitur (karakteristik) dan label (kelas) yang sesuai. Model akan belajar dari data ini untuk dapat mengklasifikasikan data baru dengan benar.</p>
+<doc-anchor-target id="komponen-utama-dalam-klasifikasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#komponen-utama-dalam-klasifikasi">#</doc-anchor-trigger>
+        <span>Komponen Utama dalam Klasifikasi</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Fitur (Attributes):</strong> Informasi atau karakteristik yang digunakan untuk mendeskripsikan data. Contoh: umur, pendapatan, tinggi badan.</li>
+<li><strong>Label (Classes):</strong> Kategori atau kelas yang menjadi target klasifikasi. Contoh: spam atau bukan spam, jenis penyakit.</li>
+</ul>
+<doc-anchor-target id="jenis-jenis-klasifikasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#jenis-jenis-klasifikasi">#</doc-anchor-trigger>
+        <span>Jenis-jenis Klasifikasi</span>
+    </h3>
+</doc-anchor-target>
+<ul>
+<li><strong>Klasifikasi Biner (Binary Classification):</strong> Mengelompokkan data ke dalam dua kelas. Contoh: email spam vs. bukan spam.</li>
+<li><strong>Klasifikasi Multikelas (Multiclass Classification):</strong> Mengelompokkan data ke dalam lebih dari dua kelas. Contoh: jenis bunga seperti setosa, versicolor, atau virginica.</li>
+<li><strong>Klasifikasi Multilabel (Multilabel Classification):</strong> Mengizinkan data masuk ke dalam lebih dari satu kelas sekaligus. Contoh: artikel yang diberi beberapa tag topik.</li>
+</ul>
+<doc-anchor-target id="proses-klasifikasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#proses-klasifikasi">#</doc-anchor-trigger>
+        <span>Proses Klasifikasi</span>
+    </h3>
+</doc-anchor-target>
 <ol>
-<li><strong>Pengumpulan Data</strong></li>
-<li><strong>Pemilihan Fitur</strong></li>
-<li><strong>Pra-pemrosesan Data</strong></li>
-<li><strong>Pemilihan Metode Pengukuran Jarak</strong></li>
-<li><strong>Pemilihan Algoritma Clustering</strong></li>
-<li><strong>Penerapan Algoritma Clustering</strong></li>
-<li><strong>Evaluasi Hasil Clustering</strong></li>
-<li><strong>Interpretasi dan Tindakan</strong></li>
+<li><strong>Pengumpulan Data</strong><br />
+Mengumpulkan data yang relevan dengan masalah yang ingin diselesaikan.</li>
+<li><strong>Persiapan Data</strong><br />
+Membersihkan dan menyiapkan data, termasuk menangani nilai yang hilang dan melakukan normalisasi.</li>
+<li><strong>Pembagian Data</strong><br />
+Memisahkan data menjadi dua bagian utama: data pelatihan (training) dan data pengujian (testing).</li>
+<li><strong>Pemilihan Model</strong><br />
+Memilih algoritma klasifikasi yang akan digunakan. Dalam modul ini, metode yang dipakai adalah <strong>K-Nearest Neighbors (KNN)</strong> dan <strong>Naive Bayes</strong>.</li>
+<li><strong>Pelatihan Model</strong><br />
+Melatih model menggunakan data pelatihan agar dapat mengenali pola-pola dalam data.</li>
+<li><strong>Evaluasi Model</strong><br />
+Mengukur seberapa baik model dalam mengklasifikasikan data menggunakan data pengujian.</li>
+<li><strong>Implementasi</strong><br />
+Menggunakan model yang telah dilatih untuk mengklasifikasikan data baru di dunia nyata.</li>
 </ol>
-<p>Mari kita bahas setiap langkah tersebut secara mendetail!</p>
-<p><figure class="content-center">
-    <img src="../img/kmeans-02.png" alt="Ilustrasi Langkah-Langkah Clustering">
-    <figcaption class="caption">Ilustrasi Langkah-Langkah Clustering</figcaption>
-</figure>
-</p>
-<doc-anchor-target id="1-pengumpulan-data">
+<doc-anchor-target id="evaluasi-kinerja-model-klasifikasi">
     <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#1-pengumpulan-data">#</doc-anchor-trigger>
-        <span>1. Pengumpulan Data</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#evaluasi-kinerja-model-klasifikasi">#</doc-anchor-trigger>
+        <span>Evaluasi Kinerja Model Klasifikasi</span>
     </h3>
 </doc-anchor-target>
-<p>Langkah pertama dalam proses clustering adalah mengumpulkan semua data relevan yang akan dianalisis. Data ini bisa berupa berbagai jenis informasi, seperti data numerik, kategorikal, atau teks, tergantung pada tujuan analisis clustering.</p>
-<p>Contohnya, jika kalian ingin menganalisis segmen pelanggan, kalian akan mengumpulkan data dari database pelanggan, seperti usia, pendapatan, dan riwayat pembelian. Penting untuk memastikan bahwa data yang dikumpulkan valid dan mencukupi agar memungkinkan identifikasi pola atau struktur yang signifikan dalam proses clustering.</p>
-<p><strong>Contoh Data Pelanggan</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>ID Pelanggan</th>
-<th>Usia</th>
-<th>Pendapatan (Juta IDR)</th>
-<th>Riwayat Pembelian</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>25</td>
-<td>5.0</td>
-<td>Elektronik</td>
-</tr>
-<tr>
-<td>2</td>
-<td>30</td>
-<td>8.0</td>
-<td>Pakaian</td>
-</tr>
-<tr>
-<td>3</td>
-<td>22</td>
-<td>4.5</td>
-<td>Elektronik</td>
-</tr>
-<tr>
-<td>4</td>
-<td>35</td>
-<td>0.0</td>
-<td>Pakaian</td>
-</tr>
-<tr>
-<td>5</td>
-<td>29</td>
-<td>6.0</td>
-<td>Elektronik</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="2-pemilihan-fitur">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#2-pemilihan-fitur">#</doc-anchor-trigger>
-        <span>2. Pemilihan Fitur</span>
-    </h3>
-</doc-anchor-target>
-<p>Setelah data terkumpul, langkah selanjutnya adalah memilih fitur, yaitu atribut-atribut yang akan digunakan untuk mengelompokkan data. Fitur harus dipilih berdasarkan relevansinya dengan tujuan analisis dan kemampuannya untuk membedakan antar kelompok.</p>
-<p>Misalnya, dalam analisis pelanggan, fitur yang relevan bisa berupa usia dan pendapatan. Pemilihan fitur yang tepat sangat penting karena fitur yang tidak relevan atau berlebihan dapat mengaburkan hasil clustering dan membuat interpretasi menjadi kurang akurat.</p>
-<p><strong>Contoh Fitur yang Dipilih untuk Clustering</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>ID Pelanggan</th>
-<th>Usia</th>
-<th>Pendapatan (Juta IDR)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>25</td>
-<td>5.0</td>
-</tr>
-<tr>
-<td>2</td>
-<td>30</td>
-<td>8.0</td>
-</tr>
-<tr>
-<td>3</td>
-<td>22</td>
-<td>4.5</td>
-</tr>
-<tr>
-<td>4</td>
-<td>35</td>
-<td>0.0</td>
-</tr>
-<tr>
-<td>5</td>
-<td>29</td>
-<td>6.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="3-pra-pemrosesan-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#3-pra-pemrosesan-data">#</doc-anchor-trigger>
-        <span>3. Pra-pemrosesan Data</span>
-    </h3>
-</doc-anchor-target>
-<p>Pra-pemrosesan data adalah tahap di mana data yang telah dikumpulkan dibersihkan dan dinormalisasi untuk memastikan kualitas serta konsistensinya. Aktivitas ini mencakup penanganan nilai yang hilang, penghapusan duplikasi, dan normalisasi skala fitur.</p>
-<p>Contohnya, kalian perlu menormalkan data pendapatan dan usia agar berada pada skala yang sama sehingga semua fitur memberikan kontribusi yang setara dalam proses clustering. Pra-pemrosesan membantu memastikan bahwa data siap digunakan dalam algoritma clustering tanpa terganggu oleh masalah kualitas data.</p>
-<p><strong>Contoh Data Setelah Pra-pemrosesan</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>ID Pelanggan</th>
-<th>Usia (Normalisasi)</th>
-<th>Pendapatan (Normalisasi)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>0.231</td>
-<td>0.625</td>
-</tr>
-<tr>
-<td>2</td>
-<td>0.615</td>
-<td>1.000</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0.000</td>
-<td>0.563</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1.000</td>
-<td>0.000</td>
-</tr>
-<tr>
-<td>5</td>
-<td>0.538</td>
-<td>0.750</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="4-pemilihan-metode-pengukuran-jarak">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#4-pemilihan-metode-pengukuran-jarak">#</doc-anchor-trigger>
-        <span>4. Pemilihan Metode Pengukuran Jarak</span>
-    </h3>
-</doc-anchor-target>
-<p>Memilih metode pengukuran jarak adalah langkah krusial untuk menentukan bagaimana mengukur kemiripan atau jarak antara objek dalam data. Metode ini akan mempengaruhi cara data dikelompokkan dan hasil clustering yang diperoleh.</p>
-<p>Contohnya, jarak Euclidean sering digunakan untuk data numerik karena mengukur jarak linier antara dua titik dalam ruang fitur. Untuk data teks, cosine similarity lebih sesuai karena mengukur seberapa mirip dua dokumen berdasarkan isi kata-katanya. Pemilihan metode pengukuran jarak yang tepat adalah kunci untuk mendapatkan hasil clustering yang akurat.</p>
-<p><strong>Contoh Pengukuran Jarak Euclidean</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>ID Pelanggan 1</th>
-<th>ID Pelanggan 2</th>
-<th>Pendapatan (Normalisasi)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>2</td>
-<td>0.537</td>
-</tr>
-<tr>
-<td>1</td>
-<td>3</td>
-<td>0.239</td>
-</tr>
-<tr>
-<td>1</td>
-<td>4</td>
-<td>0.722</td>
-</tr>
-<tr>
-<td>1</td>
-<td>5</td>
-<td>0.322</td>
-</tr>
-<tr>
-<td>2</td>
-<td>3</td>
-<td>0.429</td>
-</tr>
-<tr>
-<td>2</td>
-<td>4</td>
-<td>0.708</td>
-</tr>
-<tr>
-<td>2</td>
-<td>5</td>
-<td>0.422</td>
-</tr>
-<tr>
-<td>3</td>
-<td>4</td>
-<td>0.671</td>
-</tr>
-<tr>
-<td>3</td>
-<td>5</td>
-<td>0.341</td>
-</tr>
-<tr>
-<td>4</td>
-<td>5</td>
-<td>0.809</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Berikut adalah contoh rincian untuk beberapa pasangan.</p>
-<p><figure class="content-center">
-    <img src="../img/kmeans-03.png" alt="Ilustrasi Pengukuran Jarak Euclidean">
-    <figcaption class="caption">Ilustrasi Pengukuran Jarak Euclidean</figcaption>
-</figure>
-</p>
-<p>Lakukan perhitungan serupa untuk pasangan pelanggan lainnya menggunakan data normalisasi yang telah disediakan.</p>
-<doc-anchor-target id="5-pemilihan-algoritma-clustering">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#5-pemilihan-algoritma-clustering">#</doc-anchor-trigger>
-        <span>5. Pemilihan Algoritma Clustering</span>
-    </h3>
-</doc-anchor-target>
-<p>Memilih algoritma clustering melibatkan keputusan tentang metode yang akan digunakan untuk mengelompokkan data. Berbagai algoritma clustering, seperti K-Means, DBSCAN, atau hierarchical clustering, memiliki pendekatan yang berbeda dalam mengelompokkan data. Pilihan algoritma bergantung pada jenis data yang kalian miliki dan tujuan analisis.</p>
-<p>Misalnya, K-Means dipilih jika kalian sudah mengetahui jumlah klaster yang diinginkan, sedangkan DBSCAN lebih cocok jika ingin mengidentifikasi klaster dengan bentuk yang tidak teratur dan juga menangani noise dalam data.</p>
-<doc-anchor-target id="6-penerapan-algoritma-clustering">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#6-penerapan-algoritma-clustering">#</doc-anchor-trigger>
-        <span>6. Penerapan Algoritma Clustering</span>
-    </h3>
-</doc-anchor-target>
-<p>Setelah algoritma clustering dipilih, langkah berikutnya adalah menerapkannya pada data. Pada tahap ini, algoritma yang telah dipilih digunakan untuk mengelompokkan data ke dalam klaster berdasarkan fitur yang telah ditentukan.</p>
-<p>Misalnya, dengan K-Means, algoritma akan membagi data pelanggan ke dalam sejumlah klaster yang telah ditentukan berdasarkan kesamaan fitur, seperti usia dan pendapatan. Penerapan algoritma ini menghasilkan klaster yang mencerminkan kelompok-kelompok data dengan karakteristik serupa.</p>
-<p><strong>Contoh Hasil Penerapan K-Means</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>ID Pelanggan</th>
-<th>Usia</th>
-<th>Pendapatan (Juta IDR)</th>
-<th>Riwayat Pembelian</th>
-<th>Cluster</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>25</td>
-<td>5.0</td>
-<td>Elektronik</td>
-<td>1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>30</td>
-<td>8.0</td>
-<td>Pakaian</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>22</td>
-<td>4.5</td>
-<td>Elektronik</td>
-<td>1</td>
-</tr>
-<tr>
-<td>4</td>
-<td>35</td>
-<td>0.0</td>
-<td>Pakaian</td>
-<td>2</td>
-</tr>
-<tr>
-<td>5</td>
-<td>29</td>
-<td>6.0</td>
-<td>Elektronik</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="7-evaluasi-hasil-clustering">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#7-evaluasi-hasil-clustering">#</doc-anchor-trigger>
-        <span>7. Evaluasi Hasil Clustering</span>
-    </h3>
-</doc-anchor-target>
-<p>Evaluasi hasil clustering adalah proses untuk menilai seberapa baik data telah dikelompokkan setelah algoritma diterapkan. Berbagai metrik digunakan untuk mengevaluasi kualitas klaster, seperti silhouette score yang mengukur seberapa baik setiap objek berada dalam klaster-nya sendiri dibandingkan dengan klaster lainnya, atau Davies-Bouldin Index yang mengukur keterpisahan antar klaster. Evaluasi ini membantu memastikan bahwa klaster yang terbentuk valid dan sesuai dengan tujuan analisis.</p>
-<p><strong>Contoh Evaluasi dengan Silhouette Score</strong></p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th>ID Pelanggan 1</th>
-<th>Silhouette Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>0.68</td>
-</tr>
-<tr>
-<td>2</td>
-<td>0.77</td>
-</tr>
-<tr>
-<td>3</td>
-<td>0.71</td>
-</tr>
-<tr>
-<td>4</td>
-<td>0.72</td>
-</tr>
-<tr>
-<td>5</td>
-<td>0.65</td>
-</tr>
-</tbody>
-</table>
-</div>
-<doc-anchor-target id="8-interpretasi-dan-tindakan">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#8-interpretasi-dan-tindakan">#</doc-anchor-trigger>
-        <span>8. Interpretasi dan Tindakan</span>
-    </h3>
-</doc-anchor-target>
-<p>Langkah terakhir adalah interpretasi dan tindakan berdasarkan hasil clustering. Setelah clustering selesai, hasilnya perlu dianalisis untuk memahami pola atau struktur yang muncul dalam data. Berdasarkan temuan ini, langkah-langkah tindak lanjut dapat diambil, seperti pengembangan strategi bisnis, pembuatan laporan, atau penelitian lebih lanjut.</p>
-<p>Misalnya, jika clustering mengidentifikasi segmen pelanggan baru, kalian mungkin akan merancang strategi pemasaran yang lebih terarah untuk setiap segmen. Interpretasi yang baik dari hasil clustering memungkinkan kalian membuat keputusan yang lebih informatif dan strategis berdasarkan analisis data.</p>
-<p><strong>Contoh Interpretasi dan Tindakan</strong></p>
-<p><strong>Interpretasi Hasil</strong></p>
+<p>Untuk memastikan model klasifikasi bekerja dengan baik, kinerja model dievaluasi menggunakan beberapa metrik, antara lain:</p>
 <ul>
-<li><strong>Cluster 1:</strong> Terdiri dari pelanggan dengan usia lebih muda dan pendapatan menengah, lebih suka membeli elektronik.</li>
-<li><strong>Cluster 2:</strong> Terdiri dari pelanggan dengan usia lebih tua dan pendapatan lebih tinggi, lebih suka membeli pakaian.</li>
+<li><p><strong>Akurasi (Accuracy):</strong> Persentase prediksi yang benar dari total prediksi.</p>
+<p><span class="math">\text{Akurasi} = \frac{\text{Jumlah Prediksi Benar}}{\text{Total Jumlah Data}}</span></p>
+</li>
+<li><p><strong>Presisi (Precision):</strong> Seberapa tepat model dalam mengidentifikasi kelas positif.</p>
+<p><span class="math">\text{Presisi} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}</span></p>
+</li>
+<li><p><strong>Recall (Sensitivitas):</strong> Seberapa baik model dalam menangkap semua instance kelas positif.</p>
+<p><span class="math">\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}</span></p>
+</li>
+<li><p><strong>F1-Score:</strong> Rata-rata harmonis dari presisi dan recall, memberikan gambaran keseimbangan antara keduanya.</p>
+<p><span class="math">\text{F1-Score} = 2 \times \frac{\text{Presisi} \times \text{Recall}}{\text{Presisi} + \text{Recall}}</span></p>
+</li>
+<li><p><strong>Confusion Matrix:</strong> Matriks yang menunjukkan jumlah prediksi benar dan salah yang dilakukan oleh model.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th></th>
+<th>Prediksi Positif</th>
+<th>Prediksi Negatif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aktual Positif</strong></td>
+<td>True Positive (TP)</td>
+<td>False Negative (FN)</td>
+</tr>
+<tr>
+<td><strong>Aktual Negatif</strong></td>
+<td>False Positive (FP)</td>
+<td>True Negative (TN)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
 </ul>
-<p><strong>Tindakan</strong></p>
+<doc-anchor-target id="tantangan-dalam-klasifikasi">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#tantangan-dalam-klasifikasi">#</doc-anchor-trigger>
+        <span>Tantangan dalam Klasifikasi</span>
+    </h3>
+</doc-anchor-target>
 <ul>
-<li>Rancang kampanye pemasaran yang ditargetkan untuk masing-masing klaster, seperti promosi produk elektronik untuk Cluster 1 dan penawaran eksklusif pakaian untuk Cluster 2.</li>
+<li><strong>Overfitting</strong><br />
+Model terlalu rumit sehingga bekerja sangat baik pada data pelatihan namun buruk pada data pengujian.</li>
+<li><strong>Underfitting</strong><br />
+Model terlalu sederhana sehingga tidak mampu menangkap pola dalam data.</li>
+<li><strong>Data Tidak Seimbang</strong><br />
+Ketidakseimbangan jumlah data antar kelas dapat mempengaruhi kinerja model.</li>
+<li><strong>Pemilihan Fitur</strong><br />
+Menentukan fitur yang relevan dan informatif untuk meningkatkan akurasi model.</li>
+<li><strong>Skalabilitas</strong><br />
+Menangani dataset yang sangat besar atau berdimensi tinggi.</li>
 </ul>
-<p>Dengan menerapkan metode clustering yang tepat dan melakukan evaluasi secara cermat, kita dapat mengidentifikasi pola-pola tersembunyi dan membuat keputusan yang lebih strategis. Misalnya, dalam konteks pemasaran, hasil clustering dapat digunakan untuk merancang kampanye yang lebih terarah dan efektif berdasarkan karakteristik masing-masing kelompok pelanggan.</p>
-<p>Clustering tidak hanya membantu dalam segmentasi pasar serta analisis data, tetapi juga dalam berbagai aplikasi lain seperti deteksi anomali dan pengelompokan dokumen. Dengan memahami dan menerapkan teknik clustering secara efektif, kita dapat memanfaatkan data dengan lebih baik serta mendukung pengambilan keputusan yang lebih informatif dan berbasis data.</p>
+<doc-anchor-target id="langkah-langkah-membangun-model-klasifikasi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-membangun-model-klasifikasi">#</doc-anchor-trigger>
+        <span>Langkah-langkah Membangun Model Klasifikasi</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="pengumpulan-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pengumpulan-data">#</doc-anchor-trigger>
+        <span>Pengumpulan Data</span>
+    </h3>
+</doc-anchor-target>
+<p>Langkah pertama adalah mengumpulkan data yang relevan dengan masalah yang ingin diselesaikan. Data ini harus mencakup fitur-fitur yang mewakili informasi penting serta label yang akurat.</p>
+<doc-anchor-target id="persiapan-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#persiapan-data">#</doc-anchor-trigger>
+        <span>Persiapan Data</span>
+    </h3>
+</doc-anchor-target>
+<p>Data yang dikumpulkan seringkali perlu dibersihkan dan dipersiapkan sebelum digunakan. Ini termasuk:</p>
+<ul>
+<li><strong>Menghapus atau Mengisi Nilai yang Hilang:</strong> Mengatasi data yang tidak lengkap.</li>
+<li><strong>Normalisasi atau Standardisasi:</strong> Menyelaraskan skala fitur agar model tidak bias terhadap fitur tertentu.</li>
+<li><strong>Transformasi Data:</strong> Mengubah data ke format yang lebih sesuai untuk analisis.</li>
+</ul>
+<doc-anchor-target id="pembagian-data">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pembagian-data">#</doc-anchor-trigger>
+        <span>Pembagian Data</span>
+    </h3>
+</doc-anchor-target>
+<p>Memisahkan data menjadi dua set utama:</p>
+<ul>
+<li><strong>Data Pelatihan (Training):</strong> Digunakan untuk melatih model.</li>
+<li><strong>Data Pengujian (Testing):</strong> Digunakan untuk mengevaluasi kinerja model.</li>
+</ul>
+<doc-anchor-target id="pemilihan-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pemilihan-model">#</doc-anchor-trigger>
+        <span>Pemilihan Model</span>
+    </h3>
+</doc-anchor-target>
+<p>Memilih algoritma klasifikasi yang tepat berdasarkan karakteristik data dan kebutuhan aplikasi. Metode yang digunakan dalam modul ini adalah <strong>K-Nearest Neighbors (KNN)</strong> dan <strong>Naive Bayes</strong>.</p>
+<doc-anchor-target id="pelatihan-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pelatihan-model">#</doc-anchor-trigger>
+        <span>Pelatihan Model</span>
+    </h3>
+</doc-anchor-target>
+<p>Melatih model dengan menggunakan data pelatihan agar dapat mengenali pola-pola dalam data tersebut.</p>
+<doc-anchor-target id="36-evaluasi-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#36-evaluasi-model">#</doc-anchor-trigger>
+        <span>3.6. Evaluasi Model</span>
+    </h3>
+</doc-anchor-target>
+<p>Mengukur kinerja model menggunakan data pengujian dan metrik evaluasi yang telah dijelaskan sebelumnya untuk memastikan model dapat mengklasifikasikan data dengan akurat.</p>
+<doc-anchor-target id="penyempurnaan-model">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#penyempurnaan-model">#</doc-anchor-trigger>
+        <span>Penyempurnaan Model</span>
+    </h3>
+</doc-anchor-target>
+<p>Jika model belum mencapai kinerja yang diinginkan, langkah-langkah berikut dapat diambil:</p>
+<ul>
+<li><strong>Optimasi Hyperparameter:</strong> Menyesuaikan parameter model untuk meningkatkan kinerja.</li>
+<li><strong>Feature Engineering:</strong> Menambah, menghapus, atau mengubah fitur untuk meningkatkan representasi data.</li>
+<li><strong>Mengatasi Data Tidak Seimbang:</strong> Menggunakan teknik seperti oversampling atau undersampling untuk menangani ketidakseimbangan kelas.</li>
+</ul>
+<doc-anchor-target id="implementasi-dan-pemantauan">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#implementasi-dan-pemantauan">#</doc-anchor-trigger>
+        <span>Implementasi dan Pemantauan</span>
+    </h3>
+</doc-anchor-target>
+<p>Mengimplementasikan model dalam lingkungan produksi dan terus memantau kinerjanya untuk memastikan bahwa model tetap akurat seiring waktu dan perubahan data.</p>
+<doc-anchor-target id="alat-dan-perangkat-lunak-untuk-klasifikasi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#alat-dan-perangkat-lunak-untuk-klasifikasi">#</doc-anchor-trigger>
+        <span>Alat dan Perangkat Lunak untuk Klasifikasi</span>
+    </h2>
+</doc-anchor-target>
+<p>Berbagai alat dan perangkat lunak dapat membantu dalam tugas klasifikasi, antara lain:</p>
+<ul>
+<li><strong>Bahasa Pemrograman:</strong> Python, R</li>
+<li><strong>Library Python:</strong> Scikit-learn, TensorFlow, Keras, PyTorch</li>
+<li><strong>Software Statistik:</strong> SPSS, SAS</li>
+<li><strong>Platform Pembelajaran Mesin:</strong> Google Cloud ML, AWS SageMaker, Microsoft Azure ML</li>
+</ul>
+<doc-anchor-target id="studi-kasus-klasifikasi-dalam-kehidupan-nyata">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#studi-kasus-klasifikasi-dalam-kehidupan-nyata">#</doc-anchor-trigger>
+        <span>Studi Kasus: Klasifikasi dalam Kehidupan Nyata</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="pengklasifikasian-email-spam">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pengklasifikasian-email-spam">#</doc-anchor-trigger>
+        <span>Pengklasifikasian Email Spam</span>
+    </h3>
+</doc-anchor-target>
+<p>Menggunakan data email dengan fitur seperti frekuensi kata, panjang email, dan metadata lainnya untuk mengklasifikasikan email sebagai spam atau bukan spam.</p>
+<doc-anchor-target id="diagnosis-penyakit">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#diagnosis-penyakit">#</doc-anchor-trigger>
+        <span>Diagnosis Penyakit</span>
+    </h3>
+</doc-anchor-target>
+<p>Menggunakan data medis pasien dengan fitur seperti gejala, hasil tes laboratorium, dan riwayat kesehatan untuk mengklasifikasikan jenis penyakit yang diderita.</p>
+<doc-anchor-target id="analisis-sentimen">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#analisis-sentimen">#</doc-anchor-trigger>
+        <span>Analisis Sentimen</span>
+    </h3>
+</doc-anchor-target>
+<p>Mengklasifikasikan ulasan produk atau komentar media sosial ke dalam kategori sentimen seperti positif, negatif, atau netral berdasarkan teks yang diberikan.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -551,20 +429,20 @@
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../8-matplotlib/practicum/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../9-k-means-clustering/k-means/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Praktikum 2</span>
+                                                <span class="block mt-1">K-​Means Clustering</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../9-k-means-clustering/k-means/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../10-klasifikasi/knn/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">K-​Means Clustering</span>
+                                                <span class="block mt-1">K-​Nearest Neighbors</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -608,6 +486,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "9 - Clustering", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "10 - Klasifikasi", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
