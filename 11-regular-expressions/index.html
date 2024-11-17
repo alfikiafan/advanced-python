@@ -10,24 +10,26 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Pengantar Klasifikasi</title>
-    <meta name="title" content="Pengantar Klasifikasi">
-    <meta name="description" content="Klasifikasi merupakan salah satu cabang utama dalam Pembelajaran Mesin (Machine Learning).">
+    <title>11 - Regular Expressions</title>
+    <meta name="title" content="11 - Regular Expressions">
+    <meta name="description" content="Hai! Sebelum kita menyelami teknik dan penerapan regex dalam Python, mari kita pahami terlebih dahulu apa itu regex dan mengapa hal ini penting.">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://alfiki.my.id/advanced-python/10-klasifikasi/">
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/11-regular-expressions/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alfiki.my.id/advanced-python/10-klasifikasi/">
-    <meta property="og:title" content="Pengantar Klasifikasi">
-    <meta property="og:description" content="Klasifikasi merupakan salah satu cabang utama dalam Pembelajaran Mesin (Machine Learning).">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/11-regular-expressions/">
+    <meta property="og:title" content="11 - Regular Expressions">
+    <meta property="og:description" content="Hai! Sebelum kita menyelami teknik dan penerapan regex dalam Python, mari kita pahami terlebih dahulu apa itu regex dan mengapa hal ini penting.">
+    <meta property="og:image" content="https://alfiki.my.id/advanced-python/img/regex-01.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/10-klasifikasi/">
-    <meta property="twitter:title" content="Pengantar Klasifikasi">
-    <meta property="twitter:description" content="Klasifikasi merupakan salah satu cabang utama dalam Pembelajaran Mesin (Machine Learning).">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/11-regular-expressions/">
+    <meta property="twitter:title" content="11 - Regular Expressions">
+    <meta property="twitter:description" content="Hai! Sebelum kita menyelami teknik dan penerapan regex dalam Python, mari kita pahami terlebih dahulu apa itu regex dan mengapa hal ini penting.">
+    <meta property="twitter:image" content="https://alfiki.my.id/advanced-python/img/regex-01.png">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -36,8 +38,6 @@
     <script data-cfasync="false" src="../resources/js/config.js?v=3.6.0.785162767984" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../resources/js/lunr.js?v=3.6.0.785162767984" data-turbo-eval="false" defer></script>
-    <link href="../resources/css/katex.css?v=3.6.0" rel="stylesheet">
-    <script id="katex-js" data-cfasync="false" src="../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -152,274 +152,39 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="pengantar-klasifikasi" class="break-words">
+<doc-anchor-target id="11---regular-expressions" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pengantar-klasifikasi">#</doc-anchor-trigger>
-        <span>Pengantar Klasifikasi</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#11---regular-expressions">#</doc-anchor-trigger>
+        <span>11 - Regular Expressions</span>
     </h1>
 </doc-anchor-target>
-<doc-anchor-target id="pendahuluan">
+<p>Hai! Sebelum kita menyelami teknik dan penerapan regex dalam Python, mari kita pahami terlebih dahulu apa itu regex dan mengapa hal ini penting.</p>
+<doc-anchor-target id="apa-itu-regex">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pendahuluan">#</doc-anchor-trigger>
-        <span>Pendahuluan</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-regex">#</doc-anchor-trigger>
+        <span>Apa Itu Regex?</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="apa-itu-klasifikasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#apa-itu-klasifikasi">#</doc-anchor-trigger>
-        <span>Apa Itu Klasifikasi?</span>
-    </h3>
-</doc-anchor-target>
-<p>Klasifikasi merupakan salah satu cabang utama dalam <strong>Pembelajaran Mesin (Machine Learning)</strong>. Secara sederhana, klasifikasi adalah proses mengelompokkan data ke dalam kategori atau kelas yang telah ditentukan sebelumnya berdasarkan karakteristik atau fitur yang dimiliki data tersebut. Contohnya, menentukan apakah sebuah email termasuk spam atau bukan, atau mengidentifikasi jenis bunga berdasarkan fitur-fiturnya.</p>
-<doc-anchor-target id="mengapa-klasifikasi-penting">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-klasifikasi-penting">#</doc-anchor-trigger>
-        <span>Mengapa Klasifikasi Penting?</span>
-    </h3>
-</doc-anchor-target>
-<p>Klasifikasi memiliki berbagai aplikasi praktis yang membantu dalam memecahkan berbagai masalah sehari-hari, seperti:</p>
-<ul>
-<li>Memisahkan email masuk ke dalam kategori spam dan bukan spam.</li>
-<li>Mengklasifikasikan pasien berdasarkan gejala untuk menentukan penyakit yang diderita.</li>
-<li>Mengidentifikasi individu dari gambar wajah.</li>
-<li>*Menentukan apakah ulasan atau komentar bersifat positif, negatif, atau netral.</li>
-</ul>
-<doc-anchor-target id="dasar-dasar-klasifikasi">
+<p><figure class="content-center">
+    <img src="../img/regex-01.png" alt="Regex">
+    <figcaption class="caption">Regex</figcaption>
+</figure>
+</p>
+<p>Regular Expressions (Regex) adalah alat yang kuat untuk mencari, mencocokkan, dan memanipulasi teks berdasarkan pola tertentu. Regex itu seperti mesin pencari super canggih yang dapat menemukan informasi spesifik di tengah lautan data dengan cepat dan akurat. Bagi mahasiswa matematika, kemampuan ini sangat berguna dalam mengolah data, menganalisis hasil eksperimen, atau bahkan memformat laporan penelitian.</p>
+<doc-anchor-target id="mengapa-regex-itu-penting">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#dasar-dasar-klasifikasi">#</doc-anchor-trigger>
-        <span>Dasar-dasar Klasifikasi</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-regex-itu-penting">#</doc-anchor-trigger>
+        <span>Mengapa Regex itu Penting?</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="pembelajaran-terawasi-supervised-learning">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pembelajaran-terawasi-supervised-learning">#</doc-anchor-trigger>
-        <span>Pembelajaran Terawasi (Supervised Learning)</span>
-    </h3>
-</doc-anchor-target>
-<p>Klasifikasi termasuk dalam kategori <strong>Pembelajaran Terawasi</strong>, di mana model dilatih menggunakan data yang telah diberi label. Data ini terdiri dari fitur-fitur (karakteristik) dan label (kelas) yang sesuai. Model akan belajar dari data ini untuk dapat mengklasifikasikan data baru dengan benar.</p>
-<doc-anchor-target id="komponen-utama-dalam-klasifikasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#komponen-utama-dalam-klasifikasi">#</doc-anchor-trigger>
-        <span>Komponen Utama dalam Klasifikasi</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Fitur (Attributes):</strong> Informasi atau karakteristik yang digunakan untuk mendeskripsikan data. Contoh: umur, pendapatan, tinggi badan.</li>
-<li><strong>Label (Classes):</strong> Kategori atau kelas yang menjadi target klasifikasi. Contoh: spam atau bukan spam, jenis penyakit.</li>
-</ul>
-<doc-anchor-target id="jenis-jenis-klasifikasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#jenis-jenis-klasifikasi">#</doc-anchor-trigger>
-        <span>Jenis-jenis Klasifikasi</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Klasifikasi Biner (Binary Classification):</strong> Mengelompokkan data ke dalam dua kelas. Contoh: email spam vs. bukan spam.</li>
-<li><strong>Klasifikasi Multikelas (Multiclass Classification):</strong> Mengelompokkan data ke dalam lebih dari dua kelas. Contoh: jenis bunga seperti setosa, versicolor, atau virginica.</li>
-<li><strong>Klasifikasi Multilabel (Multilabel Classification):</strong> Mengizinkan data masuk ke dalam lebih dari satu kelas sekaligus. Contoh: artikel yang diberi beberapa tag topik.</li>
-</ul>
-<doc-anchor-target id="proses-klasifikasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#proses-klasifikasi">#</doc-anchor-trigger>
-        <span>Proses Klasifikasi</span>
-    </h3>
-</doc-anchor-target>
-<ol>
-<li><strong>Pengumpulan Data</strong><br />
-Mengumpulkan data yang relevan dengan masalah yang ingin diselesaikan.</li>
-<li><strong>Persiapan Data</strong><br />
-Membersihkan dan menyiapkan data, termasuk menangani nilai yang hilang dan melakukan normalisasi.</li>
-<li><strong>Pembagian Data</strong><br />
-Memisahkan data menjadi dua bagian utama: data pelatihan (training) dan data pengujian (testing).</li>
-<li><strong>Pemilihan Model</strong><br />
-Memilih algoritma klasifikasi yang akan digunakan. Dalam modul ini, metode yang dipakai adalah <strong>K-Nearest Neighbors (KNN)</strong> dan <strong>Naive Bayes</strong>.</li>
-<li><strong>Pelatihan Model</strong><br />
-Melatih model menggunakan data pelatihan agar dapat mengenali pola-pola dalam data.</li>
-<li><strong>Evaluasi Model</strong><br />
-Mengukur seberapa baik model dalam mengklasifikasikan data menggunakan data pengujian.</li>
-<li><strong>Implementasi</strong><br />
-Menggunakan model yang telah dilatih untuk mengklasifikasikan data baru di dunia nyata.</li>
-</ol>
-<doc-anchor-target id="evaluasi-kinerja-model-klasifikasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#evaluasi-kinerja-model-klasifikasi">#</doc-anchor-trigger>
-        <span>Evaluasi Kinerja Model Klasifikasi</span>
-    </h3>
-</doc-anchor-target>
-<p>Untuk memastikan model klasifikasi bekerja dengan baik, kinerja model dievaluasi menggunakan beberapa metrik, antara lain:</p>
-<ul>
-<li><p><strong>Akurasi (Accuracy):</strong> Persentase prediksi yang benar dari total prediksi.</p>
-<p><span class="math">\text{Akurasi} = \frac{\text{Jumlah Prediksi Benar}}{\text{Total Jumlah Data}}</span></p>
-</li>
-<li><p><strong>Presisi (Precision):</strong> Seberapa tepat model dalam mengidentifikasi kelas positif.</p>
-<p><span class="math">\text{Presisi} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Positives}}</span></p>
-</li>
-<li><p><strong>Recall (Sensitivitas):</strong> Seberapa baik model dalam menangkap semua instance kelas positif.</p>
-<p><span class="math">\text{Recall} = \frac{\text{True Positives}}{\text{True Positives} + \text{False Negatives}}</span></p>
-</li>
-<li><p><strong>F1-Score:</strong> Rata-rata harmonis dari presisi dan recall, memberikan gambaran keseimbangan antara keduanya.</p>
-<p><span class="math">\text{F1-Score} = 2 \times \frac{\text{Presisi} \times \text{Recall}}{\text{Presisi} + \text{Recall}}</span></p>
-</li>
-<li><p><strong>Confusion Matrix:</strong> Matriks yang menunjukkan jumlah prediksi benar dan salah yang dilakukan oleh model.</p>
-<div class="table-wrapper scrollbar overflow-hidden">
-<table class="comfortable">
-<thead>
-<tr>
-<th></th>
-<th>Prediksi Positif</th>
-<th>Prediksi Negatif</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Aktual Positif</strong></td>
-<td>True Positive (TP)</td>
-<td>False Negative (FN)</td>
-</tr>
-<tr>
-<td><strong>Aktual Negatif</strong></td>
-<td>False Positive (FP)</td>
-<td>True Negative (TN)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-<doc-anchor-target id="tantangan-dalam-klasifikasi">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#tantangan-dalam-klasifikasi">#</doc-anchor-trigger>
-        <span>Tantangan dalam Klasifikasi</span>
-    </h3>
-</doc-anchor-target>
-<ul>
-<li><strong>Overfitting</strong><br />
-Model terlalu rumit sehingga bekerja sangat baik pada data pelatihan namun buruk pada data pengujian.</li>
-<li><strong>Underfitting</strong><br />
-Model terlalu sederhana sehingga tidak mampu menangkap pola dalam data.</li>
-<li><strong>Data Tidak Seimbang</strong><br />
-Ketidakseimbangan jumlah data antar kelas dapat mempengaruhi kinerja model.</li>
-<li><strong>Pemilihan Fitur</strong><br />
-Menentukan fitur yang relevan dan informatif untuk meningkatkan akurasi model.</li>
-<li><strong>Skalabilitas</strong><br />
-Menangani dataset yang sangat besar atau berdimensi tinggi.</li>
-</ul>
-<doc-anchor-target id="langkah-langkah-membangun-model-klasifikasi">
+<p>Bayangkan jika kamu punya ribuan baris data eksperimen yang perlu dianalisis. Mencari pola tertentu atau mengekstrak angka-angka penting secara manual akan memakan waktu dan rawan kesalahan. Dengan regex, kamu dapat mengotomatisasi proses ini, meningkatkan efisiensi, dan memastikan konsistensi dalam pengolahan data. Selain itu, menguasai regex akan memperkuat keterampilan pemrograman, yang merupakan aset berharga dalam berbagai bidang penelitian dan industri.</p>
+<doc-anchor-target id="yuk-belajar-regex">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#langkah-langkah-membangun-model-klasifikasi">#</doc-anchor-trigger>
-        <span>Langkah-langkah Membangun Model Klasifikasi</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#yuk-belajar-regex">#</doc-anchor-trigger>
+        <span>Yuk Belajar Regex!</span>
     </h2>
 </doc-anchor-target>
-<doc-anchor-target id="pengumpulan-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pengumpulan-data">#</doc-anchor-trigger>
-        <span>Pengumpulan Data</span>
-    </h3>
-</doc-anchor-target>
-<p>Langkah pertama adalah mengumpulkan data yang relevan dengan masalah yang ingin diselesaikan. Data ini harus mencakup fitur-fitur yang mewakili informasi penting serta label yang akurat.</p>
-<doc-anchor-target id="persiapan-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#persiapan-data">#</doc-anchor-trigger>
-        <span>Persiapan Data</span>
-    </h3>
-</doc-anchor-target>
-<p>Data yang dikumpulkan seringkali perlu dibersihkan dan dipersiapkan sebelum digunakan. Ini termasuk:</p>
-<ul>
-<li><strong>Menghapus atau Mengisi Nilai yang Hilang:</strong> Mengatasi data yang tidak lengkap.</li>
-<li><strong>Normalisasi atau Standardisasi:</strong> Menyelaraskan skala fitur agar model tidak bias terhadap fitur tertentu.</li>
-<li><strong>Transformasi Data:</strong> Mengubah data ke format yang lebih sesuai untuk analisis.</li>
-</ul>
-<doc-anchor-target id="pembagian-data">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pembagian-data">#</doc-anchor-trigger>
-        <span>Pembagian Data</span>
-    </h3>
-</doc-anchor-target>
-<p>Memisahkan data menjadi dua set utama:</p>
-<ul>
-<li><strong>Data Pelatihan (Training):</strong> Digunakan untuk melatih model.</li>
-<li><strong>Data Pengujian (Testing):</strong> Digunakan untuk mengevaluasi kinerja model.</li>
-</ul>
-<doc-anchor-target id="pemilihan-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pemilihan-model">#</doc-anchor-trigger>
-        <span>Pemilihan Model</span>
-    </h3>
-</doc-anchor-target>
-<p>Memilih algoritma klasifikasi yang tepat berdasarkan karakteristik data dan kebutuhan aplikasi. Metode yang digunakan dalam modul ini adalah <strong>K-Nearest Neighbors (KNN)</strong> dan <strong>Naive Bayes</strong>.</p>
-<doc-anchor-target id="pelatihan-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pelatihan-model">#</doc-anchor-trigger>
-        <span>Pelatihan Model</span>
-    </h3>
-</doc-anchor-target>
-<p>Melatih model dengan menggunakan data pelatihan agar dapat mengenali pola-pola dalam data tersebut.</p>
-<doc-anchor-target id="36-evaluasi-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#36-evaluasi-model">#</doc-anchor-trigger>
-        <span>3.6. Evaluasi Model</span>
-    </h3>
-</doc-anchor-target>
-<p>Mengukur kinerja model menggunakan data pengujian dan metrik evaluasi yang telah dijelaskan sebelumnya untuk memastikan model dapat mengklasifikasikan data dengan akurat.</p>
-<doc-anchor-target id="penyempurnaan-model">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#penyempurnaan-model">#</doc-anchor-trigger>
-        <span>Penyempurnaan Model</span>
-    </h3>
-</doc-anchor-target>
-<p>Jika model belum mencapai kinerja yang diinginkan, langkah-langkah berikut dapat diambil:</p>
-<ul>
-<li><strong>Optimasi Hyperparameter:</strong> Menyesuaikan parameter model untuk meningkatkan kinerja.</li>
-<li><strong>Feature Engineering:</strong> Menambah, menghapus, atau mengubah fitur untuk meningkatkan representasi data.</li>
-<li><strong>Mengatasi Data Tidak Seimbang:</strong> Menggunakan teknik seperti oversampling atau undersampling untuk menangani ketidakseimbangan kelas.</li>
-</ul>
-<doc-anchor-target id="implementasi-dan-pemantauan">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#implementasi-dan-pemantauan">#</doc-anchor-trigger>
-        <span>Implementasi dan Pemantauan</span>
-    </h3>
-</doc-anchor-target>
-<p>Mengimplementasikan model dalam lingkungan produksi dan terus memantau kinerjanya untuk memastikan bahwa model tetap akurat seiring waktu dan perubahan data.</p>
-<doc-anchor-target id="alat-dan-perangkat-lunak-untuk-klasifikasi">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#alat-dan-perangkat-lunak-untuk-klasifikasi">#</doc-anchor-trigger>
-        <span>Alat dan Perangkat Lunak untuk Klasifikasi</span>
-    </h2>
-</doc-anchor-target>
-<p>Berbagai alat dan perangkat lunak dapat membantu dalam tugas klasifikasi, antara lain:</p>
-<ul>
-<li><strong>Bahasa Pemrograman:</strong> Python, R</li>
-<li><strong>Library Python:</strong> Scikit-learn, TensorFlow, Keras, PyTorch</li>
-<li><strong>Software Statistik:</strong> SPSS, SAS</li>
-<li><strong>Platform Pembelajaran Mesin:</strong> Google Cloud ML, AWS SageMaker, Microsoft Azure ML</li>
-</ul>
-<doc-anchor-target id="studi-kasus-klasifikasi-dalam-kehidupan-nyata">
-    <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#studi-kasus-klasifikasi-dalam-kehidupan-nyata">#</doc-anchor-trigger>
-        <span>Studi Kasus: Klasifikasi dalam Kehidupan Nyata</span>
-    </h2>
-</doc-anchor-target>
-<doc-anchor-target id="pengklasifikasian-email-spam">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#pengklasifikasian-email-spam">#</doc-anchor-trigger>
-        <span>Pengklasifikasian Email Spam</span>
-    </h3>
-</doc-anchor-target>
-<p>Menggunakan data email dengan fitur seperti frekuensi kata, panjang email, dan metadata lainnya untuk mengklasifikasikan email sebagai spam atau bukan spam.</p>
-<doc-anchor-target id="diagnosis-penyakit">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#diagnosis-penyakit">#</doc-anchor-trigger>
-        <span>Diagnosis Penyakit</span>
-    </h3>
-</doc-anchor-target>
-<p>Menggunakan data medis pasien dengan fitur seperti gejala, hasil tes laboratorium, dan riwayat kesehatan untuk mengklasifikasikan jenis penyakit yang diderita.</p>
-<doc-anchor-target id="analisis-sentimen">
-    <h3>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#analisis-sentimen">#</doc-anchor-trigger>
-        <span>Analisis Sentimen</span>
-    </h3>
-</doc-anchor-target>
-<p>Mengklasifikasikan ulasan produk atau komentar media sosial ke dalam kategori sentimen seperti positif, negatif, atau netral berdasarkan teks yang diberikan.</p>
+<p>Sebagai mahasiswa matematika, kita bakal sering berurusan dengan data numerik dan persamaan kompleks. Regex memungkinkan kita untuk membersihkan data, mengekstrak informasi penting, dan memvalidasi input dengan mudah. Dengan memahami regex, kita tidak hanya meningkatkan produktivitas tetapi juga membuka peluang untuk menerapkan teknik analisis data yang lebih canggih dalam studi dan penelitian.</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -429,20 +194,20 @@ Menangani dataset yang sangat besar atau berdimensi tinggi.</li>
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../9-k-means-clustering/k-means/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../10-klasifikasi/naive_bayes/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">K-​Means Clustering</span>
+                                                <span class="block mt-1">Naive Bayes</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../10-klasifikasi/knn/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../11-regular-expressions/regex/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">K-​Nearest Neighbors</span>
+                                                <span class="block mt-1">Regular Expressions</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -486,6 +251,6 @@ Menangani dataset yang sangat besar atau berdimensi tinggi.</li>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "10 - Klasifikasi", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "11 - Regular Expressions", level: 1, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
 </body>
 </html>
