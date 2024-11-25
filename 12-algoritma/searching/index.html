@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-root" content="/advanced-python">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.785816628692">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Algoritma Pencarian</title>
+    <meta name="title" content="Algoritma Pencarian">
+    <meta name="description" content="Pencarian adalah proses dasar untuk menemukan elemen atau item tertentu dalam kumpulan data.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://alfiki.my.id/advanced-python/12-algoritma/searching/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alfiki.my.id/advanced-python/12-algoritma/searching/">
+    <meta property="og:title" content="Algoritma Pencarian">
+    <meta property="og:description" content="Pencarian adalah proses dasar untuk menemukan elemen atau item tertentu dalam kumpulan data.">
+    <meta property="og:image" content="https://alfiki.my.id/advanced-python/img/algoritma-02.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alfiki.my.id/advanced-python/12-algoritma/searching/">
+    <meta property="twitter:title" content="Algoritma Pencarian">
+    <meta property="twitter:description" content="Pencarian adalah proses dasar untuk menemukan elemen atau item tertentu dalam kumpulan data.">
+    <meta property="twitter:image" content="https://alfiki.my.id/advanced-python/img/algoritma-02.png">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../resources/css/retype.css?v=3.6.0.785816628692" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.6.0.785816628692" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.6.0.785816628692" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.6.0.785816628692" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../" class="flex items-center leading-snug text-xl">
+                            <span class="dark:text-white font-semibold line-clamp-1 md:line-clamp-2">Pemrograman Lanjut dengan Python</span>
+                        </a>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="algoritma-pencarian" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#algoritma-pencarian">#</doc-anchor-trigger>
+        <span>Algoritma Pencarian</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="pengantar-pencarian">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pengantar-pencarian">#</doc-anchor-trigger>
+        <span>Pengantar Pencarian</span>
+    </h2>
+</doc-anchor-target>
+<p>Pencarian adalah proses dasar untuk menemukan elemen atau item tertentu dalam kumpulan data. Kumpulan data ini bisa berupa array, list, pohon, atau struktur data lainnya. Tujuan utama dari pencarian adalah menentukan apakah elemen yang diinginkan ada dalam data dan jika ada, menemukan lokasi tepatnya atau mengambilnya. Pencarian sangat penting dalam berbagai tugas komputasi dan aplikasi dunia nyata, seperti pengambilan informasi, analisis data, proses pengambilan keputusan, dan banyak lagi.</p>
+<doc-anchor-target id="mengapa-algoritma-pencarian-itu-penting">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mengapa-algoritma-pencarian-itu-penting">#</doc-anchor-trigger>
+        <span>Mengapa Algoritma Pencarian itu Penting?</span>
+    </h2>
+</doc-anchor-target>
+<ol>
+<li>Algoritma pencarian yang efisien dapat meningkatkan performa program.</li>
+<li>Memungkinkan menemukan dan mengambil data spesifik dengan cepat dari dataset besar.</li>
+<li>Memungkinkan query database yang cepat.</li>
+<li>Digunakan dalam berbagai tugas pemecahan masalah.</li>
+</ol>
+<doc-anchor-target id="karakteristik-pencarian">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#karakteristik-pencarian">#</doc-anchor-trigger>
+        <span>Karakteristik Pencarian</span>
+    </h2>
+</doc-anchor-target>
+<p>Berikut adalah beberapa aspek kunci dari algoritma pencarian:</p>
+<ol>
+<li><p><strong>Elemen Target</strong>:<br />
+Elemen spesifik yang ingin ditemukan dalam kumpulan data, bisa berupa nilai, catatan, kunci, atau entitas data lainnya.</p>
+</li>
+<li><p><strong>Ruang Pencarian</strong>:<br />
+Seluruh kumpulan data tempat mencari elemen target. Ruang pencarian ini bervariasi tergantung pada struktur data yang digunakan.</p>
+</li>
+<li><p><strong>Kompleksitas</strong>:<br />
+Pencarian memiliki tingkat kompleksitas yang berbeda tergantung pada struktur data dan algoritma yang digunakan, biasanya diukur dalam hal waktu dan ruang.</p>
+</li>
+<li><p><strong>Deterministik vs Non-Deterministik</strong>:<br />
+Beberapa algoritma pencarian, seperti binary search, deterministik karena mengikuti pendekatan yang jelas dan sistematis. Sementara linear search bisa dianggap non-deterministik karena mungkin perlu memeriksa seluruh ruang pencarian dalam kasus terburuk.</p>
+</li>
+</ol>
+<doc-anchor-target id="aplikasi-pencarian">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#aplikasi-pencarian">#</doc-anchor-trigger>
+        <span>Aplikasi Pencarian</span>
+    </h2>
+</doc-anchor-target>
+<p>Algoritma pencarian memiliki berbagai aplikasi di berbagai bidang, di antaranya:</p>
+<ul>
+<li><strong>Pengambilan Informasi</strong><br />
+Mesin pencari seperti Google menggunakan algoritma pencarian canggih untuk mengambil informasi relevan dari data web yang besar.</li>
+<li><strong>Sistem Basis Data</strong><br />
+Pencarian digunakan untuk mengambil catatan data spesifik berdasarkan query pengguna, meningkatkan efisiensi pengambilan data.</li>
+<li><strong>E-commerce</strong><br />
+Memungkinkan pengguna menemukan produk dengan cepat berdasarkan preferensi, spesifikasi, atau kata kunci.</li>
+<li><strong>Jaringan</strong><br />
+Algoritma pencarian digunakan untuk routing paket secara efisien melalui jaringan, menemukan jalur optimal, dan mengelola sumber daya jaringan.</li>
+<li><strong>Kecerdasan Buatan</strong><br />
+Algoritma pencarian memainkan peran penting dalam aplikasi AI, seperti pemecahan masalah, permainan (misalnya catur), dan proses pengambilan keputusan.</li>
+<li><strong>Pengenalan Pola</strong><br />
+Digunakan dalam tugas pencocokan pola, seperti pengenalan gambar, suara, dan tulisan tangan.</li>
+</ul>
+<doc-anchor-target id="algoritma-pencarian-1">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#algoritma-pencarian-1">#</doc-anchor-trigger>
+        <span>Algoritma Pencarian</span>
+    </h2>
+</doc-anchor-target>
+<p>Algoritma pencarian dirancang untuk memeriksa atau mengambil elemen dari struktur data tempat elemen tersebut disimpan. Berikut adalah beberapa algoritma pencarian yang umum:</p>
+<ol>
+<li><strong>Pencarian Linear (Linear Search)</strong></li>
+<li><strong>Pencarian Biner (Binary Search)</strong></li>
+<li><strong>Pencarian Ternary (Ternary Search)</strong></li>
+<li><strong>Jump Search</strong></li>
+<li><strong>Interpolation Search</strong></li>
+<li><strong>Fibonacci Search</strong></li>
+<li><strong>Exponential Search</strong></li>
+</ol>
+<doc-anchor-target id="1-pencarian-linear">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#1-pencarian-linear">#</doc-anchor-trigger>
+        <span>1. Pencarian Linear</span>
+    </h3>
+</doc-anchor-target>
+<p>Pencarian Linear, atau Sequential Search, adalah salah satu algoritma pencarian paling sederhana dan langsung. Cara kerjanya adalah dengan memeriksa setiap elemen dalam kumpulan data (array atau list) satu per satu hingga menemukan elemen yang dicari atau hingga seluruh data diperiksa.
+<figure class="content-center">
+    <img src="../../img/algoritma-02.png" alt="Pencarian Linear">
+    <figcaption class="caption">Pencarian Linear</figcaption>
+</figure>
+</p>
+<p><strong>Langkah-langkah Pencarian Linear:</strong></p>
+<p>Algoritma Pencarian Linear bekerja dengan cara yang sangat sederhana. Berikut langkah-langkah kerjanya:</p>
+<ol>
+<li>Periksa setiap elemen dalam kumpulan data satu demi satu, mulai dari elemen pertama hingga elemen terakhir.</li>
+<li>Bandingkan Setiap elemen yang diperiksa dengan nilai yang dicari (disebut juga sebagai &quot;key&quot;). Jika elemen tersebut sama persis dengan key, maka pencarian berhasil.</li>
+<li>Ketika algoritma menemukan elemen yang cocok, ia akan mengembalikan posisi atau indeks dari elemen tersebut dalam kumpulan data.</li>
+<li>Jika algoritma sudah memeriksa semua elemen dan tidak ada yang cocok dengan key, maka pencarian dianggap gagal dan akan mengembalikan pesan bahwa elemen tersebut tidak ditemukan.</li>
+</ol>
+<p><strong>Algoritma ini dapat digunakan ketika:</strong></p>
+<ul>
+<li>Data tidak terurut.</li>
+<li>Kumpulan data kecil.</li>
+<li>Pencarian dilakukan sekali atau jarang.</li>
+</ul>
+<p><strong>Kelebihan</strong></p>
+<ul>
+<li>Implementasi sederhana.</li>
+<li>Tidak memerlukan data yang terurut.</li>
+</ul>
+<p><strong>Kekurangan</strong></p>
+<ul>
+<li>Kurang efisien untuk kumpulan data besar.</li>
+<li>Waktu pencarian bisa lama karena harus memeriksa setiap elemen.</li>
+</ul>
+<p><strong>Ilustrasi Pencarian Linear</strong></p>
+<p>Misalkan ada sebuah array <code v-pre>arr[] = {10, 50, 30, 70, 80, 20, 90, 40}</code> dan kita ingin mencari <code v-pre>key = 30</code>.</p>
+<ol>
+<li><p><strong>Mulai dari Elemen Pertama:</strong></p>
+<ul>
+<li>Bandingkan <code v-pre>key</code> dengan elemen pertama <code v-pre>arr[0]</code> yaitu <code v-pre>10</code>.</li>
+<li>Karena <code v-pre>10</code> tidak sama dengan <code v-pre>30</code>, lanjut ke elemen berikutnya.</li>
+</ul>
+<p><img src="../../img/algoritma-03.png" alt="Pencarian Linear" /></p>
+</li>
+<li><p><strong>Memeriksa Elemen Kedua:</strong></p>
+<ul>
+<li>Bandingkan <code v-pre>key</code> dengan elemen kedua <code v-pre>arr[1]</code> yaitu <code v-pre>50</code>.</li>
+<li>Karena <code v-pre>50</code> tidak sama dengan <code v-pre>30</code>, lanjut ke elemen berikutnya.</li>
+</ul>
+<p><img src="../../img/algoritma-04.png" alt="Pencarian Linear" /></p>
+</li>
+<li><p><strong>Menemukan Elemen yang Cocok:</strong></p>
+<ul>
+<li>Bandingkan <code v-pre>key</code> dengan elemen ketiga <code v-pre>arr[2]</code> yaitu <code v-pre>30</code>.</li>
+<li>Karena <code v-pre>30</code> sama dengan <code v-pre>30</code>, pencarian berhasil! Algoritma Pencarian Linear menemukan <code v-pre>key</code> pada indeks ke-2.</li>
+</ul>
+<p><img src="../../img/algoritma-05.png" alt="Pencarian Linear" /></p>
+</li>
+</ol>
+<p><strong>Contoh Implementasi Pencarian Linear di Python:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def linear_search(data, target):
+    &quot;&quot;&quot;
+    Mencari target dalam data menggunakan metode pencarian linear.
+    
+    :param data: List data yang akan dicari
+    :param target: Nilai yang dicari
+    :return: Indeks target jika ditemukan, atau -1 jika tidak ditemukan
+    &quot;&quot;&quot;
+    for index, element in enumerate(data):
+        if element == target:
+            return index  # Kembalikan indeks jika ditemukan
+    return -1  # Kembalikan -1 jika tidak ditemukan
+
+# Contoh penggunaan
+data = [10, 50, 30, 70, 80, 20, 90, 40]
+target = 30
+
+hasil = linear_search(data, target)
+if hasil != -1:
+    print(f&quot;Elemen {target} ditemukan pada indeks {hasil}.&quot;)
+else:
+    print(f&quot;Elemen {target} tidak ditemukan dalam daftar.&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Elemen 30 ditemukan pada indeks 2.</code></pre>
+</doc-codeblock></div>
+<p><strong>Analisis Kompleksitas Pencarian Linear</strong></p>
+<ul>
+<li><strong>Waktu:</strong>
+<ul>
+<li>Kasus Terbaik: O(1) (elemen ditemukan di awal)</li>
+<li>Kasus Terburuk: O(n) (elemen ditemukan di akhir atau tidak ada)</li>
+<li>Rata-rata: O(n)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Kapan Menggunakan Pencarian Linear</strong></p>
+<ul>
+<li>Kumpulan data kecil.</li>
+<li>Data tidak terurut.</li>
+</ul>
+<doc-anchor-target id="2-pencarian-biner">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#2-pencarian-biner">#</doc-anchor-trigger>
+        <span>2. Pencarian Biner</span>
+    </h3>
+</doc-anchor-target>
+<p>Pencarian Biner adalah algoritma pencarian yang lebih efisien dibandingkan pencarian linear, namun hanya dapat diterapkan pada kumpulan data yang sudah terurut. Algoritma ini bekerja dengan membagi ruang pencarian menjadi dua bagian dan menentukan di mana kemungkinan besar elemen yang dicari berada, kemudian mengulangi proses ini secara iteratif atau rekursif.</p>
+<p><figure class="content-center">
+    <img src="../../img/algoritma-06.png" alt="Pencarian Biner">
+    <figcaption class="caption">Pencarian Biner</figcaption>
+</figure>
+</p>
+<p><strong>Algoritma ini dapat digunakan ketika:</strong></p>
+<ul>
+<li>Data sudah terurut.</li>
+<li>Kumpulan data besar.</li>
+<li>Pencarian dilakukan berulang kali pada data yang sama.</li>
+</ul>
+<p><strong>Kelebihan</strong></p>
+<ul>
+<li>Lebih cepat dibandingkan pencarian linear, terutama pada data besar.</li>
+<li>Mengurangi jumlah perbandingan yang diperlukan.</li>
+</ul>
+<p><strong>Kekurangan</strong></p>
+<ul>
+<li>Hanya bisa digunakan pada data yang terurut.</li>
+<li>Implementasinya lebih kompleks dibandingkan pencarian linear.</li>
+</ul>
+<p><strong>Langkah-langkah Pencarian Biner:</strong></p>
+<ol>
+<li><p><strong>Bagi Ruang Pencarian:</strong><br />
+Cari indeks tengah dari kumpulan data dengan rumus <code v-pre>mid = (left + right) // 2</code>, di mana <code v-pre>left</code> adalah indeks awal dan <code v-pre>right</code> adalah indeks akhir.</p>
+</li>
+<li><p><strong>Bandingkan dengan Key:</strong><br />
+Bandingkan elemen di indeks tengah (<code v-pre>arr[mid]</code>) dengan nilai yang dicari (<code v-pre>key</code>).</p>
+</li>
+<li><p><strong>Jika Ditemukan:</strong><br />
+Jika <code v-pre>arr[mid]</code> sama dengan <code v-pre>key</code>, maka pencarian selesai dan indeks <code v-pre>mid</code> dikembalikan sebagai hasil.</p>
+</li>
+<li><p><strong>Jika Tidak Ditemukan:</strong></p>
+<ul>
+<li>Jika <code v-pre>key</code> lebih kecil dari <code v-pre>arr[mid]</code>, berarti <code v-pre>key</code> berada di sebelah kiri. Maka, set <code v-pre>right = mid - 1</code> untuk fokus mencari di bagian kiri.</li>
+<li>Jika <code v-pre>key</code> lebih besar dari <code v-pre>arr[mid]</code>, berarti <code v-pre>key</code> berada di sebelah kanan. Maka, set <code v-pre>left = mid + 1</code> untuk fokus mencari di bagian kanan.</li>
+</ul>
+</li>
+<li><p><strong>Ulangi Proses:</strong><br />
+Ulangi langkah 1 hingga 4 dengan ruang pencarian yang baru hingga <code v-pre>key</code> ditemukan atau ruang pencarian habis (tidak ada lagi data yang bisa diperiksa).</p>
+</li>
+</ol>
+<p><strong>Ilustrasi Pencarian Biner</strong></p>
+<p>Misalkan kita memiliki array <code v-pre>arr[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91}</code> dan target yang ingin dicari adalah <code v-pre>23</code>.</p>
+<ol>
+<li><p><strong>Langkah Pertama:</strong></p>
+<ul>
+<li>Hitung indeks tengah (mid) dengan rumus <code v-pre>mid = (left + right) // 2</code>.</li>
+<li>Elemen di indeks tengah adalah <code v-pre>16</code>.</li>
+<li>Bandingkan elemen tengah ini dengan target <code v-pre>23</code>. Karena <code v-pre>23</code> lebih besar dari <code v-pre>16</code>, kita fokuskan pencarian ke bagian kanan array.</li>
+</ul>
+<p><img src="../../img/algoritma-07.png" alt="Pencarian Biner" /></p>
+</li>
+<li><p><strong>Langkah Kedua:</strong></p>
+<ul>
+<li>Kini ruang pencarian hanya mencakup bagian kanan dari elemen tengah sebelumnya.</li>
+<li>Hitung indeks tengah dari ruang pencarian baru. Elemen di tengah sekarang adalah <code v-pre>56</code>.</li>
+<li>Bandingkan elemen ini dengan target <code v-pre>23</code>. Karena <code v-pre>23</code> lebih kecil dari <code v-pre>56</code>, kita fokuskan pencarian ke bagian kiri ruang ini.</li>
+</ul>
+<p><img src="../../img/algoritma-08.png" alt="Pencarian Biner" /></p>
+</li>
+<li><p><strong>Langkah Ketiga:</strong></p>
+<ul>
+<li>Ruang pencarian sekarang semakin kecil.</li>
+<li>Elemen tengah yang baru adalah <code v-pre>23</code>, dan ini cocok dengan target kita!</li>
+<li>Proses pencarian selesai, dan elemen ditemukan.</li>
+</ul>
+<p><img src="../../img/algoritma-09.png" alt="Pencarian Biner" /></p>
+</li>
+</ol>
+<p><strong>Implementasi Pencarian Biner di Python</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def binary_search(data, target):
+    &quot;&quot;&quot;
+    Mencari target dalam data yang sudah terurut menggunakan metode pencarian biner.
+    
+    :param data: List data yang sudah terurut
+    :param target: Nilai yang dicari
+    :return: Indeks target jika ditemukan, atau -1 jika tidak ditemukan
+    &quot;&quot;&quot;
+    left, right = 0, len(data) - 1
+    
+    while left &lt;= right:
+        mid = (left + right) // 2
+        mid_val = data[mid]
+        
+        if mid_val == target:
+            return mid  # Kembalikan indeks jika ditemukan
+        elif mid_val &lt; target:
+            left = mid + 1  # Cari di bagian kanan
+        else:
+            right = mid - 1  # Cari di bagian kiri
+    
+    return -1  # Kembalikan -1 jika tidak ditemukan
+
+# Contoh penggunaan
+data_terurut = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+target = 23
+
+hasil = binary_search(data_terurut, target)
+if hasil != -1:
+    print(f&quot;Elemen {target} ditemukan pada indeks {hasil}.&quot;)
+else:
+    print(f&quot;Elemen {target} tidak ditemukan dalam daftar.&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Elemen 23 ditemukan pada indeks 5.</code></pre>
+</doc-codeblock></div>
+<p><strong>Implementasi Pencarian Biner Menggunakan Rekursi</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-python"><code v-pre class="language-python">def binary_search_recursive(data, target, left, right):
+    &quot;&quot;&quot;
+    Mencari target dalam data yang sudah terurut secara rekursif menggunakan metode pencarian biner.
+    
+    :param data: List data yang sudah terurut
+    :param target: Nilai yang dicari
+    :param left: Indeks kiri
+    :param right: Indeks kanan
+    :return: Indeks target jika ditemukan, atau -1 jika tidak ditemukan
+    &quot;&quot;&quot;
+    if left &gt; right:
+        return -1  # Basis rekursi: target tidak ditemukan
+    
+    mid = (left + right) // 2
+    mid_val = data[mid]
+    
+    if mid_val == target:
+        return mid  # Target ditemukan
+    elif mid_val &lt; target:
+        return binary_search_recursive(data, target, mid + 1, right)  # Cari di kanan
+    else:
+        return binary_search_recursive(data, target, left, mid - 1)  # Cari di kiri
+
+# Contoh penggunaan
+data_terurut = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
+target = 56
+
+hasil = binary_search_recursive(data_terurut, target, 0, len(data_terurut) - 1)
+if hasil != -1:
+    print(f&quot;Elemen {target} ditemukan pada indeks {hasil}.&quot;)
+else:
+    print(f&quot;Elemen {target} tidak ditemukan dalam daftar.&quot;)</code></pre>
+</doc-codeblock></div>
+<p><strong>Output:</strong></p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">Elemen 56 ditemukan pada indeks 7.</code></pre>
+</doc-codeblock></div>
+<p><strong>Analisis Kompleksitas Pencarian Biner</strong></p>
+<ul>
+<li><strong>Waktu:</strong>
+<ul>
+<li>Kasus Terbaik: O(1) (elemen ditemukan di tengah)</li>
+<li>Kasus Terburuk: O(log n) (elemen tidak ada atau berada di salah satu ujung)</li>
+<li>Rata-rata: O(log n)</li>
+</ul>
+</li>
+<li><strong>Ruang Tambahan:</strong> O(1) untuk pendekatan iteratif, O(log n) untuk pendekatan rekursif</li>
+</ul>
+<doc-anchor-target id="perbandingan-pencarian-linear-dan-pencarian-biner">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#perbandingan-pencarian-linear-dan-pencarian-biner">#</doc-anchor-trigger>
+        <span>Perbandingan Pencarian Linear dan Pencarian Biner</span>
+    </h3>
+</doc-anchor-target>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th>Aspek</th>
+<th>Pencarian Linear</th>
+<th>Pencarian Biner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kondisi Data</strong></td>
+<td>Tidak perlu terurut</td>
+<td>Harus terurut</td>
+</tr>
+<tr>
+<td><strong>Kompleksitas Waktu</strong></td>
+<td>O(n)</td>
+<td>O(log n)</td>
+</tr>
+<tr>
+<td><strong>Kelebihan</strong></td>
+<td>Sederhana, fleksibel</td>
+<td>Lebih cepat pada data besar</td>
+</tr>
+<tr>
+<td><strong>Kekurangan</strong></td>
+<td>Lambat untuk data besar</td>
+<td>Memerlukan data terurut</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="algoritma-pencarian-yang-sering-digunakan">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#algoritma-pencarian-yang-sering-digunakan">#</doc-anchor-trigger>
+        <span>Algoritma Pencarian yang Sering Digunakan</span>
+    </h2>
+</doc-anchor-target>
+<p>Banyak jenis algoritma pencarian yang digunakan dalam aplikasi berdasarkan jenis data dan masalah yang dihadapi. Beberapa algoritma pencarian yang sering digunakan dalam aplikasi adalah:</p>
+<ul>
+<li>Dataset Kecil: Linear Search atau Hashing.</li>
+<li>Dataset Besar dan Terurut: Binary Search.</li>
+<li>Graph-Based Problems: BFS, DFS, Dijkstra, atau A*.</li>
+<li>Teks dan Dokumen: TF-IDF, KMP, atau BM25.</li>
+<li>Pencarian dengan Kemiripan: ANN atau Edit Distance.</li>
+</ul>
+<doc-anchor-target id="kesimpulan">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#kesimpulan">#</doc-anchor-trigger>
+        <span>Kesimpulan</span>
+    </h2>
+</doc-anchor-target>
+<p>Pencarian adalah komponen penting dalam algoritma dan struktur data. Pencarian Linear dan Pencarian Biner adalah dua metode yang umum digunakan dengan kelebihan dan kekurangannya masing-masing. Memahami kapan dan bagaimana menggunakan kedua metode ini akan membantu dalam mengembangkan program yang lebih efisien dan efektif.</p>
+<doc-anchor-target id="referensi">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#referensi">#</doc-anchor-trigger>
+        <span>Referensi</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><a href="https://www.geeksforgeeks.org/searching-algorithms/">GeeksforGeeks - Searching Algorithms</a></li>
+</ul>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../12-algoritma/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">12 - Algoritma</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../12-algoritma/sorting/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Algoritma Pengurutan</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© Copyright 2024 - Alfiki - All rights reserved.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Algoritma Pencarian", level: 2, icon: "file", hasPrism: true, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+</body>
+</html>
