@@ -1,0 +1,5 @@
+---
+deployment:
+    tasks:
+      - export DEPLOYPATH=/home/u1578064/public_html/alfiki.my.id/advanced-python
+      - /bin/cp -r . $DEPLOYPATH
